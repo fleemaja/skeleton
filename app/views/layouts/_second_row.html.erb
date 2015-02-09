@@ -28,17 +28,13 @@
 	  					<a href="#/users/<%= current_user.id %>"><%= current_user.username %></a>
 						(<span class="user-karma"><%= current_user.post_karma %></span>)
 					</li>
-					<li>
-	  					<a href="#/messages">messages</a>
-					</li>
+
 
 					<li id="notifications-li">
 						<a class="notifications-link" href="#notifications">notifications<span class="notifications-num"></span></a>
 						<ul class="notifications-dropdown"></ul>
 					</li>
-					<li>
-	  					<a id="preferences-link" href="#/preferences">preferences</a>
-	  				</li>
+			
 					<li>
 						<%= link_to "logout", api_session_url, method: :delete %>
 					</li>
