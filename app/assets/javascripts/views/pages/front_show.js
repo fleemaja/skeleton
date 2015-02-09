@@ -39,7 +39,7 @@ ProjectSkeleton.Views.FrontShow = Backbone.View.extend({
 	  $("input#confirm-deletion").off();
 	  $("input#confirm-deletion").attr("data-type", type);
 	  $("input#confirm-deletion").attr("data-id", typeId);
-  	  $("input#confirm-deletion").one("click", this.deleteItem);
+  	$("input#confirm-deletion").one("click", this.deleteItem);
 	  $("#delete-modal").addClass("is-active");
   },
 
@@ -110,8 +110,6 @@ ProjectSkeleton.Views.FrontShow = Backbone.View.extend({
 			  console.log(collection);
 		  }
 	  })
-
-
   },
 
   sortCon: function(){
@@ -125,7 +123,6 @@ ProjectSkeleton.Views.FrontShow = Backbone.View.extend({
 			  console.log(collection);
 		  }
 	  })
-
   },
 
 
@@ -140,16 +137,15 @@ ProjectSkeleton.Views.FrontShow = Backbone.View.extend({
 			  console.log(collection);
 		  }
 	  })
-
   },
 
 
   newSubReddit: function(event){
-  	  event.preventDefault();
+  	event.preventDefault();
 	  if (ProjectSkeleton.currentUserId) {
 		  $("#new-subreddit-modal").addClass("is-active");
 		  $("input.new-subreddit").off();
-	  	  $("input.new-subreddit").one("click", this.submitSubReddit);
+	  	$("input.new-subreddit").one("click", this.submitSubReddit);
 
 	  } else {
 		  $("#login-modal").addClass("is-active");
@@ -173,10 +169,7 @@ ProjectSkeleton.Views.FrontShow = Backbone.View.extend({
 			  ProjectSkeleton.subReddits.unshift(model);
 		  }
 	  });
-
-
   },
-
 
   newPost: function(event){
   	event.preventDefault();
@@ -189,9 +182,7 @@ ProjectSkeleton.Views.FrontShow = Backbone.View.extend({
 
     } else {
 		  $("#login-modal").addClass("is-active");
-  	  	  $("input[type=password]").val("");
-
-
+  	  $("input[type=password]").val("");
 	  };
   },
 
@@ -214,27 +205,21 @@ ProjectSkeleton.Views.FrontShow = Backbone.View.extend({
 	  });
 
 	  $("a.new").click();
-
   },
 
   render: function(){
-	 var renderedContent = this.template({
-		 posts: this.collection,
-		 navTemplate: JST["pages/_front_nav_bar"],
-		 textTemplate: JST["posts/_show_text"]
-	 })
+	  var renderedContent = this.template({
+		  posts: this.collection,
+		  navTemplate: JST["pages/_front_nav_bar"],
+		  textTemplate: JST["posts/_show_text"]
+	  })
 
-	 this.$el.html(renderedContent);
-	 return this;
-
+	  this.$el.html(renderedContent);
+	  return this;
   },
 
   renderPosts: function(){
-
 	  var el = $(".subreddit-posts.")
-
-
-
   },
 
   updatePostKarma: function(karma, postId){
@@ -243,21 +228,15 @@ ProjectSkeleton.Views.FrontShow = Backbone.View.extend({
  	  currentKarma += parseInt(karma);
  	  $(str).html(currentKarma);
  	  if (this.collection.get(postId).get("poster_id") === ProjectSkeleton.currentUserId) {
-
  		  this.updateCurrentUserKarma(karma)
-
  	  }
-
    },
-
 
    updateCurrentUserKarma: function(karma) {
  	  var currentKarma = parseInt($("span.user-karma").html());
  	  currentKarma += parseInt(karma);
  	  $("span.user-karma").html(currentKarma);
-
    },
-
 
   downvote: function(event){
   	event.preventDefault();
@@ -271,21 +250,18 @@ ProjectSkeleton.Views.FrontShow = Backbone.View.extend({
   			    data: { "post_id": id}
   			  })
   			  .done(function(data){
-				  that.updatePostKarma(data, id);
+				    that.updatePostKarma(data, id);
   			  });
   		  }
-	  } else {
 
-	  		  $("#login-modal").addClass("is-active");
-	  	  	  $("input[type=password]").val("");
-
-
+    } else {
+        $("#login-modal").addClass("is-active");
+	  	  $("input[type=password]").val("");
 	  };
   },
 
-
   upvote: function(event){
-  	  event.preventDefault();
+  	event.preventDefault();
 	  var that = this;
 	  if (ProjectSkeleton.currentUserId) {
 		  var id = $(event.currentTarget).attr("post-id")
@@ -296,18 +272,15 @@ ProjectSkeleton.Views.FrontShow = Backbone.View.extend({
   			    data: { "post_id": id }
   			  })
   			  .done(function(data){
-				  that.updatePostKarma(data, id);
+				    that.updatePostKarma(data, id);
   			  });
   		  }
-	  } else {
 
-		$("#login-modal").addClass("is-active");
-	  	$("input[type=password]").val("");
-
-
+    } else {
+		    $("#login-modal").addClass("is-active");
+	  	  $("input[type=password]").val("");
 	  };
   },
-
 
   searchPosts: function(event){
 	  event.preventDefault();
@@ -322,12 +295,9 @@ ProjectSkeleton.Views.FrontShow = Backbone.View.extend({
 	  })
 	  .done(function(data){
 
-		  var results = new ProjectSkeleton.Collections.Posts(data, { parse: true})
+		  var results = new ProjectSkeleton.Collections.Posts(data, { parse: true })
 		  that.renderSearch(results);
 	  });
-
-
-
   },
 
   renderSearch: function(collection){
@@ -336,8 +306,8 @@ ProjectSkeleton.Views.FrontShow = Backbone.View.extend({
 		 navTemplate: JST["pages/_search_nav_bar"],
 		 textTemplate: JST["posts/_show_text"]
 	 })
-	 this.$el.html(renderedContent);
-	 return this;
 
+   this.$el.html(renderedContent);
+	 return this;
   }
 });

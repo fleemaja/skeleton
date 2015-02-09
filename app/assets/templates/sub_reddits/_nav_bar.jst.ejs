@@ -25,7 +25,7 @@
 
 		<div class="subreddit-details">
 			<p><%= subReddit.escape("name") %></p>
-		    <p>Moderator: <a href="#/users/<%= subReddit.escape("moderator_id")%>"><%= subReddit.escape("moderator") %></a></p>
+		    <p>Moderator: <a href="#/users/<%= SubReddit.escape("moderator_id")%>"><%= subReddit.escape("moderator") %></a></p>
 			<p><%= subReddit.escape("title") %></p>
 			<p><%= subReddit.escape("description") %></p>
 			<p><%= subReddit.escape("sidebar") %></p>
