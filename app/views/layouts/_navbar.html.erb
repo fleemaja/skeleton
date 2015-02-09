@@ -1,0 +1,59 @@
+<header>
+	<nav class="top clearfix">
+		<ul class>
+			<li class="triangle">
+				<a href="#/subreddits">MY SUBS  <span class="arrow-down"></span></a>
+
+				<ul class="dropdown-subreddits">
+					<% if current_user %>
+						<% current_user.subscribed_subreddits.each do |subreddit| %>
+						<li sub-id="<%= subreddit.id %>">
+							<a href="#/subreddits/<%= subreddit.id %>">
+							<%= subreddit.name.upcase %></a>
+						</li>
+						<% end %>
+					<% end %>
+				</ul>
+
+			</li>
+			<li class="groups">
+				<ul>
+					<li>
+						<a href="#">FRONT</a>
+					</li>
+					<li>
+						<a href="#/all">ALL</a>
+					</li>
+					<li>
+						<a href="#/subreddits/random">RANDOM</a>
+					</li>
+				</ul>
+			</li>
+			<% if current_user %>
+
+				<li class="random-subreddits">
+					<ul>
+						<% current_user.subscribed_subreddits.take(10).each do |subreddit| %>
+						<li sub-id="<%= subreddit.id %>">
+							<a href="#/subreddits/<%= subreddit.id %>"><%= subreddit.name.upcase %></a>
+
+						</li>
+						<% end %>
+					</ul>
+				</li>
+
+			<% else %>
+				<li class="random-subreddits">
+					<ul>
+						<% SubReddit.take(10).each do |subreddit| %>
+						<li>
+							<a href="#/subreddits/<%= subreddit.id %>"><%= subreddit.name.upcase %></a>
+						</li>
+						<% end %>
+					</ul>
+				</li>
+			<% end %>
+			<li class="subreddits-link"><a href="#/subreddits">MORE</a></div>
+		</ul>
+	</nav>
+</header>

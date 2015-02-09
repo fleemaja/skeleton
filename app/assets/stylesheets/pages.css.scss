@@ -1,0 +1,23 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#art {
+	width: 96px;
+	height: 73px;
+	vertical-align: normal;
+	position: absolute;
+	background: transparent;
+	overflow: hidden;
+	
+	
+}
+
+#art div{
+	
+	width: 6px;
+	height: 6px;
+	background: transparent;
+	box-shadow: 6px 12px #000000,6px 24px #000000,6px 18px #000000,6px 36px #000000,6px 30px #000000,6px 48px #000000,6px 42px #000000,18px 54px #000000,12px 54px #000000,30px 54px #000000,24px 54px #000000,42px 54px #000000,36px 54px #000000,48px 54px #000000,60px 54px #000000,54px 54px #000000,66px 54px #000000,78px 54px #000000,72px 54px #000000,84px 48px #000000,84px 42px #000000,84px 36px #000000,84px 30px #000000,84px 24px #000000,84px 18px #000000,84px 12px #000000,78px 6px #000000,60px 6px #000000,72px 6px #000000,66px 6px #000000,54px 6px #000000,42px 6px #000000,48px 6px #000000,36px 6px #000000,30px 6px #000000,24px 6px #000000,18px 6px #000000,12px 6px #000000,24px 18px #ff0000,24px 24px #ff0000,30px 24px #ff0000,30px 18px #ff0000,60px 18px #ff0000,60px 24px #ff0000,66px 18px #ff0000,66px 24px #ff0000,30px 36px #000000,36px 42px #000000,48px 42px #000000,42px 42px #000000,54px 42px #000000,60px 36px #000000,60px 0px #000000,30px 84px #000000,36px 84px #000000,48px 84px #000000,42px 84px #000000,54px 84px #000000,66px 84px #000000,60px 84px #000000,72px 78px #000000,72px 72px #000000,72px 60px #000000,72px 66px #000000,18px 60px #000000,18px 66px #000000,18px 72px #000000,18px 78px #000000,24px 84px #000000,18px 90px #000000,24px 90px #000000,30px 90px #000000,66px 90px #000000,72px 90px #000000,60px 90px #000000,6px 72px #000000,12px 78px #000000,6px 66px #000000,12px 60px #000000,78px 60px #000000,78px 78px #000000,84px 72px #000000,84px 66px #000000;
+}

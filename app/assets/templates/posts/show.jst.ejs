@@ -1,0 +1,26 @@
+
+	<%= navTemplateFn({post: post }) %>
+<div class="post-show">
+	<%= textTemplateFn({ post: post }) %>
+
+	<div class="new-comment">
+
+		<h5>comment on post</h5>
+		<form class="post-comment" action="#<%= post.url() %>/comment/new" >
+			<input type="hidden" name="comment[post_id]" value="<%= post.id %>">
+			<textarea name="comment[content]"></textarea>
+			<br>
+			<input type="submit" value="save">
+		</form>
+	</div>
+
+
+	<div id="link-post-comments">
+	<% post.comments().forEach(function(comment) { %>
+		<%= commentTemplate({ comment: comment, templateFn: commentTemplate}) %>
+
+	<% }); %>
+
+
+	</div>
+</div>

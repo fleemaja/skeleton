@@ -1,0 +1,34 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.avatar-section img {
+	max-width: 200px;
+}
+
+.user-profile {
+	border-top: 1px solid black;
+	
+}
+
+.user-details {
+}
+
+
+#guest-sign-in {
+	margin-top: 10px;
+	display: inline-block;
+	color: white;
+	font-weight: bold;
+	padding: 5px 10px;
+	background: blue;
+	border: 2px solid black;
+	cursor: pointer;
+	
+}
+
+.google-button {
+	margin-bottom: 5px;
+}
+

@@ -1,0 +1,540 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+body, header, nav, div, h1, h2, h3, h4, h5, h6, ul, li, span, p {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: normal;
+	font-family: helvetica;
+
+}
+
+body {
+	font-family: helvetica;
+	font-size: 16px;
+	background: #f0f0f0;
+}
+
+a {
+	text-decoration: none;
+	display: block;
+	color: inherit;
+
+}
+
+ul {
+	list-style: none;
+}
+
+button, input[type="submit"], input[type="file"], input[type="file"]::-webkit-file-upload-button {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	vertical-align: normal;
+	font-family: helvetica;
+	-webkit-appearance: none;
+	background: transparent;
+	color: inherit;
+
+}
+
+.early-debug {
+	display: inline-block;
+	border: 2px dashed red;
+	float: right;
+	background: white;
+	z-index: 3;
+}
+
+.clearfix:after {
+
+	content: "";
+	clear: both;
+	display: block;
+
+}
+
+#content {
+	background: #fff;
+	z-index: 2;
+}
+
+nav.top {
+	background: white;
+	white-space: nowrap;
+	border-bottom: 1px solid gray;
+
+}
+
+.subreddit-details > .avatar-section > img {
+	width: 240px;
+	border: 10px solid black;
+}
+
+
+nav.top a {
+	font-size: 70%;
+}
+
+nav.top > ul {
+	position: relative;
+}
+
+nav.top > ul > .triangle {
+	float: left;
+	border-right: 1px solid black;
+}
+
+.triangle > a {
+	padding: 5px 10px;
+	position: relative;
+	color: black
+}
+
+.triangle > a:hover {
+	color: white
+}
+
+.triangle .dropdown-subreddits {
+	display: none;
+	position: absolute;
+	background: #f0f0f0;
+	border-top: 1px solid black;
+	border-right: 1px solid black;
+	z-index: 4;
+	min-width: 167px;
+}
+
+.triangle .dropdown-subreddits > li {
+	border-bottom: 1px solid black;
+	padding: 5px 5px;
+	color: black;
+}
+
+.triangle:hover .dropdown-subreddits {
+	display: block;
+}
+
+.triangle .dropdown-subreddits > li:hover {
+	background: darkgray;
+	color: white;
+}
+
+nav.top > ul > .groups {
+	float: left;
+}
+
+nav.top > ul > .random-subreddits {
+	float: left;
+}
+
+nav.top > ul > .subreddits-link {
+	position: absolute;
+	display: block;
+	padding: 5px 10px;
+	background: #f0f0f0;
+	top: 0;
+	right: 0;
+	z-index: 2;
+	border-left: 1px solid black;
+}
+
+
+.groups > ul, .random-subreddits > ul {
+	float: right;
+
+}
+
+.groups > ul > li, .random-subreddits > ul > li {
+	float: left;
+	border-right: 1px solid black;
+}
+
+.groups > ul > li > a, .random-subreddits > ul > li > a {
+
+	padding: 5px 10px;
+}
+
+
+.groups > ul > li:hover, .random-subreddits > ul > li:hover, nav.top > ul > .subreddits-link:hover, nav.top > ul > .triangle:hover {
+	background: darkgray;
+	color: white;
+}
+
+.second-row {
+	background: #f0f0f0;
+	border-bottom: 1px black;
+	position: relative;
+	height: 110px;
+}
+
+a.reddit-main {
+	position: absolute;
+	display: block;
+	/*bottom: 1px;*/
+	left: 10px;
+}
+
+.loginorout > ul.user-info {
+	float: right;
+}
+
+ul.user-info a {
+	display: inline;
+}
+
+ul.user-info a:hover {
+
+}
+ul.user-info > li {
+	float: left;
+	margin-top: 45px;
+	padding-bottom: 5px;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+ul.user-info > li:hover {
+}
+
+
+ul.user-info > li a {
+	text-decoration: underline;
+}
+
+footer {
+	background: #f0f0f0;
+	border-top: 1px solid black;
+	height: 30px;
+	display: block;
+	width: 100%;
+}
+
+footer a:hover {
+	text-decoration: underline;
+}
+
+footer p {
+}
+
+footer > .info {
+	float: left;
+	padding: 5px 10px;
+}
+footer > .info a {
+	display: inline;
+}
+
+footer > a {
+	float: right;
+	padding: 5px 10px;
+}
+
+
+.button_to input[type="submit"], .subscribe-button {
+
+	background: #f0f0f0;
+	padding: 10px 5px;
+	color: black;
+	border: 1px solid #ccc;
+	margin: 5px;
+	min-width: 100px;
+	text-align: center;
+	float: left;
+}
+
+.button_to input[type="submit"]:hover, .subscribe-button:hover {
+	background: black;
+}
+
+.subreddit-link {
+	font-weight: bold;
+	background: #fff;
+	padding: 10px 5px;
+	margin: 5px;
+	border: 1px solid #ccc;
+	min-width: 100px;
+	text-align: center;
+	display: inline-block;
+}
+
+.subreddit-link:hover {
+
+	background: lightgray;
+}
+
+.surround-subreddit {
+	margin: 10px 0px;
+}
+
+.surround-subreddit p {
+
+	float: left;
+}
+
+.subreddit-desc {
+	padding: 10px 10px;
+	border: 1px solid black;
+	background: #ccc;
+	display: block;
+	width: 500px;
+	margin-left: 10px;
+	float: left;
+	margin-top: 5px;
+
+
+}
+
+input[type="submit"] {
+
+	background: #f0f0f0;
+	padding: 10px 5px;
+	width: 50px;
+	color: black;
+	border: 1px solid #ccc;
+	margin: 5px 0px;
+	display: inline-block;
+	font-weight: bold;
+}
+
+.user-comments .comment {
+
+	padding-left: 0px;
+
+}
+
+#login-modal, #new-post-modal, #compose-modal, #new-subreddit-modal, #delete-modal, #preferences-modal {
+	display: none;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	z-index: 100;
+}
+
+#login-modal:before, #new-post-modal:before, #compose-modal:before, #new-subreddit-modal:before, #delete-modal:before, #preferences-modal:before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+#login-modal.is-active,  #new-post-modal.is-active, #compose-modal.is-active, #new-subreddit-modal.is-active, #delete-modal.is-active, #preferences-modal.is-active {
+	display: block;
+}
+
+#login-modal > article, #new-post-modal > article, #compose-modal > article, #new-subreddit-modal > article, #delete-modal > article, #preferences-modal > article {
+
+	position: fixed;
+	top: 100px;
+	left: 15%;
+	width: 800px;
+	margin-bottom: 100px;
+	min-height: 200px;
+	padding: 50px;
+	background: white;
+	border-radius: 5px;
+	border: 1px solid black;
+
+}
+
+#login-modal .hide-modal, #new-post-modal .hide-modal,  #compose-modal .hide-modal, #new-subreddit-modal .hide-modal, #delete-modal .hide-modal, #preferences-modal .hide-modal {
+	position: relative;
+	font-size: 40px;
+	top: -50px;
+	right: -25px;
+	float: right;
+	font-weight: bold;
+	cursor: pointer;
+	color: gray;
+
+}
+
+#login-modal section.new-account {
+	display: block;
+	width: 450px;
+	border-right: 1px solid #ccc;
+	float: left;
+}
+
+ section.new-text {
+ 	display: block;
+ 	width: 300px;
+ 	border-right: 1px solid #ccc;
+	padding-right: 50px;
+ 	float: left;
+
+ }
+
+ section.new-text {
+
+	 border-right: 0;
+	 padding-left: 50px;
+ }
+
+#login-modal section.sign-in {
+	display: block;
+	width: 250px;
+	padding-left: 50px;
+	float: left;
+}
+
+
+.hidden {
+
+	display: none;
+}
+
+.arrow-down {
+	display: inline-block;
+	width: 0;
+	height: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 10px solid black;
+	vertical-align: middle;
+}
+
+.show-login, .show-register {
+
+	cursor: pointer;
+
+}
+
+input[type="submit"] {
+
+	cursor: pointer;
+}
+
+
+input[type="file"]::-webkit-file-upload-button {
+	display: block;
+	color: white;
+	font-weight: bold;
+	size: 8px;
+	padding: 5px 10px;
+	border: 1px solid black;
+	background: #f0f0f0;
+}
+
+input[type="file"] {
+
+}
+
+
+.error {
+	position: absolute;
+	top: 20px;
+	left: 400px;
+	color: red;
+	background: white;
+	border: 2px dashed red;
+	padding: 5px 10px;
+	border-radius: 5px;
+}
+
+.error a {
+	text-decoration: underline;
+}
+
+
+#new-subreddit-modal h3 {
+	text-align: center;
+}
+
+.new-subreddit-form  {
+	margin-left: 200px;
+}
+
+.new-subreddit-form input[type="text"], .new-subreddit-form textarea {
+	width: 400px;
+	border: 1px solid black;
+}
+
+.new-subreddit-form  input[type="submit"] {
+	margin-left: 145px;
+}
+
+#notifications-li {
+}
+
+#notifications-li > .notifications-link {
+	text-decoration: none;
+}
+
+
+#notifications-li ul.notifications-dropdown {
+	position: absolute;
+	background: #f0f0f0;
+	overflow: visible;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	border-top: 1px solid black;
+	margin-right: 5px;
+	z-index: 3;
+	display: none;
+
+}
+
+.notifications-link {
+	cursor: pointer;
+}
+
+#notifications-li:hover ul.notifications-dropdown {
+	display: block;
+}
+ul.notifications-dropdown > li {
+}
+
+ul.notifications-dropdown > li > a {
+	display: block;
+	text-decoration: none;
+	padding: 5px 10px;
+	border-bottom: 1px solid black;
+}
+
+ul.notifications-dropdown > li > a:hover {
+	background: darkgray;
+	color: white;
+}
+
+.notifications-num {
+	display: inline-block;
+	padding: 2px 5px;
+	border-radius: 10px;
+	font-weight: bold;
+	font-size: 12px;
+	color: white;
+	background: lightblue;
+	margin-left: 5px;
+}
+
+.notifications-num-black {
+	display: inline-block;
+	padding: 2px 5px;
+	border-radius: 10px;
+	font-weight: bold;
+	font-size: 12px;
+	color: white;
+	background: black;
+	margin-left: 5px;
+
+
+
+}

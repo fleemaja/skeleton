@@ -1,0 +1,6 @@
+<%= navTemplate({ user: user }) %>
+<div class="user-profile">
+	<% user.posts().forEach(function(post){  %>
+		<%= textTemplate({ post: post }) %>
+	<% }); %>
+</div>

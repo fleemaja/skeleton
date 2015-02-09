@@ -1,0 +1,50 @@
+<div class="comment">
+	
+	<div class="vote-buttons">
+		<div class="upvote">
+			<%= link_to "upvote", comment_upvote_url(comment), method: :post %>
+		</div>
+
+		<div class="downvote">
+			<%= link_to "downvote", comment_downvote_url(comment), method: :post %> 
+			
+		</div>
+				
+			<% if comment.user == current_user %>
+			<div class="delete">
+	
+				<%= link_to "delete", comment_url(comment), method: :delete  %> 
+			</div>
+	
+			<% end %>
+				
+
+	</div>
+	
+	
+	<p><span class="username"><%= User.find(comment.user_id).username %></span> <span class="time-ago"><%= time_ago_in_words(comment.created_at) %></span> ago</p>
+	
+	<p class="content"><%= comment.content %>
+	<p> <span class="comment-link"><a href="<%= comment_url(comment) %>">permalink</a></span> <span class="reply"><a href="#">reply</a></span> </p>
+	<p><span class="karma"><%= comment.karma %></span> karma
+	 </p>
+	<h6>comment on comment</h6>
+	<form action="<%= comment_comments_url(comment) %>" method="POST">
+		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+		<textarea name="comment[content]"></textarea>
+		<br>
+		<input type="submit" value="save">
+	</form>
+	
+	<% comment.comments.each do |child| %>
+	<div class="child">
+
+		<%= render partial: "comments/show", locals: { comment: child } %>
+	</div>
+	<% end %>
+	
+</div>
+
+	
+

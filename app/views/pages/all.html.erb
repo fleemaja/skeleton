@@ -1,0 +1,32 @@
+
+ <div class="subreddit-elements clearfix">
+	<h3>All</h3>
+
+	<div class="subreddit-nav-bar">
+			<ul>
+				<li><a href="<%= all_hot_url %>">hot</a></li>
+				<li><a href="<%= all_newest_url %>">new</a></li>
+				<li><a href="<%= all_rising_url %>">rising</a></li>
+				<li><a href="<%= all_controversial_url %>">controversial</a></li>
+				<li><a href="<%= all_top_url %>">top</a></li>
+			</ul>
+	</div>
+
+	<div class="subreddit-sidebar">
+		<div class="search-submit-area">
+			<form>
+				<input type="text" placeholder="search reddit">
+			</form>
+			<a href="<%= new_post_url %>">Submit a new text post</a>
+			<a href="<%= new_subreddit_url %>">Create your own subreddit</a>
+		</div>
+		<div class="subreddit-details">
+		</div>
+	</div>
+</div>
+
+<ul class="subreddit-posts">
+	<% @posts.each do |post| %>
+    <li><%= render partial: "posts/show_text", locals: { post: post } %></li>
+	<% end %>
+</ul>

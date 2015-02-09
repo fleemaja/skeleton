@@ -1,0 +1,16 @@
+
+<% if ( unRead.length > 0 ) { %>
+
+	<a class="notifications-link">notifications</a><span class="notifications-num"> <%= unRead.length %></span>
+
+<% } else { %>
+	
+	<a class="notifications-link">notifications</a><span class="notifications-num-black"> <%= 0 %></span>
+	
+<% } %>
+
+<ul class="notifications-dropdown">
+	<% notifications.forEach(function(notification){ %>
+		<li><a class="link-to-content" data-id="<%= notification.id %>" href="<%= notification.escape("url") %>"><%= notification.escape("text") %></a></li>		
+	<% }) %>
+</ul>

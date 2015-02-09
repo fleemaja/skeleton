@@ -1,0 +1,56 @@
+<h3>submit to reddit</h3>
+
+<form class="new-text-form" action="<%= posts_url %>" method="POST">
+	<label><b>text form</b></label>
+
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+	<label>
+		<p>title</p>
+		<textarea name="post[title]"></textarea>
+	</label>
+
+	<label>
+		<p>text</p>
+		<textarea name="post[text]"></textarea>
+	</label>
+
+	<br><br>
+
+	<label>
+		choose a sub
+		<input type="text" name="post[subreddit]">
+	<label>
+
+
+	<br><br>
+
+	<br><br>
+
+	<input type="submit" value="submit">
+
+</form>
+
+<h3>submit to project skeleton</h3>
+
+<form class="new-link-form" action="<%= posts_url %>" method="POST">
+	<label><b>link form</b></label>
+
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+	<label>
+		<p>title</p>
+		<textarea name="post[title]"></textarea>
+	</label>
+
+	<br><br>
+
+	<label>
+		choose a sub
+		<input type="text" name="post[subreddit]">
+	<label>
+		
+	<br><br>
+
+	<input type="submit" value="submit">
+
+</form>

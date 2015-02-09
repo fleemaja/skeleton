@@ -1,0 +1,118 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.text-post {
+	padding: 10px 0px;
+
+}
+
+.text-post a {
+	padding: 2px 5px;
+}
+
+.text-post span.username {
+	color: black;
+	background: lightgray;
+	border: 2px solid white;
+	border-radius: 5px;
+	padding: 2px 5px;
+}
+
+.text-post span.username:hover {
+	background: darkgray;
+}
+
+.text-post span.subreddit-name {
+	color: white;
+	background: lightblue;
+	border: 2px solid white;
+	border-radius: 5px;
+	padding: 2px 5px;
+
+}
+
+.text-post span.karma {
+
+	background: white;
+	border: 2px solid black;
+	display: inline-block;
+	padding: 2px 5px 2px 1px;
+	border-radius: 10px;
+	margin: 0px 0px 0px 5px;
+	font-weight: bold;
+}
+
+
+.text-post .upvote {
+
+	color: black;
+	background: #f0f0f0;
+	border: 2px solid black;
+	border-radius: 5px;
+
+}
+
+.text-post .downvote {
+
+	color: black;
+	background: lightblue;
+	border: 2px solid black;
+	border-radius: 5px;
+
+}
+
+.text-post .delete {
+	// color: white;
+	// font-weight: bold;
+	// background: black;
+	// border: 2px solid white;
+	// border-radius: 5px;
+
+}
+
+.text-post .upvote:hover {
+
+	background: darkgray;
+	color: white;
+
+}
+
+.text-post .downvote:hover {
+	background: darkblue;
+	color: white;
+}
+
+.text-post > .vote-buttons {
+	float: left;
+
+}
+.text-post .text {
+	padding: 5px;
+	// background: orange;
+	// border: 2px solid black;
+	// border-radius: 10px;
+	display: inline-block;
+	max-width: 600px;
+}
+
+.text-post .comments {
+	text-decoration: underline;
+	font-weight: bold;
+	margin-left: 90px;
+
+}
+
+.text-post .p-karma {
+	margin-left: 90px;
+}
+
+.post-show {
+	border-top: 1px solid black;
+
+}
+
+
+.post > p > a {
+	max-width: 1000px;
+}

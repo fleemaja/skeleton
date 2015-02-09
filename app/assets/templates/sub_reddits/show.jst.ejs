@@ -1,0 +1,11 @@
+
+
+<%= navTemplate({ subReddit: subReddit }) %>
+
+<ul class="subreddit-posts">
+	<% subReddit.posts().forEach(function(post){  %>
+		<li>
+			<%= textTemplate({ post: post }) %>
+		</li>
+	<% }) %>
+</ul>

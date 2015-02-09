@@ -1,0 +1,10 @@
+	  	<div class="new-comment hidden">
+
+	  		<h5>comment on comment</h5>
+	  		<form action="#/comments/<%= comment.id %>/comment/new" method="POST">
+	  			<input type="hidden" name="comment[comment_id]" value="<%= comment.id %>">
+	  			<textarea name="comment[content]"></textarea>
+	  			<br>
+	  			<input type="submit" value="save">
+	  		</form>
+	  	</div>

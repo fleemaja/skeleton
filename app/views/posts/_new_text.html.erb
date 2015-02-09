@@ -1,0 +1,26 @@
+<form class="new-text-form" >
+	<label><b>text form</b></label>
+
+	<!-- <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>"> -->
+	<label>
+		<p>title</p>
+		<textarea name="post[title]"></textarea>
+	</label>
+
+	<label>
+		<p>text (optional)</p>
+		<textarea name="post[text]"></textarea>
+	</label>
+
+	<br><br>
+
+	<label>
+		choose a subreddit
+		<input type="text" name="post[subreddit]" id="text-post-subreddit-input">
+	<label>
+
+	<br><br>
+
+	<input class="new-post" type="submit" value="submit">
+
+</form>

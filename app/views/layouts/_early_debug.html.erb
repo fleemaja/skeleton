@@ -1,0 +1,23 @@
+	<div class="early-debug">
+		<p>DEBUG:</p>
+
+	    <% if current_user %>
+	    	<p>current_user is: <%= current_user.username %></p>
+		<% else %>
+			<p>no current user</p>
+		<% end %>
+
+		<p>Users:</p>
+		<% User.all.each do |user| %>
+			<p><a href="<%= user_url(user) %>"><%= user.username %></a></p>
+		<% end %>
+
+	    <% if flash[:errors] %>
+	    	<% flash[:errors].each do |error| %>
+			<p class="error"><%= error %></p>
+	  		<% end %>
+	    <% else %>
+			<p>No errors now!</p>
+		<% end %>
+
+	</div>

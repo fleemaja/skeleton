@@ -1,0 +1,19 @@
+<h3>login</h3>
+
+<form class="sign-in-form" action="<%= api_session_url %>" method="POST">
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+	<label>
+		<p>username:</p>
+		<input type="text" name="user[username]">
+	</label>
+
+	<label>
+		<p>password:</p>
+		<input type="password" name="user[password]">
+	</label>
+
+	<br>
+
+	<input type="submit" value="login">
+
+</form>

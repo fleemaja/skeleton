@@ -1,0 +1,35 @@
+ <div class="subreddit-elements clearfix">
+	<h3><%= post.subReddit().escape("name") %></h3>
+
+
+	<div class="subreddit-nav-bar">
+		<ul>
+			<li><a class="hot" href="#/posts/" + "<%= post.id %>">hot</a></li>
+			<li><a class="new" href="#/posts/" + "<%= post.id %>">new</a></li>
+			<li><a class="controversial" href="#/posts/" + "<%= post.id %>">controversial</a></li>
+			<li><a class="top" href="#/posts/" + "<%= post.id %>">top</a></li>
+			<li><a class="best" href="#/posts/" + "<%= post.id %>">best</a></li>
+
+		</ul>
+	</div>
+
+
+	<div class="subreddit-sidebar">
+		<div class="search-submit-area">
+			<form class="search-posts">
+				<input type="text" name="search" placeholder="search project skeleton">
+			</form>
+			<a class="new-text" href="#/posts/new">Submit a new text post</a>
+			<a class="new-subreddit" href="#/subreddits/new">Create your own sub</a>
+		</div>
+
+		<div class="subreddit-details">
+			<p><%= post.subReddit().escape("name") %></p>
+		    <p>Moderator: <a href="#/users/<%= post.subReddit().escape("moderator_id")%>"><%= post.subReddit().escape("moderator") %></a></p>
+			<p><%= post.subReddit().escape("title") %></p>
+			<p><%= post.subReddit().escape("description") %></p>
+			<p><%= post.subReddit().escape("sidebar") %></p>
+		</div>
+	</div>
+
+</div>

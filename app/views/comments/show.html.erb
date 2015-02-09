@@ -1,0 +1,5 @@
+<h3>You are viewing a single comment's thread.</h3>
+<p><a href="<%= find_parent_url(@comment) %>">view the rest of the comments--></a>
+	
+<%= render partial: "comments/show", locals: { comment: @comment } %>
+	

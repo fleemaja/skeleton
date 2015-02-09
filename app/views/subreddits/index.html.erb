@@ -1,0 +1,17 @@
+<h3>SubReddits Index</h3>
+
+<% if current_user %>
+	<% @subreddits.each do |subreddit| %>
+		<p><a href="<%= subreddit_url(subreddit) %>"><%= subreddit.name %></a></p>
+		<% if subscribed?(subreddit) %>
+			<%= button_to "Unsubscribe", subreddit_subscription_url(subreddit, Subscription.find_by(user_id: current_user.id, subreddit_id: subreddit.id)), method: "delete" %>
+		<% else %>
+			<%= button_to "Subscribe", subreddit_subscriptions_url(subreddit), method: "post" %>
+		<% end %>
+	<% end %>
+<% else %>
+	 <% @subreddits.each do |subreddit| %>
+		<p><a href="<%= subreddit_url(subreddit) %>"><%= subreddit.name %></a></p>
+		<%= link_to "Subscribe", new_user_url %>
+	<% end %>
+<% end %>

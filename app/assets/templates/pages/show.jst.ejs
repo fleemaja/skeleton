@@ -1,0 +1,22 @@
+<%= navTemplate() %>
+
+<br><br>
+<p><h5>
+		Project Skeleton is a web forum
+		devoted to projects, challenges, battles,
+		and prompts.
+		<br><br>
+		It allows you to use project specifications
+		and a creative community to spark
+		<br><br>your imagination to make cool things.
+	</h5>
+</p>
+<br><br>
+
+<ul class="subreddit-posts">
+	<% posts.forEach(function(post){  %>
+			<li>
+			  <%= textTemplate({ post: post }) %>
+			</li>
+	<% }) %>
+</ul>

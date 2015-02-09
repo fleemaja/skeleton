@@ -1,0 +1,27 @@
+<div class="comment" comment-id="<%= comment.id %>">
+
+	<div class="vote-buttons">
+		<div class="upvote">
+			<a href="#/comments/<%= comment.id %>/upvote" rel="nofollow">upvote</a>
+		</div>
+
+		<div class="downvote">
+			<a href="#/comments/<%= comment.id %>/downvote" rel="nofollow">downvote</a>
+
+		</div>
+
+			<% if (comment.escape("user_id") == ProjectSkeleton.currentUserId ) { %>
+				<div class="delete">
+					<a href="#/comments/<%= comment.id %>" rel="nofollow">delete</a>
+				</div>
+			<% } %>
+	</div>
+
+	<p><span class="username"><%= comment.escape("author_username") %></span> <span class="time-ago">
+		<%= jQuery.timeago(comment.escape("created_at")) %></span></p>
+
+	<p class="content"><%= comment.escape("content") %>
+	<p> <span class="comment-link"><a href="#/comments/<%= comment.id %>">permalink</a></span> <span class="reply"><a href="#" data-id="<%= comment.id %>">reply</a></span> </p>
+	<p><span class="karma"><%= comment.escape("karma") %></span> karma
+	 </p>
+</div>

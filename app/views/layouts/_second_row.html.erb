@@ -1,0 +1,49 @@
+	<div class="second-row clearfix">
+	  <!-- <div id="art">
+	  	<div></div>
+	  </div> -->
+  	  <!-- <a class="reddit-main" href="/">project skeleton</a> -->
+
+			<a class="reddit-main" href="/">
+					<img alt="Brand" src="<%= image_path('skeleton.png') %>"
+					onMouseOver=src="<%= image_path('skeletonEyes.png') %>"
+					onMouseOut=src="<%= image_path('skeleton.png') %>">
+			</a>
+
+	  	<div class="loginorout">
+	  		<ul class="user-info">
+	  		    <% if !current_user %>
+
+				    <% if flash[:errors] %>
+						<div class="error">
+							<p>Invalid username or password?</p>
+						</div>
+
+				    <% end %>
+
+
+	  		    	<li><p>want to join? <a class="show-login">login</a> or <a class="show-register">register</a> in seconds</p></li>
+	  			<% else %>
+	  				<li>
+	  					<a href="#/users/<%= current_user.id %>"><%= current_user.username %></a>
+						(<span class="user-karma"><%= current_user.post_karma %></span>)
+					</li>
+					<li>
+	  					<a href="#/messages">messages</a>
+					</li>
+
+					<li id="notifications-li">
+						<a class="notifications-link" href="#notifications">notifications<span class="notifications-num"></span></a>
+						<ul class="notifications-dropdown"></ul>
+					</li>
+					<li>
+	  					<a id="preferences-link" href="#/preferences">preferences</a>
+	  				</li>
+					<li>
+						<%= link_to "logout", api_session_url, method: :delete %>
+					</li>
+
+	  			<% end %>
+	  		</ul>
+	  	</div>
+	</div>

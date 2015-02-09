@@ -1,0 +1,26 @@
+<h3>SubReddits Index</h3>
+	<% subReddits.forEach(function(subReddit){ %>
+	  <div class="surround-subreddit clearfix">
+		<p><a class="subreddit-link" href="#/subreddits/<%= subReddit.id %>"><%= subReddit.escape("name") %></a></p>
+
+		<% if (ProjectSkeleton.currentUserId) { %>
+			<% if (subReddit.subscription().escape("id")) { %>
+			<form class="button_to" data-id="<%= subReddit.id %>" sub-id="<%= subReddit.subscription().escape("id") %>">
+				<div>
+					<input class="unsubscribe" type="submit" value="Unsubscribe">
+				</div>
+			</form>
+
+			<% } else { %>
+				<form class="button_to" data-id="<%= subReddit.id %>">
+					<div>
+						<input class="subscribe" type="submit" value="Subscribe">
+					</div>
+				</form>
+			<% } %>
+		<% } else { %>
+			<a class="subscribe-button" href="#/api/users/new">Subscribe</a>
+		<% } %>
+		<p class="subreddit-desc"><%= subReddit.escape("description") %></p>
+	  </div>
+	<% }); %>

@@ -1,0 +1,40 @@
+<h3>create a subreddit</h3>
+
+<form class="new-subreddit-form" action="<%= subreddits_url %>" method="POST">
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+	<label>name
+		<br>
+		<input type="text" name="subreddit[name]">
+	</label>
+	<br><br>
+
+	<label>title
+		<br>
+		<input type="text" name="subreddit[title]">
+	</label>
+	<br><br>
+
+	<label>description
+		<br>
+		<textarea name="subreddit[description]"></textarea>
+	</label>
+	<br><br>
+
+	<label>sidebar
+		<br>
+		<textarea name="subreddit[sidebar]"></textarea>
+
+	</label>
+	<br><br>
+
+	<label>submission text
+		<br>
+		<textarea name="subreddit[submission_text]"></textarea>
+
+	</label>
+	<br><br>
+
+	<input type="submit" value="create">
+
+</form>
