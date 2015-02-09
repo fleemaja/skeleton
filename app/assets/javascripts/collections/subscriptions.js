@@ -4,16 +4,15 @@ ProjectSkeleton.Collections.Subscriptions = Backbone.Collection.extend({
 
 	url: '/api/subreddits/',
 
-
   getOrFetch: function(id){
 	  var subscriptions = this;
-
 	  var subscription = this.get(id);
 
 	  if (subscription) {
 		  subscription.fetch();
-	  } else {
-		  subscription = new ProjectSkeleton.Models.Subscription({id: id});
+
+   } else {
+		  subscription = new ProjectSkeleton.Models.Subscription({ id: id});
 		  subscription.fetch({
 			  success: function(){
 				  subscriptions.add(subscription);

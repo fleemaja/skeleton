@@ -16,7 +16,6 @@ ProjectSkeleton.Models.Comment = Backbone.Model.extend({
 	},
 
 	comments: function(){
-
 		if (!this.get('comments')) {
 			var comments = new ProjectSkeleton.Collections.Comments([]);
 

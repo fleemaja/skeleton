@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
   include PgSearch
-  pg_search_scope :search_posts, against: [:title, :text, :url]
+  pg_search_scope :search_posts, against: [:title, :text]
 
   belongs_to :subreddit, class_name: "SubReddit", foreign_key: "subreddit_id"
   belongs_to :user, class_name: "User", foreign_key: :poster_id
@@ -95,7 +95,6 @@ class Post < ActiveRecord::Base
 
 
   def subreddit=(subreddit)
-    #implement code to procure subreddit id. For now return nil.
     self.subreddit_id = SubReddit.find_by(name: subreddit.downcase).try(:id)
   end
 
@@ -106,6 +105,4 @@ class Post < ActiveRecord::Base
     notification.user = self.subreddit.moderator
     notification.save
   end
-
-
 end

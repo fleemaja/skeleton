@@ -17,15 +17,15 @@
 	<div class="subreddit-sidebar">
 		<div class="search-submit-area">
 			<form class="search-posts">
-				<input type="text" name="search" placeholder="search reddit">
+				<input type="text" name="search" placeholder="search project skeleton">
 			</form>
 			<a class="new-text" href="#/posts/new">Submit a new text post</a>
-			<a class="new-subreddit" href="#/subreddits/new">Create your own subreddit</a>
+			<a class="new-subreddit" href="#/subreddits/new">Create your own sub</a>
 		</div>
 
 		<div class="subreddit-details">
 			<p><%= subReddit.escape("name") %></p>
-		    <p>Moderator: <a href="#/users/<%= SubReddit.escape("moderator_id")%>"><%= subReddit.escape("moderator") %></a></p>
+		    <p>Moderator: <a href="#/users/<%= subReddit.escape("moderator_id") %>"><%= subReddit.escape("moderator") %></a></p>
 			<p><%= subReddit.escape("title") %></p>
 			<p><%= subReddit.escape("description") %></p>
 			<p><%= subReddit.escape("sidebar") %></p>

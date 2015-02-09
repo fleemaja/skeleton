@@ -1,7 +1,6 @@
 ProjectSkeleton.Collections.Users = Backbone.Collection.extend({
 
   model: ProjectSkeleton.Models.User,
-
   url: "/api/users",
 
   getOrFetch: function(id){
@@ -16,7 +15,7 @@ ProjectSkeleton.Collections.Users = Backbone.Collection.extend({
 			  success: function(){
 				  users.add(user);
 			  },
-
+        
 			  error: function(error){
 				  console.log("error fetching user info", error)
 			  }

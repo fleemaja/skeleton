@@ -33,7 +33,6 @@ Rails.application.routes.draw do
     post "downvote", to: "user_votes#downvote"
 
     get "search_posts", to: "posts#search"
-    get "search_messages", to: "messages#search"
 
     resources :users, only: [:new, :create, :show, :update] do
       member do

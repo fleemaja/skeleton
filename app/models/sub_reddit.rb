@@ -21,5 +21,4 @@ class SubReddit < ActiveRecord::Base
   def subscribed?(user)
     Subscription.where(user_id: user.try(:id), subreddit_id: self.id)
   end
-
 end
