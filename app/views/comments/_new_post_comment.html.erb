@@ -7,13 +7,8 @@
 		<textarea name="comment[content]"></textarea>
 		<br>
 
-		<%= form_for comment do |f| %>
-			<div>
-				<%= f.label :filepicker_url, "Upload Your Avatar:" %>
-				<%= f.filepicker_field :filepicker_url %> <!-- User#filepicker_url is a regular string column -->
-			</div>
+		<button type="button" class="shawnas">Upload a Photo </button>
 
-			<%= f.submit %>
-	  <% end %>
+		<input type="submit" value="save">
 	</form>
 </div>

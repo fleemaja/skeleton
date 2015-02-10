@@ -22,10 +22,22 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
 	  "click .new-text": "newPost",
 	  "submit .search-posts": "searchPosts",
 	  "click .delete": "showDeleteModal",
-	  "click #cancel-deletion": "cancelDelete"
+	  "click #cancel-deletion": "cancelDelete",
+    "click .shawnas": "pick"
+  },
+
+  pick: function () {
+    var that = this;
+    filepicker.pick({maxSize: 1024*1024}, function (Blob) {
+      debugger
+      that._lastFile = Blob.url;
+    }, function (FPError) {
+
+    })
   },
 
   render: function(){
+    console.log(this.model);
 	  var renderedContent = this.template({
 		  post: this.model,
 		  textTemplateFn: JST["posts/_show_text_no_delete"],
@@ -82,10 +94,11 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
 	  var that = this;
 	  var params = $(event.currentTarget).closest("form").serializeJSON();
 	  var comment = new ProjectSkeleton.Models.Comment(params["comment"]);
-	  comment.save({}, {
+	  comment.save({filepicker_url: this._lastFile}, {
 		  success: function(model){
 			  that.model.fetch({
 				  success: function(){
+            that._lastFile = "";
 				  	that.updatePostCommentsNum(1);
 					  that.render()
 				  }

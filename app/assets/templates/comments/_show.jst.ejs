@@ -33,6 +33,7 @@
 
 	<p class="content">
 	  <%= comment.escape("content") %>
+		<img src="<%= comment.get('filepicker_url') %>">
 	  <p>
 		  <span class="comment-link">
 			  <a href="#/comments/<%= comment.id %>">

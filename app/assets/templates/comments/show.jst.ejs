@@ -33,6 +33,7 @@
 
 	<p class="content">
 	  <%= comment.escape("content") %>
+		<img src="<%= comment.get('filepicker_url') %>" alt="" />
 
 	  <p>
 			<span class="comment-link">
@@ -58,6 +59,8 @@
 
 		<textarea name="comment[content]"></textarea>
 		<br>
+		<button type="button" class="shawnas">Upload a Photo </button>
+
 		<input type="submit" value="save">
 	</form>
 

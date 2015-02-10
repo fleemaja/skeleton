@@ -41,7 +41,7 @@ class Api::CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:content)
+    params.require(:comment).permit(:content, :filepicker_url)
   end
 
   def extract_commentable_type
