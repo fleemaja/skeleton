@@ -4,14 +4,14 @@ window.ProjectSkeleton = {
   Views: {},
   Routers: {},
   initialize: function() {
-	  // authorize timeago library
+	  // timeago library
 	  jQuery("abbr.timeago").timeago();
 
 	  // pull divs from root
 	  var $rootEl = $("#content");
 	  var $notificationsEl = $("#notifications-li");
 
-	  //monitor modal clicks
+	  // monitor modal clicks
 	  $(".hide-modal").on("click", function(event){
   	  event.preventDefault();
   	  $("#login-modal").removeClass("is-active");

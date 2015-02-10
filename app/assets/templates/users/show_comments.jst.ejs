@@ -2,9 +2,7 @@
 <div class="user-profile">
 	<div class="user-comments">
 		<% user.comments().forEach(function(comment){  %>
-	
-			<%= commentTemplate({comment: comment }) %>	
-	
+			<%= commentTemplate({ comment: comment }) %>
 		<% }); %>
 	</div>
 </div>

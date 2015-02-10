@@ -60,7 +60,6 @@ class Notification < ActiveRecord::Base
 
       "#{post_user.username} posted in your subreddit: #{subreddit.title}"
     end
-
   end
 
   def event_name
@@ -72,5 +71,4 @@ class Notification < ActiveRecord::Base
     options[:host] = Rails.env.production? ? "projectskeleton.herokuapp.com" : "localhost:3000"
     options
   end
-
 end

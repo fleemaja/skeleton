@@ -9,7 +9,7 @@ class UserVotesController < ApplicationController
   def downvote
     vote(-1)
   end
-  
+
   private
 
   def vote(direction)
@@ -17,19 +17,15 @@ class UserVotesController < ApplicationController
 
     if @user_vote
       if @user_vote.value == direction
-
         @user_vote.update_attribute(:value, 0)
       else
         @user_vote.update_attribute(:value, direction)
       end
     else
-
       @user_vote = current_user.user_votes.create(value: direction, votable_type: @votable_type, votable_id: @votable_id)
-
     end
 
     redirect_to :back
-
   end
 
   def extract_votable_type
@@ -42,7 +38,6 @@ class UserVotesController < ApplicationController
     else
       raise ActionController::ParameterMissing
     end
-
   end
 
   def require_login

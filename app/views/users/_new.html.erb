@@ -1,4 +1,4 @@
-<h3>create account</h3>
+<h3>Create Account</h3>
 
 
 <form class="new-user-form" action="<%= users_url %>" enctype="multipart/form-data" method="POST">
@@ -7,29 +7,29 @@
 		<p>username:</p>
 		<input type="text" name="user[username]">
 	</label>
-	
+
 	<label>
 		<p>password:</p>
 		<input type="password" name="user[password]">
 	</label>
-	
+
 	<label>
 		<p>verify password:</p>
 		<input type="password" name="user[password_confirmation]">
 	</label>
-	
-	
+
+
 	<label><p>upload an avatar!</p>
 		<input type="file" name="user[avatar]">
 	</label>
-		
+
 	<label>
 		<br>
 		<input type="checkbox" name="user[remember_user]" value="true"> remember me
 	<label>
-	
+
 	<br>
 
 	<input type="submit" value="create account">
-	
+
 </form>

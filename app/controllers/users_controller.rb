@@ -28,7 +28,6 @@ class UsersController < ApplicationController
     redirect_to :back
   end
 
-
   def show
     @user = User.find(params[:id])
     @posts = @user.posts
@@ -41,7 +40,6 @@ class UsersController < ApplicationController
     end
     redirect_to :back
   end
-
 
   private
 

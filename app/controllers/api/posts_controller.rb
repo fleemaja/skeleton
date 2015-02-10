@@ -15,11 +15,9 @@ class Api::PostsController < ApplicationController
     end
   end
 
-
   def show
     @post = Post.find(params[:id])
   end
-
 
   def index
     @posts = Post.all
@@ -38,12 +36,9 @@ class Api::PostsController < ApplicationController
     render "search_results"
   end
 
-
-
   private
 
   def post_params
     params.require(:post).permit(:title, :text, :subreddit)
   end
-
 end

@@ -1,32 +1,56 @@
-
-<%= navTemplateFn({comment: comment }) %>
+<%= navTemplateFn({ comment: comment }) %>
 <div class="comment-show">
 	<div class="comment"  comment-id="<%= comment.id %>">
 
 		<div class="vote-buttons">
 			<div class="upvote" comment-id="<%= comment.id %>">
-				<a href="#/comments/<%= comment.id %>/upvote" rel="nofollow">^</a>
+				<a href="#/comments/<%= comment.id %>/upvote" rel="nofollow">
+				  <img src="assets/skeleFBlike.png" height="32" width="32">
+				</a>
 			</div>
 
 			<div class="downvote" comment-id="<%= comment.id %>">
-				<a href="#/comments/<%= comment.id %>/downvote" rel="nofollow">V</a>
-
+				<a href="#/comments/<%= comment.id %>/downvote" rel="nofollow">
+					<img src="assets/skeleFBdislike.png" height="32" width="32">
+				</a>
 			</div>
 
-				<% if (comment.escape("user_id") == ProjectSkeleton.currentUserId ) { %>
-					<div class="delete" comment-id="<%= comment.id %>">
-						<a href="#/comments/<%= comment.id %>" rel="nofollow">delete</a>
-					</div>
-				<% } %>
+		  <% if (comment.escape("user_id") == ProjectSkeleton.currentUserId ) { %>
+			  <div class="delete" comment-id="<%= comment.id %>">
+				  <a href="#/comments/<%= comment.id %>" rel="nofollow">delete</a>
+				</div>
+			<% } %>
 		</div>
 
-		<p><span class="username"><a href="#/users/<%= comment.escape("user_id") %>"><%= comment.escape("author_username") %></a></span> <span class="time-ago">
-			<%= jQuery.timeago(comment.escape("created_at")) %></span></p>
+		<p>
+			<span class="username">
+				<a href="#/users/<%= comment.escape("user_id") %>">
+					<%= comment.escape("author_username") %>
+				</a>
+			</span>
 
-		<p class="content"><%= comment.escape("content") %>
-		<p> <span class="comment-link"><a href="#/comments/<%= comment.id %>">permalink</a></span> <span class="reply"><a href="#" data-id="<%= comment.id %>">reply</a></span> </p>
-		<p><span class="karma"><%= comment.escape("karma") %></span> karma
-		 </p>
+			<span class="karma">
+				<%= comment.escape("karma") %> points
+			</span>
+
+			<span class="time-ago">
+				<%= jQuery.timeago(comment.escape("created_at")) %>
+			</span>
+		</p>
+
+		<p class="content">
+			<%= comment.escape("content") %>
+
+			<p>
+				<span class="comment-link">
+					<a href="#/comments/<%= comment.id %>">permalink</a>
+				</span>
+
+				<span class="reply">
+					<a href="#" data-id="<%= comment.id %>">reply</a>
+				</span>
+			</p>
+		</p>
 
 		<form class="hidden commment-comment" action="#/comments/<%= comment.id %>/comments/new" data-id="<%= comment.id %>">
 			<p>comment on comment</p>
@@ -40,10 +64,8 @@
 
 		<div class="child">
 			<% comment.comments().forEach(function(child) { %>
-				<%= templateFn({comment: child, templateFn: templateFn}) %>
+				<%= templateFn({ comment: child, templateFn: templateFn }) %>
 			<% }) %>
-
 		</div>
-
 	</div>
 </div>

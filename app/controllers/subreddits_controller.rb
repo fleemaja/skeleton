@@ -1,6 +1,5 @@
 class SubredditsController < ApplicationController
-  before_action :require_login, only: [ :new, :create ]
-
+  before_action :require_login, only: [:new, :create]
 
   def new
     @subreddit = Subreddit.new
@@ -18,7 +17,6 @@ class SubredditsController < ApplicationController
       render :new
     end
   end
-
 
   def show
     @subreddit = SubReddit.find(params[:id])
@@ -59,7 +57,6 @@ class SubredditsController < ApplicationController
     @posts = @subreddit.posts.sort_by(&:karma).reverse
     render :show
   end
-
 
   def index
     @subreddits = SubReddit.all

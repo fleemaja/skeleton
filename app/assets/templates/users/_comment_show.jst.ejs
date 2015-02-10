@@ -2,12 +2,15 @@
 
 	<div class="vote-buttons">
 		<div class="upvote">
-			<a href="#/comments/<%= comment.id %>/upvote" rel="nofollow">upvote</a>
+			<a href="#/comments/<%= comment.id %>/upvote" rel="nofollow">
+			  <img src="assets/skeleFBlike.png" height="32" width="32">
+			</a>
 		</div>
 
 		<div class="downvote">
-			<a href="#/comments/<%= comment.id %>/downvote" rel="nofollow">downvote</a>
-
+			<a href="#/comments/<%= comment.id %>/downvote" rel="nofollow">
+				<img src="assets/skeleFBdislike.png" height="32" width="32">
+			</a>
 		</div>
 
 			<% if (comment.escape("user_id") == ProjectSkeleton.currentUserId ) { %>

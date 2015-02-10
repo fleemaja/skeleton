@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-  before_action :require_login, only: [ :new, :create ]
+  before_action :require_login, only: [:new, :create]
 
   def new
 
@@ -25,5 +25,4 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :text, :subreddit)
   end
-
 end

@@ -14,14 +14,12 @@
  *= require_self
  */
 
-
 body, header, nav, div, h1, h2, h3, h4, h5, h6, ul, li, span, p {
 	margin: 0;
 	padding: 0;
 	border: 0;
 	vertical-align: normal;
 	font-family: helvetica;
-
 }
 
 body {
@@ -34,7 +32,6 @@ a {
 	text-decoration: none;
 	display: block;
 	color: inherit;
-
 }
 
 ul {
@@ -51,7 +48,6 @@ button, input[type="submit"], input[type="file"], input[type="file"]::-webkit-fi
 	-webkit-appearance: none;
 	background: transparent;
 	color: inherit;
-
 }
 
 .early-debug {
@@ -63,11 +59,9 @@ button, input[type="submit"], input[type="file"], input[type="file"]::-webkit-fi
 }
 
 .clearfix:after {
-
 	content: "";
 	clear: both;
 	display: block;
-
 }
 
 #content {
@@ -79,14 +73,12 @@ nav.top {
 	background: white;
 	white-space: nowrap;
 	border-bottom: 1px solid gray;
-
 }
 
 .subreddit-details > .avatar-section > img {
 	width: 240px;
 	border: 10px solid black;
 }
-
 
 nav.top a {
 	font-size: 70%;
@@ -155,7 +147,6 @@ nav.top > ul > .subreddits-link {
 	border-left: 1px solid black;
 }
 
-
 .groups > ul, .random-subreddits > ul {
 	float: right;
 }
@@ -168,7 +159,6 @@ nav.top > ul > .subreddits-link {
 .groups > ul > li > a, .random-subreddits > ul > li > a {
 	padding: 5px 10px;
 }
-
 
 .groups > ul > li:hover, .random-subreddits > ul > li:hover, nav.top > ul > .subreddits-link:hover, nav.top > ul > .triangle:hover {
 	background: darkgray;
@@ -295,7 +285,6 @@ footer > a {
 }
 
 input[type="submit"] {
-
 	background: #f0f0f0;
 	padding: 10px 5px;
 	width: 100px;
@@ -382,11 +371,11 @@ input[type="submit"] {
  	float: left;
  }
 
- section.new-text {
+section.new-text {
 
-	 border-right: 0;
-	 padding-left: 50px;
- }
+	border-right: 0;
+  padding-left: 50px;
+}
 
 #login-modal section.sign-in {
 	display: block;
@@ -395,9 +384,7 @@ input[type="submit"] {
 	float: left;
 }
 
-
 .hidden {
-
 	display: none;
 }
 
@@ -412,16 +399,12 @@ input[type="submit"] {
 }
 
 .show-login, .show-register {
-
-	cursor: pointer;
-
+  cursor: pointer;
 }
 
 input[type="submit"] {
-
 	cursor: pointer;
 }
-
 
 input[type="file"]::-webkit-file-upload-button {
 	display: block;
@@ -437,7 +420,6 @@ input[type="file"] {
 
 }
 
-
 .error {
 	position: absolute;
 	top: 20px;
@@ -452,7 +434,6 @@ input[type="file"] {
 .error a {
 	text-decoration: underline;
 }
-
 
 #new-subreddit-modal h3 {
 	text-align: center;
@@ -472,12 +453,12 @@ input[type="file"] {
 }
 
 #notifications-li {
+
 }
 
 #notifications-li > .notifications-link {
 	text-decoration: none;
 }
-
 
 #notifications-li ul.notifications-dropdown {
 	position: absolute;
@@ -489,7 +470,6 @@ input[type="file"] {
 	margin-right: 5px;
 	z-index: 3;
 	display: none;
-
 }
 
 .notifications-link {
@@ -501,6 +481,7 @@ input[type="file"] {
 }
 
 ul.notifications-dropdown > li {
+
 }
 
 ul.notifications-dropdown > li > a {
@@ -535,7 +516,4 @@ ul.notifications-dropdown > li > a:hover {
 	color: white;
 	background: #3b5998;
 	margin-left: 5px;
-
-
-
 }

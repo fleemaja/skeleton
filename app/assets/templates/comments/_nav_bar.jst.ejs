@@ -1,6 +1,7 @@
  <div class="subreddit-elements clearfix">
-	<h3><%= comment.subReddit().escape("name") %></h3>
-
+	<h3>
+    <%= comment.subReddit().escape("name") %>
+  </h3>
 
 	<div class="subreddit-nav-bar">
 		<ul>
@@ -24,12 +25,12 @@
 
 		<div class="subreddit-details">
 			<p>Name: <%= comment.subReddit().escape("name") %></p>
-		    <p>Moderator: <a href="#/api/users/<%= comment.subReddit().escape("moderator_id")%>"><%= comment.subReddit().escape("moderator") %></a></p>
+		  <p>Moderator: <a href="#/api/users/<%= comment.subReddit().escape("moderator_id")%>">
+      <%= comment.subReddit().escape("moderator") %></a></p>
 			<p>Title: <%= comment.subReddit().escape("title") %></p>
 			<p>Description: <%= comment.subReddit().escape("description") %></p>
 			<p>Sidebar: <%= comment.subReddit().escape("sidebar") %></p>
 			<p>Submission text: <%= comment.subReddit().escape("submission_text") %></p>
 		</div>
 	</div>
-
 </div>

@@ -13,15 +13,12 @@ class Api::CommentsController < ApplicationController
     else
       render json: @comment.errors, status: :unprocessable_entity
     end
-
   end
-
 
   def show
     @comment = Comment.find(params[:id])
     render "show"
   end
-
 
   def index
     @comments = Comment.all
@@ -35,7 +32,6 @@ class Api::CommentsController < ApplicationController
       render "show"
     end
   end
-
 
   def comments
     @comment = Comment.find(params[:id])
@@ -58,7 +54,5 @@ class Api::CommentsController < ApplicationController
     else
       raise ActionController::ParameterMissing
     end
-
   end
-
 end

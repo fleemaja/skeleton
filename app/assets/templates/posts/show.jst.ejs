@@ -1,5 +1,5 @@
+<%= navTemplateFn({ post: post }) %>
 
-	<%= navTemplateFn({post: post }) %>
 <div class="post-show">
 	<%= textTemplateFn({ post: post }) %>
 
@@ -16,11 +16,9 @@
 
 
 	<div id="link-post-comments">
-	<% post.comments().forEach(function(comment) { %>
-		<%= commentTemplate({ comment: comment, templateFn: commentTemplate}) %>
+	  <% post.comments().forEach(function(comment) { %>
+		<%= commentTemplate({ comment: comment, templateFn: commentTemplate }) %>
 
-	<% }); %>
-
-
+	  <% }); %>
 	</div>
 </div>

@@ -2,12 +2,16 @@
 
 	<div class="vote-buttons">
 		<div class="upvote" post-id="<%= post.id %>">
-			<a href="#/posts/<%= post.id %>/upvote" rel="nofollow"><img src="assets/skeleFBlike.png" height="32" width="32"></a>
+			<a href="#/posts/<%= post.id %>/upvote" rel="nofollow">
+				<img src="assets/skeleFBlike.png" height="32" width="32">
+			</a>
 
 		</div>
 
 		<div class="downvote" post-id="<%= post.id %>">
-			<a href="#/posts/<%= post.id %>/downvote" rel="nofollow"><img src="assets/skeleFBdislike.png" height="32" width="32"></a>
+			<a href="#/posts/<%= post.id %>/downvote" rel="nofollow">
+				<img src="assets/skeleFBdislike.png" height="32" width="32">
+			</a>
 
 		</div>
 		<% if ( post.escape("poster_id") == ProjectSkeleton.currentUserId ) { %>
@@ -18,14 +22,43 @@
 		<% } %>
 	</div>
 
-	<p><a href="#/posts/<%= post.id %>"><%= post.escape("title") %></a> submitted by <a href="#/users/<%= post.escape("poster_id") %>"><span class="username">
-		<%= post.escape("poster") %></a></span> in <a href="#/subreddits/<%= post.escape("subreddit_id") %>"><span class="subreddit-name">
-		<%= post.subReddit().escape("name") %></span></a> <span class="time-ago">
-			<%= jQuery.timeago(post.escape("created_at")) %></span></p>
-	<p class="text"><%= post.escape("text") %></p>
-	<p class="p-karma"><span class="karma"><%= post.escape("karma") %></span> karma </p>
+	<p>
+		<a href="#/posts/<%= post.id %>"><%= post.escape("title") %>
+		</a>
+		submitted by <a href="#/users/<%= post.escape("poster_id") %>">
+
+			<span class="username">
+			  <%= post.escape("poster") %>
+		</a>
+		</span>
+		in <a href="#/subreddits/<%= post.escape("subreddit_id") %>">
+			 <span class="subreddit-name">
+		     <%= post.subReddit().escape("name") %>
+			 </span>
+			</a>
+
+		<span class="time-ago">
+			<%= jQuery.timeago(post.escape("created_at")) %>
+		</span>
+	</p>
+
+	<p class="text">
+		<%= post.escape("text") %>
+	</p>
+
+	<p class="p-karma">
+		<span class="karma">
+			<%= post.escape("karma") %>
+		</span>
+		 karma
+	</p>
 
 	<div class="comments">
-		<a href="#/posts/<%= post.id %>"> <span class="num-comments"><%= post.escape("sum_comments") %></span> comment(s)</a>
+		<a href="#/posts/<%= post.id %>">
+			<span class="num-comments">
+				<%= post.escape("sum_comments") %>
+			</span>
+			comment(s)
+		</a>
 	</div>
 </div>

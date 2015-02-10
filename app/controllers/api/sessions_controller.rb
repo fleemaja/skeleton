@@ -11,23 +11,16 @@ class Api::SessionsController < ApplicationController
       flash[:errors] = ["Invalid username or password."]
     end
     redirect_to :root
-
-
   end
-
 
   def destroy
     sign_out
     redirect_to :root
   end
 
-
-
   private
 
   def sessions_params
     params.require(:user).permit(:username, :password, :remember_user)
   end
-
-
 end

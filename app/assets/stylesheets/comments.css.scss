@@ -2,7 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
 .comment {
 	padding: 10px 0px 10px 50px;
 }
@@ -30,14 +29,11 @@
 	font-size: 12px;
 }
 
-
 .comment .upvote {
-  
 	// color: black;
 	// background: #f0f0f0;
 	// border: 2px solid black;
 	// border-radius: 5px;
-
 }
 
 .comment .vote-buttons a {
@@ -49,7 +45,6 @@
 	// background: lightblue;
 	// border: 2px solid black;
 	// border-radius: 5px;
-
 }
 
 .comment .delete {
@@ -58,16 +53,11 @@
 	background: black;
 	border: 2px solid white;
 	border-radius: 5px;
-
 }
 
-
-
 .comment .upvote:hover {
-
 	background: darkgray;
 	// color: white;
-
 }
 
 .comment .downvote:hover {
@@ -77,7 +67,6 @@
 
 .comment > .vote-buttons {
 	float: left;
-
 }
 .comment .content {
 	padding: 25px;
@@ -130,7 +119,6 @@ span.reply:hover{
 }
 
 .comment input[type="submit"] {
-
 	padding: 5px 10px;
 	background: #f0f0f0;
 	border: 2px solid black;
@@ -140,20 +128,15 @@ span.reply:hover{
 }
 .comment input[type="submit"]:hover {
 	color: white;
-
-
 	background: darkgray;
-
 }
 
 
 .comment .child {
 	border-left: 1px dashed #ccc;
 	margin-top: 5px;
-
 }
 
 .comment-show {
 	border-top: 1px solid black;
-
 }

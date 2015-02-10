@@ -15,7 +15,6 @@ class Comment < ActiveRecord::Base
     self.user_votes.sum(:value)
   end
 
-
   def num_votes
     self.user_votes.count
   end
@@ -41,7 +40,6 @@ class Comment < ActiveRecord::Base
     seconds = (self.created_at - 1134028003).to_i
     order + sign * seconds.fdiv(45000)
   end
-
 
   def self._bestness(ups, downs)
     n = ups + downs
@@ -82,7 +80,6 @@ class Comment < ActiveRecord::Base
 
   end
 
-
   def sum_comments
     count = self.comments.length
     self.comments.each do |comment|
@@ -103,8 +100,6 @@ class Comment < ActiveRecord::Base
     end
 
     parent
-
-
   end
 
   def subreddit
@@ -123,6 +118,4 @@ class Comment < ActiveRecord::Base
     notification.user = commentable.user
     notification.save
   end
-
-
 end

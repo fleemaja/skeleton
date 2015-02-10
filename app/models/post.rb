@@ -12,7 +12,6 @@ class Post < ActiveRecord::Base
   has_many :notifications, as: :notifiable, inverse_of: :notifiable, dependent: :destroy
   after_commit :set_notification, on: [:create]
 
-
   def karma
     self.user_votes.sum(:value)
   end
@@ -38,7 +37,6 @@ class Post < ActiveRecord::Base
     count
   end
 
-
   def hotness
     s = self.karma
     order = Math.log10([s, 1].max)
@@ -52,7 +50,6 @@ class Post < ActiveRecord::Base
     seconds = (self.created_at - 1134028003).to_i
     order + sign * seconds.fdiv(45000)
   end
-
 
   def self._bestness(ups, downs)
     n = ups + downs
@@ -92,7 +89,6 @@ class Post < ActiveRecord::Base
     magnitude ** balance
 
   end
-
 
   def subreddit=(subreddit)
     self.subreddit_id = SubReddit.find_by(name: subreddit.downcase).try(:id)

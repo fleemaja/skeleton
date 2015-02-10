@@ -1,15 +1,15 @@
  <div class="subreddit-elements clearfix">
 	<h3><%= user.escape("username") %></h3>
-	
-	 
+
+
 	<div class="subreddit-nav-bar">
 		<ul>
 			<li><a class="posts" href="#/users/<%= user.id %>/posts">posts</a></li>
-			<li><a class="comments" href="#/users/<%= user.id %>/comments">comments</a></li>		
+			<li><a class="comments" href="#/users/<%= user.id %>/comments">comments</a></li>
 		</ul>
 	</div>
 
-	
+
 	<div class="subreddit-sidebar">
 		<div class="subreddit-details user-details">
 			<p><%= user.escape("username") %></p>
@@ -23,18 +23,17 @@
 					<br>
 				<% }) %>
 			<% } %>
-			
+
 			<div class="avatar-section">
 				<img src="<%= user.escape("avatar_url") %>" alt="avatar">
-				<form action="#/users/<%= user.id  %>" >		
+				<form action="#/users/<%= user.id  %>" >
 					<label>upload an avatar!
 						<input type="file" name="user[avatar]" id="user-avatar-input">
 					</label>
 					<input type="submit" value="confirm selection">
 				</form>
-				
-			</div>			
+
+			</div>
 		</div>
 	</div>
-	
 </div>

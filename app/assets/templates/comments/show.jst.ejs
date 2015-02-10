@@ -2,19 +2,22 @@
 
 	<div class="vote-buttons">
 		<div class="upvote" comment-id="<%= comment.id %>">
-			<a href="#/comments/<%= comment.id %>/upvote" rel="nofollow"><img src="assets/skeleFBlike.png" height="32" width="32"></a>
+			<a href="#/comments/<%= comment.id %>/upvote" rel="nofollow">
+			  <img src="assets/skeleFBlike.png" height="32" width="32">
+			</a>
 		</div>
 
 		<div class="downvote" comment-id="<%= comment.id %>">
-			<a href="#/comments/<%= comment.id %>/downvote" rel="nofollow"><img src="assets/skeleFBdislike.png" height="32" width="32"></a>
-
+			<a href="#/comments/<%= comment.id %>/downvote" rel="nofollow">
+			  <img src="assets/skeleFBdislike.png" height="32" width="32">
+			</a>
 		</div>
 
-			<% if (comment.escape("user_id") == ProjectSkeleton.currentUserId ) { %>
-				<div class="delete" comment-id="<%= comment.id %>">
-					<a href="#/comments/<%= comment.id %>" rel="nofollow">delete</a>
-				</div>
-			<% } %>
+		<% if (comment.escape("user_id") == ProjectSkeleton.currentUserId ) { %>
+			<div class="delete" comment-id="<%= comment.id %>">
+			  <a href="#/comments/<%= comment.id %>" rel="nofollow">delete</a>
+			</div>
+		<% } %>
 	</div>
 
 	<p>
@@ -59,9 +62,7 @@
 
 	<div class="child">
 		<% comment.comments().forEach(function(child) { %>
-			<%= templateFn({comment: child, templateFn: templateFn}) %>
+			<%= templateFn({ comment: child, templateFn: templateFn }) %>
 		<% }) %>
-
 	</div>
-
 </div>

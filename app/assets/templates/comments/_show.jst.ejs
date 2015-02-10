@@ -2,14 +2,17 @@
 
 	<div class="vote-buttons">
 		<div class="upvote" comment-id="<%= comment.id %>">
-			<a href="#/comments/<%= comment.id %>/upvote" rel="nofollow"><img src="skeleFBlike.png"></a>
+			<a href="#/comments/<%= comment.id %>/upvote" rel="nofollow">
+			  <img src="skeleFBlike.png" height="32" width="32">
+			</a>
 		</div>
 
 		<div class="downvote" comment-id="<%= comment.id %>">
-			<a href="#/comments/<%= comment.id %>/downvote" rel="nofollow">V</a>
+			<a href="#/comments/<%= comment.id %>/downvote" rel="nofollow">
+			  <img src="skeleFBlike.png" height="32" width="32">
+			</a>
 
 		</div>
-
 			<% if (comment.escape("user_id") == ProjectSkeleton.currentUserId ) { %>
 				<div class="delete" comment-id="<%= comment.id %>">
 					<a href="#/comments/<%= comment.id %>" rel="nofollow">delete</a>
@@ -33,7 +36,20 @@
 		</span>
 	</p>
 
-	<p class="content"><%= comment.escape("content") %>
-	<p> <span class="comment-link"><a href="#/comments/<%= comment.id %>
-">permalink</a></span> <span class="reply"><a href="#/comments/<%= comment.id %>" data-id="<%= comment.id %>">reply</a></span> </p>
+	<p class="content">
+	  <%= comment.escape("content") %>
+	  <p>
+		  <span class="comment-link">
+			  <a href="#/comments/<%= comment.id %>">
+				  permalink
+				</a>
+			</span>
+
+			<span class="reply">
+				<a href="#/comments/<%= comment.id %>" data-id="<%= comment.id %>">
+				  reply
+				</a>
+			</span>
+		</p>
+	</p>
 </div>

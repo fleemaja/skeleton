@@ -4,10 +4,8 @@
 
 
 .subreddit-elements {
-	
 	background: white;
 	position: relative;
-	
 }
 
 .subreddit-elements > h3 {
@@ -19,7 +17,6 @@
 
 .subreddit-elements > .subreddit-nav-bar {
 	float: left;
-	
 }
 
 .subreddit-nav-bar {
@@ -33,14 +30,11 @@
 
 .subreddit-nav-bar > ul > li > a {
 	padding: 5px 10px;
-	
 }
 
 .subreddit-nav-bar > ul > li:hover {
-	
 	background: darkgray;
 	color: white;
-	
 }
 
 .search-submit-area {
@@ -57,8 +51,8 @@
 .subreddit-sidebar img {
 	max-width: 235px;
 }
+
 .search-submit-area > a {
-	
 	background: darkgray;
 	color: white;
 	border: 2px solid black;
@@ -68,16 +62,13 @@
 }
 
 .search-submit-area > a:hover {
-	
 	background: black;
 }
 
 .search-submit-area {
 	padding: 10px 10px;
 	background: white;
-	
 }
-
 
 .subreddit-details {
 	border: 2px solid black;
@@ -106,32 +97,21 @@
 
 ul.subreddit-posts {
 	background: white;
-
 }
 
 ul.subreddit-posts > li {
 	display: block;
 	border: 1px solid black;
-	
 }
 
 ul.subreddit-posts > li:hover {
 	background: rgb(230, 230, 230);
-
 }
 
-
 input[type="text"], input[type="password"], textarea {
-	
 	font-weight: bold;
 	font-size: 16px;
 	height: 100%;
 	padding: 5px;
 	width: 240px;
-	
 }
-
-
-
-
-
