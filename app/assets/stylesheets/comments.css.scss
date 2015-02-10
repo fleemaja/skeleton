@@ -12,44 +12,37 @@
 }
 
 .comment span.username {
-	// color: white;
-	// background: black;
-	// border: 2px solid white;
-	// border-radius: 5px;
 	padding: 2px 5px;
 }
 
-.comment span.karma {
-
-	background: white;
-	border: 2px solid black;
-	display: inline-block;
-	padding: 2px 5px 2px 1px;
-	border-radius: 10px;
-	margin: 0px 0px 0px 5px;
-	font-weight: bold;
-}
+// .comment span.karma {
+// 	font-size: 12px;
+// }
+//
+// .comment span.time-ago{
+// 	font-size: 12px;
+// }
 
 
 .comment .upvote {
 
-	color: black;
-	background: #f0f0f0;
-	border: 2px solid black;
-	border-radius: 5px;
+	// color: black;
+	// background: #f0f0f0;
+	// border: 2px solid black;
+	// border-radius: 5px;
 
 }
 
 .comment .vote-buttons a {
-	padding: 2px 5px;
+	padding: 10px 10px;
 }
 
 .comment .downvote {
 
-	color: black;
-	background: lightblue;
-	border: 2px solid black;
-	border-radius: 5px;
+	// color: black;
+	// background: lightblue;
+	// border: 2px solid black;
+	// border-radius: 5px;
 
 }
 
@@ -67,13 +60,13 @@
 .comment .upvote:hover {
 
 	background: darkgray;
-	color: white;
+	// color: white;
 
 }
 
 .comment .downvote:hover {
-	background: darkblue;
-	color: white;
+	background: darkgray;
+	// color: white;
 }
 
 .comment > .vote-buttons {
@@ -81,8 +74,16 @@
 
 }
 .comment .content {
-	padding: 15px;
+	padding: 25px;
 	display: inline-block;
+	background: #f0f0f0;
+}
+
+.permareply {
+	font-size: 12px;
+	// color: darkgray;
+	font-weight: bold;
+	color: #3b5998;
 }
 
 .comment .child {

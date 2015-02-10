@@ -158,7 +158,6 @@ nav.top > ul > .subreddits-link {
 
 .groups > ul, .random-subreddits > ul {
 	float: right;
-
 }
 
 .groups > ul > li, .random-subreddits > ul > li {
@@ -167,7 +166,6 @@ nav.top > ul > .subreddits-link {
 }
 
 .groups > ul > li > a, .random-subreddits > ul > li > a {
-
 	padding: 5px 10px;
 }
 
@@ -202,6 +200,7 @@ ul.user-info a {
 ul.user-info a:hover {
 
 }
+
 ul.user-info > li {
 	float: left;
 	margin-top: 45px;
@@ -211,8 +210,8 @@ ul.user-info > li {
 }
 
 ul.user-info > li:hover {
-}
 
+}
 
 ul.user-info > li a {
 	text-decoration: underline;
@@ -246,9 +245,7 @@ footer > a {
 	padding: 5px 10px;
 }
 
-
 .button_to input[type="submit"], .subscribe-button {
-
 	background: #f0f0f0;
 	padding: 10px 5px;
 	color: black;
@@ -275,7 +272,6 @@ footer > a {
 }
 
 .subreddit-link:hover {
-
 	background: lightgray;
 }
 
@@ -284,7 +280,6 @@ footer > a {
 }
 
 .surround-subreddit p {
-
 	float: left;
 }
 
@@ -297,15 +292,13 @@ footer > a {
 	margin-left: 10px;
 	float: left;
 	margin-top: 5px;
-
-
 }
 
 input[type="submit"] {
 
 	background: #f0f0f0;
 	padding: 10px 5px;
-	width: 50px;
+	width: 100px;
 	color: black;
 	border: 1px solid #ccc;
 	margin: 5px 0px;
@@ -314,9 +307,7 @@ input[type="submit"] {
 }
 
 .user-comments .comment {
-
 	padding-left: 0px;
-
 }
 
 #login-modal, #new-post-modal, #compose-modal, #new-subreddit-modal, #delete-modal, #preferences-modal {
@@ -339,19 +330,30 @@ input[type="submit"] {
 	display: block;
 }
 
-#login-modal > article, #new-post-modal > article, #compose-modal > article, #new-subreddit-modal > article, #delete-modal > article, #preferences-modal > article {
-
+#login-modal > article, #compose-modal > article, #new-subreddit-modal > article, #delete-modal > article, #preferences-modal > article {
 	position: fixed;
-	top: 100px;
+	top: 50px;
 	left: 15%;
-	width: 800px;
+	width: 75%;
 	margin-bottom: 100px;
 	min-height: 200px;
-	padding: 50px;
+	padding: 35px;
 	background: white;
 	border-radius: 5px;
 	border: 1px solid black;
+}
 
+#new-post-modal > article {
+	position: fixed;
+	top: 50px;
+	left: 25%;
+	width: 40%;
+	margin-bottom: 100px;
+	min-height: 200px;
+	padding: 35px;
+	background: white;
+	border-radius: 5px;
+	border: 1px solid black;
 }
 
 #login-modal .hide-modal, #new-post-modal .hide-modal,  #compose-modal .hide-modal, #new-subreddit-modal .hide-modal, #delete-modal .hide-modal, #preferences-modal .hide-modal {
@@ -379,7 +381,6 @@ input[type="submit"] {
  	border-right: 1px solid #ccc;
 	padding-right: 50px;
  	float: left;
-
  }
 
  section.new-text {
@@ -499,6 +500,7 @@ input[type="file"] {
 #notifications-li:hover ul.notifications-dropdown {
 	display: block;
 }
+
 ul.notifications-dropdown > li {
 }
 
