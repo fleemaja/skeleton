@@ -7,13 +7,11 @@ ProjectSkeleton.Views.CommentShow = Backbone.View.extend({
 	  this.listenTo(this.model, "fetch", this.render)
   },
 
-
   render: function(){
 	 var renderedContent = this.template({
 		 comment: this.model,
 		 templateFn: JST["comments/show"],
 		 navTemplateFn: JST["comments/_nav_bar"]
-
 	 });
 
 	 this.$el.html(renderedContent);
@@ -35,14 +33,12 @@ ProjectSkeleton.Views.CommentShow = Backbone.View.extend({
 	  "submit .search-posts": "searchPosts"
   },
 
-
   updateCommentKarma: function(karma, comment_id){
 	  var str = "div[comment-id=" + comment_id + "] > p .karma";
 	  var currentKarma = parseInt($(str).html());
 	  currentKarma += parseInt(karma);
 	  $(str).html(currentKarma);
   },
-
 
   submitComment: function(event) {
 	  event.preventDefault();
@@ -54,17 +50,12 @@ ProjectSkeleton.Views.CommentShow = Backbone.View.extend({
 		  success: function(model){
 			  that.model.fetch({
 				  success: function(){
-
 					  that.render()
 				  }
-
 			  });
-
 		  }
 	  });
-
   },
-
 
   showForm: function(event){
 	  event.preventDefault();
@@ -77,7 +68,6 @@ ProjectSkeleton.Views.CommentShow = Backbone.View.extend({
 	  } else {
 		  $("#login-modal").addClass("is-active");
 	  };
-
   },
 
   sortHot: function(){
@@ -91,7 +81,6 @@ ProjectSkeleton.Views.CommentShow = Backbone.View.extend({
 			  console.log(model.comments());
 		  }
 	  })
-
   },
 
   sortTop: function(){
@@ -105,7 +94,6 @@ ProjectSkeleton.Views.CommentShow = Backbone.View.extend({
 			  console.log(model.comments());
 		  }
 	  })
-
   },
 
   sortNew: function(){
@@ -119,8 +107,6 @@ ProjectSkeleton.Views.CommentShow = Backbone.View.extend({
 			  console.log(model.comments());
 		  }
 	  })
-
-
   },
 
   sortCon: function(){
@@ -134,9 +120,7 @@ ProjectSkeleton.Views.CommentShow = Backbone.View.extend({
 			  console.log(model.comments());
 		  }
 	  })
-
   },
-
 
   sortBest: function(){
 	  var that = this;
@@ -149,11 +133,10 @@ ProjectSkeleton.Views.CommentShow = Backbone.View.extend({
 			  console.log(model.comments());
 		  }
 	  })
-
   },
 
   downvote: function(event){
-  	  event.preventDefault();
+  	event.preventDefault();
 	  var that = this;
 	  if (ProjectSkeleton.currentUserId) {
 		  var id = $(event.currentTarget).attr("comment-id")
@@ -170,9 +153,8 @@ ProjectSkeleton.Views.CommentShow = Backbone.View.extend({
 	  };
   },
 
-
   upvote: function(event){
-  	  event.preventDefault();
+  	event.preventDefault();
 	  var that = this;
 	  if (ProjectSkeleton.currentUserId) {
 		  var id = $(event.currentTarget).attr("comment-id")
@@ -183,9 +165,10 @@ ProjectSkeleton.Views.CommentShow = Backbone.View.extend({
 		  })
 		  .done(function(data){
 			  that.updateCommentKarma(data, id);
+        // $(event.currentTarget).addClass("voted")
 		  })
 	  } else {
-	  		  $("#login-modal").addClass("is-active");
+	      $("#login-modal").addClass("is-active");
 	  };
   },
 
@@ -195,16 +178,11 @@ ProjectSkeleton.Views.CommentShow = Backbone.View.extend({
 	  if (ProjectSkeleton.currentUserId) {
 		  $("#new-subreddit-modal").addClass("is-active");
 		  $("input.new-subreddit").off();
-	  	  $("input.new-subreddit").one("click", that.submitSubReddit);
+	  	$("input.new-subreddit").one("click", that.submitSubReddit);
 
 	  } else {
-
-		  $("#login-modal").addClass("is-active");
-
+		    $("#login-modal").addClass("is-active");
 	  };
-
-
-
   },
 
   submitSubReddit: function(event){
@@ -220,21 +198,17 @@ ProjectSkeleton.Views.CommentShow = Backbone.View.extend({
 			  ProjectSkeleton.subReddits.unshift(model);
 		  }
 	  });
-
-
   },
 
-
   newPost: function(event){
-  	  event.preventDefault();
+  	event.preventDefault();
 	  var that = this;
 	  if (ProjectSkeleton.currentUserId) {
 		  $("#new-post-modal").addClass("is-active");
 		  $("input.new-post").off();
-	  	  $("input.new-post").one("click", that.submitPost);
+	  	$("input.new-post").one("click", that.submitPost);
 	  } else {
 		  $("#login-modal").addClass("is-active");
-
 	  };
   },
 
@@ -253,25 +227,19 @@ ProjectSkeleton.Views.CommentShow = Backbone.View.extend({
 	  });
   },
 
-
   searchPosts: function(event){
 	  event.preventDefault();
 	  var data = $(event.currentTarget).serializeJSON();
 	  var that = this;
-	  console.log(data)
+
 	  $.ajax({
 	    type: "GET",
 	    url: "/api/search_posts",
 	    data: data
-	  })
-	  .done(function(data){
-
-		  var results = new ProjectSkeleton.Collections.Posts(data, {parse: true})
+	  }).done(function(data){
+		  var results = new ProjectSkeleton.Collections.Posts(data, { parse: true })
 		  that.renderSearch(results);
 	  });
-
-
-
   },
 
   renderSearch: function(collection){

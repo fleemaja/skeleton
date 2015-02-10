@@ -1,4 +1,5 @@
 ProjectSkeleton.Views.FrontShow = Backbone.View.extend({
+
   template: JST['pages/show'],
 
   events: {
@@ -19,9 +20,7 @@ ProjectSkeleton.Views.FrontShow = Backbone.View.extend({
   initialize: function() {
 	  this.listenTo(this.collection, "sort", this.render);
 	  this.listenTo(this.collection, "sync fetch", this.render);
-
   },
-
 
   showDeleteModal: function(event){
 	  event.preventDefault();
@@ -36,6 +35,7 @@ ProjectSkeleton.Views.FrontShow = Backbone.View.extend({
 		  type = "comment";
 		  typeId = outerDiv.attr("comment-id");
 	  }
+
 	  $("input#confirm-deletion").off();
 	  $("input#confirm-deletion").attr("data-type", type);
 	  $("input#confirm-deletion").attr("data-id", typeId);
@@ -64,12 +64,9 @@ ProjectSkeleton.Views.FrontShow = Backbone.View.extend({
 	  }
 	  item.destroy();
 
-
 	  var str = "div." + type + "[" + type + "-id=\"" + typeId + "\"]";
 	  $(str).closest("li").remove();
-
   },
-
 
   sortHot: function(){
 	  var that = this;
@@ -82,7 +79,6 @@ ProjectSkeleton.Views.FrontShow = Backbone.View.extend({
 			  console.log(collection);
 		  }
 	  })
-
   },
 
   sortTop: function(){
@@ -93,10 +89,8 @@ ProjectSkeleton.Views.FrontShow = Backbone.View.extend({
 		  success: function(collection){
 			  collection.changeSort("topPosts");
 			  collection.sort();
-			  console.log(collection);
 		  }
 	  })
-
   },
 
   sortNew: function(){
@@ -107,7 +101,6 @@ ProjectSkeleton.Views.FrontShow = Backbone.View.extend({
 		  success: function(collection){
 			  collection.changeSort("newPosts");
 			  collection.sort();
-			  console.log(collection);
 		  }
 	  })
   },
@@ -120,7 +113,6 @@ ProjectSkeleton.Views.FrontShow = Backbone.View.extend({
 		  success: function(collection){
 			  collection.changeSort("conPosts");
 			  collection.sort();
-			  console.log(collection);
 		  }
 	  })
   },
@@ -134,11 +126,9 @@ ProjectSkeleton.Views.FrontShow = Backbone.View.extend({
 		  success: function(collection){
 			  collection.changeSort("bestPosts");
 			  collection.sort();
-			  console.log(collection);
 		  }
 	  })
   },
-
 
   newSubReddit: function(event){
   	event.preventDefault();
@@ -175,7 +165,6 @@ ProjectSkeleton.Views.FrontShow = Backbone.View.extend({
   	event.preventDefault();
 	  var that = this;
 	  if (ProjectSkeleton.currentUserId) {
-
 		  $("#new-post-modal").addClass("is-active");
 		  $("input.new-post").off();
 	  	$("input.new-post").one("click", that.submitPost);
@@ -230,13 +219,13 @@ ProjectSkeleton.Views.FrontShow = Backbone.View.extend({
  	  if (this.collection.get(postId).get("poster_id") === ProjectSkeleton.currentUserId) {
  		  this.updateCurrentUserKarma(karma)
  	  }
-   },
+  },
 
-   updateCurrentUserKarma: function(karma) {
+  updateCurrentUserKarma: function(karma) {
  	  var currentKarma = parseInt($("span.user-karma").html());
  	  currentKarma += parseInt(karma);
  	  $("span.user-karma").html(currentKarma);
-   },
+  },
 
   downvote: function(event){
   	event.preventDefault();
@@ -248,8 +237,7 @@ ProjectSkeleton.Views.FrontShow = Backbone.View.extend({
   			    type: "POST",
   			    url: "/api/downvote",
   			    data: { "post_id": id}
-  			  })
-  			  .done(function(data){
+  			  }).done(function(data){
 				    that.updatePostKarma(data, id);
   			  });
   		  }
@@ -270,8 +258,7 @@ ProjectSkeleton.Views.FrontShow = Backbone.View.extend({
   			    type: "POST",
   			    url: "/api/upvote",
   			    data: { "post_id": id }
-  			  })
-  			  .done(function(data){
+  			  }).done(function(data){
 				    that.updatePostKarma(data, id);
   			  });
   		  }
@@ -292,22 +279,20 @@ ProjectSkeleton.Views.FrontShow = Backbone.View.extend({
 	    type: "GET",
 	    url: "/api/search_posts",
 	    data: data
-	  })
-	  .done(function(data){
-
-		  var results = new ProjectSkeleton.Collections.Posts(data, { parse: true })
+	  }).done(function(data){
+      var results = new ProjectSkeleton.Collections.Posts(data, { parse: true })
 		  that.renderSearch(results);
 	  });
   },
 
   renderSearch: function(collection){
-	 var renderedContent = JST["pages/show"]({
-		 posts: collection,
-		 navTemplate: JST["pages/_search_nav_bar"],
-		 textTemplate: JST["posts/_show_text"]
-	 })
+	  var renderedContent = JST["pages/show"]({
+		  posts: collection,
+		  navTemplate: JST["pages/_search_nav_bar"],
+		  textTemplate: JST["posts/_show_text"]
+	  })
 
-   this.$el.html(renderedContent);
-	 return this;
+    this.$el.html(renderedContent);
+	  return this;
   }
 });

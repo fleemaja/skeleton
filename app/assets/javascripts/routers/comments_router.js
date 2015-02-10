@@ -13,23 +13,19 @@ ProjectSkeleton.Routers.Comments = Backbone.Router.extend({
 		var that = this;
 		this._getComment(id, function(comment){
 			var commentView = new ProjectSkeleton.Views.CommentShow({
-
 				model: comment
-
 			});
 
 			that._swapView(commentView);
 		});
-
 	},
 
 	_getComment: function(id, callback){
 		var that = this;
 		var comment = ProjectSkeleton.comments.get(id);
+
 		if (!comment){
-			comment = new ProjectSkeleton.Models.Comment({
-				id: id
-			});
+			comment = new ProjectSkeleton.Models.Comment({ id: id });
 
 			comment.collection = this.comments;
 			comment.fetch({
@@ -38,10 +34,10 @@ ProjectSkeleton.Routers.Comments = Backbone.Router.extend({
 					callback(comment);
 				}
 			});
+
 		} else {
 			callback(comment);
 		}
-
 	},
 
 	_swapView: function(view) {

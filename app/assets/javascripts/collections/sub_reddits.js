@@ -18,6 +18,7 @@ ProjectSkeleton.Collections.SubReddits = Backbone.Collection.extend({
 			  }
 		  });
 	  }
+    
 	  return subReddit;
   }
 });

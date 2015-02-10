@@ -8,7 +8,6 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
   },
 
   events: {
-
 	  "click .post-comment input": "submit",
 	  "click .reply a": "showForm",
 	  "click .commment-comment input": "submitComment",
@@ -24,21 +23,18 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
 	  "submit .search-posts": "searchPosts",
 	  "click .delete": "showDeleteModal",
 	  "click #cancel-deletion": "cancelDelete"
-
-
-
   },
 
   render: function(){
-	 var renderedContent = this.template({
-		 post: this.model,
-		 textTemplateFn: JST["posts/_show_text_no_delete"],
-		 navTemplateFn: JST["posts/_nav_bar"],
-		 commentTemplate: JST["comments/show"]
-	 });
+	  var renderedContent = this.template({
+		  post: this.model,
+		  textTemplateFn: JST["posts/_show_text_no_delete"],
+		  navTemplateFn: JST["posts/_nav_bar"],
+		  commentTemplate: JST["comments/show"]
+	  });
 
-	 this.$el.html(renderedContent);
-	 return this;
+	  this.$el.html(renderedContent);
+	  return this;
   },
 
   updatePostKarma: function(karma){
@@ -47,49 +43,38 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
 	  $(".post .karma").html(currentKarma);
 	  if (this.model.get("poster_id") === ProjectSkeleton.currentUserId) {
 		  this.updateCurrentUserKarma(karma)
-
 	  }
   },
 
   updatePostCommentsNum: function(change){
-  	  var currentNum = parseInt($(".post .num-comments").html());
-  	  currentNum += parseInt(change);
-  	  $(".post .num-comments").html(currentNum);
+    var currentNum = parseInt($(".post .num-comments").html());
+  	currentNum += parseInt(change);
+  	$(".post .num-comments").html(currentNum);
   },
-
 
   updateCurrentUserKarma: function(karma) {
 	  var currentKarma = parseInt($("span.user-karma").html());
 	  currentKarma += parseInt(karma);
 	  $("span.user-karma").html(currentKarma);
-
-
   },
 
-  updateCommentKarma: function(karma, comment_id){
-
+  updateCommentKarma: function(karma, comment_id) {
 	  var str = "div[comment-id=" + comment_id + "] > p .karma";
 	  var currentKarma = parseInt($(str).html());
 	  currentKarma += parseInt(karma);
 	  $(str).html(currentKarma);
-
-
   },
-
 
   submit: function(event) {
 	  event.preventDefault();
 	  var that = this;
 	  var params = $("form.post-comment").serializeJSON();
 	  var comment = new ProjectSkeleton.Models.Comment(params["comment"]);
-	  console.log(params)
 	  comment.save({}, {
 		  success: function(){
-		  	  that.model.comments().add(comment);
-
+		    that.model.comments().add(comment);
 		  }
 	  });
-
   },
 
   submitComment: function(event) {
@@ -97,20 +82,16 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
 	  var that = this;
 	  var params = $(event.currentTarget).closest("form").serializeJSON();
 	  var comment = new ProjectSkeleton.Models.Comment(params["comment"]);
-	  console.log(params)
 	  comment.save({}, {
 		  success: function(model){
 			  that.model.fetch({
 				  success: function(){
-				  	  that.updatePostCommentsNum(1);
+				  	that.updatePostCommentsNum(1);
 					  that.render()
 				  }
-
 			  });
-
 		  }
 	  });
-
   },
 
 
@@ -124,11 +105,8 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
 
 	  } else {
 		  $("#login-modal").addClass("is-active");
-  	  	  $("input[type=password]").val("");
-
-
+  	  $("input[type=password]").val("");
 	  };
-
   },
 
   sortHot: function(){
@@ -139,10 +117,8 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
 		  success: function(model){
 			  model.comments().changeSort("hotPosts");
 			  model.comments().sort();
-			  console.log(model.comments());
 		  }
 	  })
-
   },
 
   sortTop: function(){
@@ -153,7 +129,6 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
 		  success: function(model){
 			  model.comments().changeSort("topPosts");
 			  model.comments().sort();
-			  console.log(model.comments());
 		  }
 	  })
 
@@ -167,11 +142,8 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
 		  success: function(model){
 			  model.comments().changeSort("newPosts");
 			  model.comments().sort();
-			  console.log(model.comments());
 		  }
 	  })
-
-
   },
 
   sortCon: function(){
@@ -182,12 +154,9 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
 		  success: function(model){
 			  model.comments().changeSort("conPosts");
 			  model.comments().sort();
-			  console.log(model.comments());
 		  }
 	  })
-
   },
-
 
   sortBest: function(){
 	  var that = this;
@@ -197,14 +166,12 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
 		  success: function(model){
 			  model.comments().changeSort("bestPosts");
 			  model.comments().sort();
-			  console.log(model.comments());
 		  }
 	  })
-
   },
 
   downvote: function(event){
-  	  event.preventDefault();
+  	event.preventDefault();
 	  var that = this;
 	  if (ProjectSkeleton.currentUserId) {
 		  var id = $(event.currentTarget).attr("post-id")
@@ -213,33 +180,29 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
   			    type: "POST",
   			    url: "/api/downvote",
   			    data: { "post_id": $(event.currentTarget).attr("post-id")}
+  			  }).done(function(data){
+				    that.updatePostKarma(data);
+  			  });
+
+        } else {
+  			  id = $(event.currentTarget).attr("comment-id")
+  			  $.ajax({
+  			    type: "POST",
+  			    url: "/api/downvote",
+  			    data: { "comment_id": id }
   			  })
   			  .done(function(data){
-				  that.updatePostKarma(data);
-  			  });
-  		  } else {
-			  id = $(event.currentTarget).attr("comment-id")
-			  $.ajax({
-			    type: "POST",
-			    url: "/api/downvote",
-			    data: { "comment_id": id }
-			  })
-			  .done(function(data){
-				  that.updateCommentKarma(data, id);
-			  })
+  				  that.updateCommentKarma(data, id);
+  			  })
   		  }
 	  } else {
-
-	  		  $("#login-modal").addClass("is-active");
-	  	  	  $("input[type=password]").val("");
-
-
+      $("#login-modal").addClass("is-active");
+	  	$("input[type=password]").val("");
 	  };
   },
 
-
   upvote: function(event){
-  	  event.preventDefault();
+    event.preventDefault();
 	  var that = this;
 	  if (ProjectSkeleton.currentUserId) {
 		  var id = $(event.currentTarget).attr("post-id")
@@ -248,48 +211,37 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
   			    type: "POST",
   			    url: "/api/upvote",
   			    data: { "post_id": id }
-  			  })
-  			  .done(function(data){
-				  that.updatePostKarma(data);
+  			  }).done(function(data){
+				    that.updatePostKarma(data);
   			  });
-  		  } else {
-			  id = $(event.currentTarget).attr("comment-id")
-			  $.ajax({
-			    type: "POST",
-			    url: "/api/upvote",
-			    data: { "comment_id": id }
-			  })
-			  .done(function(data){
-				  that.updateCommentKarma(data, id);
-			  })
+
+        } else {
+  			  id = $(event.currentTarget).attr("comment-id")
+  			  $.ajax({
+  			    type: "POST",
+  			    url: "/api/upvote",
+  			    data: { "comment_id": id }
+  			  }).done(function(data){
+  				  that.updateCommentKarma(data, id);
+  			  })
   		  }
 	  } else {
-
-	  		  $("#login-modal").addClass("is-active");
-	  	  	  $("input[type=password]").val("");
-
-
+      $("#login-modal").addClass("is-active");
+	  	$("input[type=password]").val("");
 	  };
   },
 
-
   newSubReddit: function(event){
-  	  event.preventDefault();
+  	event.preventDefault();
 	  if (ProjectSkeleton.currentUserId) {
 		  $("#new-subreddit-modal").addClass("is-active");
 		  $("input.new-subreddit").off();
-	  	  $("input.new-subreddit").one("click", this.submitSubReddit);
+	  	$("input.new-subreddit").one("click", this.submitSubReddit);
 
 	  } else {
-
 		  $("#login-modal").addClass("is-active");
-  	  	  $("input[type=password]").val("");
-
-
+  	  $("input[type=password]").val("");
 	  };
-
-
-
   },
 
   submitSubReddit: function(event){
@@ -308,24 +260,19 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
 			  ProjectSkeleton.subReddits.unshift(model);
 		  }
 	  });
-
-
   },
 
-
   newPost: function(event){
-  	  event.preventDefault();
+  	event.preventDefault();
 	  var that = this;
 	  if (ProjectSkeleton.currentUserId) {
-
 		  $("#new-post-modal").addClass("is-active");
 		  $("input.new-post").off();
-	  	  $("input.new-post").one("click", that.submitPost);
-	  } else {
+	  	$("input.new-post").one("click", that.submitPost);
+
+    } else {
 		  $("#login-modal").addClass("is-active");
-  	  	  $("input[type=password]").val("");
-
-
+  	  $("input[type=password]").val("");
 	  };
   },
 
@@ -346,11 +293,10 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
 	  });
   },
 
-
-
   showDeleteModal: function(event){
 	  event.preventDefault();
-	  var type; var typeId;
+	  var type;
+    var typeId;
 	  var outerDiv = $(event.currentTarget).closest("div")
 
 	  if (outerDiv.attr("post-id")){
@@ -361,10 +307,11 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
 		  type = "comment";
 		  typeId = outerDiv.attr("comment-id");
 	  }
+
 	  $("input#confirm-deletion").off();
 	  $("input#confirm-deletion").attr("data-type", type);
 	  $("input#confirm-deletion").attr("data-id", typeId);
-  	  $("input#confirm-deletion").one("click", this.deleteItem);
+  	$("input#confirm-deletion").one("click", this.deleteItem);
 	  $("#delete-modal").addClass("is-active");
   },
 
@@ -389,17 +336,11 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
 	  }
 	  item.destroy();
 
-
 	  var str = "div." + type + "[" + type + "-id=\"" + typeId + "\"]";
 	  $(str).remove();
 
-	  //remove comment count
-  	  $(".post .num-comments").html("view");
-
-
+  	$(".post .num-comments").html("view");
   },
-
-
 
   searchPosts: function(event){
 	  event.preventDefault();
@@ -410,25 +351,20 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
 	    type: "GET",
 	    url: "/api/search_posts",
 	    data: data
-	  })
-	  .done(function(data){
-
+	  }).done(function(data){
 		  var results = new ProjectSkeleton.Collections.Posts(data, {parse: true})
 		  that.renderSearch(results);
 	  });
-
-
-
   },
 
   renderSearch: function(collection){
-	 var renderedContent = JST["pages/show"]({
-		 posts: collection,
-		 navTemplate: JST["pages/_search_nav_bar"],
-		 textTemplate: JST["posts/_show_text"]
-	 })
-   
-	 this.$el.html(renderedContent);
-	 return this;
+	  var renderedContent = JST["pages/show"]({
+		  posts: collection,
+		  navTemplate: JST["pages/_search_nav_bar"],
+		  textTemplate: JST["posts/_show_text"]
+	  })
+
+	  this.$el.html(renderedContent);
+	  return this;
   }
 });

@@ -1,7 +1,8 @@
 ProjectSkeleton.Views.AllShow = Backbone.View.extend({
-  template: JST['pages/show'],
-  events: {
 
+  template: JST['pages/show'],
+
+  events: {
 	  "click .hot": "sortHot",
 	  "click .new": "sortNew",
 	  "click .controversial": "sortCon",
@@ -13,10 +14,7 @@ ProjectSkeleton.Views.AllShow = Backbone.View.extend({
 	  "click .new-text": "newPost",
 	  "submit .search-posts": "searchPosts",
 	  "click .delete": "showDeleteModal",
-	  "click #cancel-deletion": "cancelDelete",
-
-
-
+	  "click #cancel-deletion": "cancelDelete"
    },
 
   initialize: function() {
@@ -26,7 +24,8 @@ ProjectSkeleton.Views.AllShow = Backbone.View.extend({
 
   showDeleteModal: function(event){
 	  event.preventDefault();
-	  var type; var typeId;
+	  var type;
+    var typeId;
 	  var outerDiv = $(event.currentTarget).closest("div")
 
 	  if (outerDiv.attr("post-id")){
@@ -37,6 +36,7 @@ ProjectSkeleton.Views.AllShow = Backbone.View.extend({
 		  type = "comment";
 		  typeId = outerDiv.attr("comment-id");
 	  }
+
 	  $("input#confirm-deletion").off();
 	  $("input#confirm-deletion").attr("data-type", type);
 	  $("input#confirm-deletion").attr("data-id", typeId);
@@ -65,12 +65,9 @@ ProjectSkeleton.Views.AllShow = Backbone.View.extend({
 	  }
 	  item.destroy();
 
-
 	  var str = "div." + type + "[" + type + "-id=\"" + typeId + "\"]";
 	  $(str).closest("li").remove();
-
   },
-
 
   sortHot: function(){
 	  var that = this;
@@ -83,7 +80,6 @@ ProjectSkeleton.Views.AllShow = Backbone.View.extend({
 			  console.log(collection);
 		  }
 	  })
-
   },
 
   sortTop: function(){
@@ -97,7 +93,6 @@ ProjectSkeleton.Views.AllShow = Backbone.View.extend({
 			  console.log(collection);
 		  }
 	  })
-
   },
 
   sortNew: function(){
@@ -110,8 +105,6 @@ ProjectSkeleton.Views.AllShow = Backbone.View.extend({
 			  collection.sort();
 		  }
 	  })
-
-
   },
 
   sortCon: function(){
@@ -125,9 +118,7 @@ ProjectSkeleton.Views.AllShow = Backbone.View.extend({
 			  console.log(collection);
 		  }
 	  })
-
   },
-
 
   sortBest: function(){
 	  var that = this;
@@ -140,27 +131,19 @@ ProjectSkeleton.Views.AllShow = Backbone.View.extend({
 			  console.log(collection);
 		  }
 	  })
-
   },
 
-
   newSubReddit: function(event){
-  	  event.preventDefault();
+  	event.preventDefault();
 	  if (ProjectSkeleton.currentUserId) {
 		  $("#new-subreddit-modal").addClass("is-active");
 		  $("input.new-subreddit").off();
-	  	  $("input.new-subreddit").one("click", this.submitSubReddit);
+	  	$("input.new-subreddit").one("click", this.submitSubReddit);
 
 	  } else {
-
-		  $("#login-modal").addClass("is-active");
-  	  	  $("input[type=password]").val("");
-
-
+		    $("#login-modal").addClass("is-active");
+  	    $("input[type=password]").val("");
 	  };
-
-
-
   },
 
   submitSubReddit: function(event){
@@ -178,23 +161,19 @@ ProjectSkeleton.Views.AllShow = Backbone.View.extend({
 			  ProjectSkeleton.subReddits.unshift(model);
 		  }
 	  });
-
-
   },
 
-
   newPost: function(event){
-  	  event.preventDefault();
+  	event.preventDefault();
 	  var that = this;
 	  if (ProjectSkeleton.currentUserId) {
 		  $("#new-post-modal").addClass("is-active");
 		  $("input.new-post").off();
-	  	  $("input.new-post").one("click", that.submitPost);
-	  } else {
+	  	$("input.new-post").one("click", that.submitPost);
+
+    } else {
 		  $("#login-modal").addClass("is-active");
-  	  	  $("input[type=password]").val("");
-
-
+  	  $("input[type=password]").val("");
 	  };
   },
 
@@ -209,15 +188,13 @@ ProjectSkeleton.Views.AllShow = Backbone.View.extend({
 	  var post = new ProjectSkeleton.Models.Post(params);
 	  var that = this;
 	  post.save({}, {
-		  success: function(model){
-		  }
+		  success: function(model){}
 	  });
-	  $("a.new").click();
 
+	  $("a.new").click();
   },
 
   render: function(){
-
 	 var renderedContent = this.template({
 		 posts: this.collection,
 		 navTemplate: JST["pages/all_nav_bar"],
@@ -232,31 +209,25 @@ ProjectSkeleton.Views.AllShow = Backbone.View.extend({
 	  var el = $(".subreddit-posts.")
   },
 
- updatePostKarma: function(karma, postId){
+  updatePostKarma: function(karma, postId){
 	  var str = "div[post-id=" + postId + "] > p .karma";
 	  var currentKarma = parseInt($(str).html());
 	  currentKarma += parseInt(karma);
 	  $(str).html(currentKarma);
+
 	  if (this.collection.get(postId).get("poster_id") === ProjectSkeleton.currentUserId) {
-
 		  this.updateCurrentUserKarma(karma)
-
 	  }
-
   },
-
 
   updateCurrentUserKarma: function(karma) {
 	  var currentKarma = parseInt($("span.user-karma").html());
 	  currentKarma += parseInt(karma);
 	  $("span.user-karma").html(currentKarma);
-
   },
 
-
-
   downvote: function(event){
-  	  event.preventDefault();
+  	event.preventDefault();
 	  var that = this;
 	  if (ProjectSkeleton.currentUserId) {
 		  var id = $(event.currentTarget).attr("post-id")
@@ -265,23 +236,19 @@ ProjectSkeleton.Views.AllShow = Backbone.View.extend({
   			    type: "POST",
   			    url: "/api/downvote",
   			    data: { "post_id": id}
-  			  })
-  			  .done(function(data){
-				  that.updatePostKarma(data, id);
+  			  }).done(function(data){
+				    that.updatePostKarma(data, id);
   			  });
   		  }
 	  } else {
-
-	  		  $("#login-modal").addClass("is-active");
-	  	  	  $("input[type=password]").val("");
-
-
+	  	  $("#login-modal").addClass("is-active");
+	  	  $("input[type=password]").val("");
 	  };
   },
 
 
   upvote: function(event){
-  	  event.preventDefault();
+  	event.preventDefault();
 	  var that = this;
 	  if (ProjectSkeleton.currentUserId) {
 		  var id = $(event.currentTarget).attr("post-id")
@@ -290,40 +257,30 @@ ProjectSkeleton.Views.AllShow = Backbone.View.extend({
   			    type: "POST",
   			    url: "/api/upvote",
   			    data: { "post_id": id }
-  			  })
-  			  .done(function(data){
-				  that.updatePostKarma(data, id);
+  			  }).done(function(data){
+				    that.updatePostKarma(data, id);
   			  });
   		  }
 	  } else {
-
-		$("#login-modal").addClass("is-active");
+		  $("#login-modal").addClass("is-active");
 	  	$("input[type=password]").val("");
-
-
 	  };
   },
-
 
   searchPosts: function(event){
 	  event.preventDefault();
 
 	  var data = $(event.currentTarget).serializeJSON();
 	  var that = this;
-	  console.log(data)
+
 	  $.ajax({
 	    type: "GET",
 	    url: "/api/search_posts",
 	    data: data
-	  })
-	  .done(function(data){
-
-		  var results = new ProjectSkeleton.Collections.Posts(data, {parse: true})
-		  that.renderSearch(results);
+	  }).done(function(data){
+		    var results = new ProjectSkeleton.Collections.Posts(data, {parse: true})
+		    that.renderSearch(results);
 	  });
-
-
-
   },
 
   renderSearch: function(collection){

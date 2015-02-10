@@ -39,8 +39,6 @@ ProjectSkeleton.Views.SubRedditsIndex = Backbone.View.extend({
 
 	  var str = "li[sub-id=" + subredditId + "]";
 	  $(str).remove()
-
-
   },
 
   subscribe: function(event){
@@ -51,13 +49,14 @@ ProjectSkeleton.Views.SubRedditsIndex = Backbone.View.extend({
 		  user_id: ProjectSkeleton.currentUserId,
 		  subreddit_id: subredditId
 	  });
+
 	  subscription.collection = ProjectSkeleton.subscriptions;
 	  subscription.save({}, {
 		  success: function(){
  			  that.collection.fetch();
-
 		  }
 	  });
+
 	  var subredditName = ProjectSkeleton.subReddits.get(subredditId).get("name").toUpperCase();
 	  var html = "<li sub-id=" + subredditId + "><a href=\"#/subreddits/" + subredditId + "\">" + subredditName + "</a></li>"
 	  $(".random-subreddits > ul").append(html);
@@ -65,8 +64,8 @@ ProjectSkeleton.Views.SubRedditsIndex = Backbone.View.extend({
   },
 
   render: function(){
-	 var renderedContent = this.template({ subReddits: this.collection })
-	 this.$el.html(renderedContent);
-	 return this;
+	  var renderedContent = this.template({ subReddits: this.collection })
+	  this.$el.html(renderedContent);
+	  return this;
   }
 });

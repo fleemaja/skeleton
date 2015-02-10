@@ -1,9 +1,9 @@
 ProjectSkeleton.Routers.Pages = Backbone.Router.extend({
+
 	initialize: function(posts, frontPosts, $rootEl) {
 		this.allPosts = posts;
 		this.frontPosts = frontPosts;
 		this.$rootEl = $rootEl;
-
 	},
 
 	routes: {
@@ -26,7 +26,7 @@ ProjectSkeleton.Routers.Pages = Backbone.Router.extend({
 			},
 
 			error: function(response){
-				console.log("an error has occurred...", response)
+				console.log("error fetching the front page", response)
 			}
 		});
 	},
@@ -45,16 +45,14 @@ ProjectSkeleton.Routers.Pages = Backbone.Router.extend({
 			},
 
 			error: function(response){
-				console.log("an error has occurred...", response)
+				console.log("error fetching all subs", response)
 			}
 		});
 	},
-
 
 	_swapView: function(view) {
 		this._currentView && this._currentView.remove();
 		this._currentView = view;
 		this.$rootEl.html(view.render().$el);
 	}
-
 });

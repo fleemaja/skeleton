@@ -7,7 +7,6 @@ ProjectSkeleton.Views.UserComments = Backbone.View.extend({
     "submit form": "submitAvatar"
   },
 
-
   template: JST['users/show_comments'],
 
   render: function(){
@@ -22,19 +21,15 @@ ProjectSkeleton.Views.UserComments = Backbone.View.extend({
 	 return this;
   },
 
-
   updateCommentKarma: function(karma, comment_id){
-
 	  var str = "div[comment-id=" + comment_id + "] > p .karma";
 	  var currentKarma = parseInt($(str).html());
 	  currentKarma += parseInt(karma);
 	  $(str).html(currentKarma);
-
   },
 
-
   downvote: function(event){
-  	  event.preventDefault();
+  	event.preventDefault();
 	  var that = this;
 	  if (ProjectSkeleton.currentUserId) {
 		var id = $(event.currentTarget).attr("comment-id")
@@ -42,20 +37,16 @@ ProjectSkeleton.Views.UserComments = Backbone.View.extend({
 			    type: "POST",
 			    url: "/api/downvote",
 			    data: { "comment_id": id }
-			  })
-			  .done(function(data){
+			  }).done(function(data){
 				  that.updateCommentKarma(data, id);
 			  })
 	  } else {
-
-	  		  $("#login-modal").addClass("is-active");
-
+      $("#login-modal").addClass("is-active");
 	  };
   },
 
-
   upvote: function(event){
-  	  event.preventDefault();
+  	event.preventDefault();
 	  var that = this;
 	  if (ProjectSkeleton.currentUserId) {
 		var id = $(event.currentTarget).attr("comment-id")
@@ -63,14 +54,11 @@ ProjectSkeleton.Views.UserComments = Backbone.View.extend({
 			    type: "POST",
 			    url: "/api/upvote",
 			    data: { "comment_id": id }
-			  })
-			  .done(function(data){
+			  }).done(function(data){
 				  that.updateCommentKarma(data, id);
 			  })
 	  } else {
-
-	  		  $("#login-modal").addClass("is-active");
-
+	  	$("#login-modal").addClass("is-active");
 	  };
   },
 
@@ -96,29 +84,23 @@ ProjectSkeleton.Views.UserComments = Backbone.View.extend({
   },
 
   submitAvatar: function(event){
-      var that = this;
-      var formData = $(event.currentTarget).serializeJSON();
+    var that = this;
+    var formData = $(event.currentTarget).serializeJSON();
 
-      event.preventDefault();
-      this.model.save({
-        success: function(){
-          ProjectSkeleton.users.add(that.model);
+    event.preventDefault();
+    this.model.save({
+      success: function(){
+        ProjectSkeleton.users.add(that.model);
 
-          // Remove the image attribute with raw data
-          // from the model after uploading it.
-          delete that.model.attributes.avatar;
-          console.log(that.model);
-          Backbone.history.navigate("/users/" + that.model.id, { trigger: true });
-        },
+        // Remove the image attribute with raw data
+        // from the model after uploading it.
+        delete that.model.attributes.avatar;
+        Backbone.history.navigate("/users/" + that.model.id, { trigger: true });
+      },
 
-	 error: function(response){
-		 console.log(response);
-	 }
-      })
-
-
-
+  	  error: function(response){
+  		  console.log(response);
+  	  }
+    })
   }
-
-
 });

@@ -10,9 +10,8 @@ ProjectSkeleton.Collections.Subscriptions = Backbone.Collection.extend({
 
 	  if (subscription) {
 		  subscription.fetch();
-
    } else {
-		  subscription = new ProjectSkeleton.Models.Subscription({ id: id});
+		  subscription = new ProjectSkeleton.Models.Subscription({ id: id });
 		  subscription.fetch({
 			  success: function(){
 				  subscriptions.add(subscription);

@@ -14,9 +14,9 @@ ProjectSkeleton.Routers.Notifications = Backbone.Router.extend({
 
 					router._swapView(notificationsView);
 				},
+				
 				error: function(response){
-
-					console.log("an error has occurred...", response)
+          console.log("an error has occurred...", response)
 				}
 			});
 		}

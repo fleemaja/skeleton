@@ -34,7 +34,6 @@ class Notification < ActiveRecord::Base
       post = self.notifiable
       root_url + "#/subreddits/#{post.subreddit_id}"
     end
-
   end
 
 

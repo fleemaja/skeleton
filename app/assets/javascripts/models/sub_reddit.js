@@ -1,4 +1,5 @@
 ProjectSkeleton.Models.SubReddit = Backbone.Model.extend({
+
 	initialize: function(options) {
 		this.id = options.id;
 	},
@@ -31,6 +32,7 @@ ProjectSkeleton.Models.SubReddit = Backbone.Model.extend({
 				posts: posts
 			});
 		}
+		
 		return this.get('posts');
 	},
 

@@ -9,19 +9,15 @@ ProjectSkeleton.Routers.Posts = Backbone.Router.extend({
 		"posts/index": "index"
 	},
 
-	show: function(id){
-
+	show: function(id) {
 		var that = this;
 		this._getPost(id, function(post){
 			var postView = new ProjectSkeleton.Views.PostShow({
-
 				model: post
-
 			});
+
 			that._swapView(postView);
-
 		});
-
 	},
 
 	index: function() {
@@ -38,9 +34,7 @@ ProjectSkeleton.Routers.Posts = Backbone.Router.extend({
 		var that = this;
 		var post = ProjectSkeleton.posts.get(id);
 		if (!post){
-			post = new ProjectSkeleton.Models.Post({
-				id: id
-			});
+			post = new ProjectSkeleton.Models.Post({ id: id });
 
 			post.collection = this.posts;
 			post.fetch({
@@ -52,16 +46,11 @@ ProjectSkeleton.Routers.Posts = Backbone.Router.extend({
 		} else {
 			callback(post);
 		}
-
 	},
 
-
 	_swapView: function(view) {
-
 		this._currentView && this._currentView.remove();
 		this._currentView = view;
 		this.$rootEl.html(view.render().$el);
-
 	}
-
 });

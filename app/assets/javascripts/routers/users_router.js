@@ -24,44 +24,31 @@ ProjectSkeleton.Routers.Users = Backbone.Router.extend({
 			},
 
 			error: function(response){
-
-				console.log("an error has occurred...", response)
+				console.log("error fetching users", response)
 			}
-
 		});
-
 	},
 
 	show: function(id){
 		var that = this;
 		this._getUser(id, function(user){
 			var userView = new ProjectSkeleton.Views.UserShow({
-
 				model: user
-
 			});
 
 			that._swapView(userView);
-
 		});
-
 	},
 
-
 	showComments: function(id){
-
 		var that = this;
 		this._getUser(id, function(user){
 			var userView = new ProjectSkeleton.Views.UserComments({
-
 				model: user
-
 			});
 
 			that._swapView(userView);
-
 		});
-
 	},
 
 
@@ -69,9 +56,7 @@ ProjectSkeleton.Routers.Users = Backbone.Router.extend({
 		var that = this;
 		var user = ProjectSkeleton.users.get(id);
 		if (!user){
-			user = new ProjectSkeleton.Models.User({
-				id: id
-			});
+			user = new ProjectSkeleton.Models.User({ id: id });
 
 			user.collection = this.users;
 			user.fetch({
@@ -83,16 +68,11 @@ ProjectSkeleton.Routers.Users = Backbone.Router.extend({
 		} else {
 			callback(user);
 		}
-
 	},
 
-
 	_swapView: function(view) {
-
 		this._currentView && this._currentView.remove();
 		this._currentView = view;
 		this.$rootEl.html(view.render().$el);
-
 	}
-
 });

@@ -24,15 +24,12 @@ ProjectSkeleton.Routers.SubReddits = Backbone.Router.extend({
 			},
 
 			error: function(response){
-
-				console.log("an error has occurred...", response)
+        console.log("error fetching subs", response)
 			}
-
 		})
 	},
 
 	random: function(){
-
 		var router = this;
 		this.subReddits.fetch({
 			success: function(collection){
@@ -43,7 +40,7 @@ ProjectSkeleton.Routers.SubReddits = Backbone.Router.extend({
 			},
 
 			error: function(response){
-				console.log("an error has occurred...", response)
+				console.log("error fetching random subreddit", response)
 			}
 		})
 	},
@@ -64,11 +61,9 @@ ProjectSkeleton.Routers.SubReddits = Backbone.Router.extend({
 	_getSubReddit: function(id, callback){
 		var that = this;
 		var subReddit = ProjectSkeleton.subReddits.get(id);
-		if (!subReddit){
-			subReddit = new ProjectSkeleton.Models.SubReddit({
-				id: id
-			});
 
+		if (!subReddit){
+			subReddit = new ProjectSkeleton.Models.SubReddit({ id: id });
 			subReddit.collection = this.subReddits;
 			subReddit.fetch({
 				success: function(){
@@ -90,5 +85,4 @@ ProjectSkeleton.Routers.SubReddits = Backbone.Router.extend({
 		this._currentView = view;
 		this.$rootEl.html(view.render().$el);
 	}
-
 });

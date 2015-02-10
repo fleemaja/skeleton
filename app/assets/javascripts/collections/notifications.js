@@ -18,7 +18,7 @@ ProjectSkeleton.Collections.Notifications = Backbone.Collection.extend({
 	  if (notification) {
 		  notification.fetch();
 	  } else {
-		  notification = new ProjectSkeleton.Models.Notification({id: id});
+		  notification = new ProjectSkeleton.Models.Notification({ id: id });
 		  notification.fetch({
 			  success: function(){
 				  notifications.add(notification);

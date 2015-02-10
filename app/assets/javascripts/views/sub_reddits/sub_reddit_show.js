@@ -1,5 +1,6 @@
 ProjectSkeleton.Views.SubRedditShow = Backbone.View.extend({
   template: JST['sub_reddits/show'],
+
   events: {
 
 	  "click .hot": "sortHot",
@@ -17,11 +18,8 @@ ProjectSkeleton.Views.SubRedditShow = Backbone.View.extend({
    },
 
   initialize: function() {
-
 	  this.listenTo(this.model.posts(), "sort add remove", this.render);
 	  this.listenTo(this.model, "fetch", this.render);
-	  // this.listenTo(ProjectSkeleton.posts, "add remove sync", this.render);
-	  // this.listenTo(ProjectSkeleton.comments, "add remove sync", this.render);
 	  this.listenTo(ProjectSkeleton.subReddits, "add remove", this.render);
   },
 
@@ -38,10 +36,11 @@ ProjectSkeleton.Views.SubRedditShow = Backbone.View.extend({
 		  type = "comment";
 		  typeId = outerDiv.attr("comment-id");
 	  }
+
 	  $("input#confirm-deletion").off();
 	  $("input#confirm-deletion").attr("data-type", type);
 	  $("input#confirm-deletion").attr("data-id", typeId);
-  	  $("input#confirm-deletion").one("click", this.deleteItem);
+  	$("input#confirm-deletion").one("click", this.deleteItem);
 	  $("#delete-modal").addClass("is-active");
   },
 
@@ -66,10 +65,8 @@ ProjectSkeleton.Views.SubRedditShow = Backbone.View.extend({
 	  }
 	  item.destroy();
 
-
 	  var str = "div." + type + "[" + type + "-id=\"" + typeId + "\"]";
 	  $(str).closest("li").remove();
-
   },
 
   sortHot: function(){
@@ -83,7 +80,6 @@ ProjectSkeleton.Views.SubRedditShow = Backbone.View.extend({
 			  console.log(model.posts());
 		  }
 	  })
-
   },
 
   sortTop: function(){
@@ -97,7 +93,6 @@ ProjectSkeleton.Views.SubRedditShow = Backbone.View.extend({
 			  console.log(model.posts());
 		  }
 	  })
-
   },
 
   sortNew: function(){
@@ -111,8 +106,6 @@ ProjectSkeleton.Views.SubRedditShow = Backbone.View.extend({
 			  console.log(model.posts());
 		  }
 	  })
-
-
   },
 
   sortCon: function(){
@@ -126,9 +119,7 @@ ProjectSkeleton.Views.SubRedditShow = Backbone.View.extend({
 			  console.log(model.posts());
 		  }
 	  })
-
   },
-
 
   sortBest: function(){
 	  var that = this;
@@ -141,7 +132,6 @@ ProjectSkeleton.Views.SubRedditShow = Backbone.View.extend({
 			  console.log(model.posts());
 		  }
 	  })
-
   },
 
   newSubReddit: function(event){
@@ -149,20 +139,13 @@ ProjectSkeleton.Views.SubRedditShow = Backbone.View.extend({
 	  if (ProjectSkeleton.currentUserId) {
 		  $("#new-subreddit-modal").addClass("is-active");
 		  $(event.currentTarget).closest('form').find("input[type=text], textarea").val("");
-
 		  $("input.new-subreddit").off()
-	  	  $("input.new-subreddit").one("click", this.submitSubReddit);
+	  	$("input.new-subreddit").one("click", this.submitSubReddit);
 
 	  } else {
-
 		  $("#login-modal").addClass("is-active");
-  	  	  $("input[type=password]").val("");
-
-
+  	  $("input[type=password]").val("");
 	  };
-
-
-
   },
 
   submitSubReddit: function(event){
@@ -178,22 +161,19 @@ ProjectSkeleton.Views.SubRedditShow = Backbone.View.extend({
 			  ProjectSkeleton.subReddits.unshift(model);
 		  }
 	  });
-
   },
 
   newPost: function(event){
-  	  event.preventDefault();
+  	event.preventDefault();
 	  var that = this;
 	  if (ProjectSkeleton.currentUserId) {
-
 		  $("#new-post-modal").addClass("is-active");
 		  $("input.new-post").off();
-	  	  $("input.new-post").one("click", this.submitPost);
-	  } else {
+	  	$("input.new-post").one("click", this.submitPost);
+
+    } else {
 		  $("#login-modal").addClass("is-active");
-  	  	  $("input[type=password]").val("");
-
-
+  	  $("input[type=password]").val("");
 	  };
   },
 
@@ -214,22 +194,21 @@ ProjectSkeleton.Views.SubRedditShow = Backbone.View.extend({
 			  that.model.fetch();
 		  }
 	  });
+
 	  $("a.new").click();
-
-
   },
 
 
   render: function(){
 
-	 var renderedContent = this.template({
-		 subReddit: this.model,
-		 navTemplate: JST["sub_reddits/_nav_bar"],
-		 textTemplate: JST["posts/_show_text"]
-	 })
+	  var renderedContent = this.template({
+		  subReddit: this.model,
+		  navTemplate: JST["sub_reddits/_nav_bar"],
+		  textTemplate: JST["posts/_show_text"]
+	  })
 
-	 this.$el.html(renderedContent);
-	 return this;
+	  this.$el.html(renderedContent);
+	  return this;
   },
 
   renderPosts: function(){
@@ -242,24 +221,18 @@ ProjectSkeleton.Views.SubRedditShow = Backbone.View.extend({
 	  currentKarma += parseInt(karma);
 	  $(str).html(currentKarma);
 	  if (this.model.posts().get(postId).get("poster_id") === ProjectSkeleton.currentUserId) {
-
 		  this.updateCurrentUserKarma(karma)
-
 	  }
-
   },
-
 
   updateCurrentUserKarma: function(karma) {
 	  var currentKarma = parseInt($("span.user-karma").html());
 	  currentKarma += parseInt(karma);
 	  $("span.user-karma").html(currentKarma);
-
   },
 
-
   downvote: function(event){
-  	  event.preventDefault();
+  	event.preventDefault();
 	  var that = this;
 	  if (ProjectSkeleton.currentUserId) {
 		  var id = $(event.currentTarget).attr("post-id")
@@ -268,23 +241,19 @@ ProjectSkeleton.Views.SubRedditShow = Backbone.View.extend({
   			    type: "POST",
   			    url: "/api/downvote",
   			    data: { "post_id": id}
-  			  })
-  			  .done(function(data){
-				  that.updatePostKarma(data, id);
+  			  }).done(function(data){
+				    that.updatePostKarma(data, id);
   			  });
   		  }
 	  } else {
-
-	  		  $("#login-modal").addClass("is-active");
-	  	  	  $("input[type=password]").val("");
-
-
+	  	  $("#login-modal").addClass("is-active");
+	  	  $("input[type=password]").val("");
 	  };
   },
 
 
   upvote: function(event){
-  	  event.preventDefault();
+  	event.preventDefault();
 	  var that = this;
 	  if (ProjectSkeleton.currentUserId) {
 		  var id = $(event.currentTarget).attr("post-id")
@@ -293,50 +262,40 @@ ProjectSkeleton.Views.SubRedditShow = Backbone.View.extend({
   			    type: "POST",
   			    url: "/api/upvote",
   			    data: { "post_id": id }
-  			  })
-  			  .done(function(data){
-				  that.updatePostKarma(data, id);
+  			  }).done(function(data){
+				    that.updatePostKarma(data, id);
   			  });
   		  }
 	  } else {
-
-		$("#login-modal").addClass("is-active");
+		  $("#login-modal").addClass("is-active");
 	  	$("input[type=password]").val("");
-
-
 	  };
   },
-
 
   searchPosts: function(event){
 	  event.preventDefault();
 
 	  var data = $(event.currentTarget).serializeJSON();
 	  var that = this;
-	  console.log(data)
 	  $.ajax({
 	    type: "GET",
 	    url: "/api/search_posts",
 	    data: data
 	  })
 	  .done(function(data){
-
-		  var results = new ProjectSkeleton.Collections.Posts(data, {parse: true})
+		  var results = new ProjectSkeleton.Collections.Posts(data, { parse: true })
 		  that.renderSearch(results);
 	  });
-
-
-
   },
 
   renderSearch: function(collection){
-	 var renderedContent = JST["pages/show"]({
-		 posts: collection,
-		 navTemplate: JST["pages/_search_nav_bar"],
-		 textTemplate: JST["posts/_show_text"]
-	 })
+	  var renderedContent = JST["pages/show"]({
+		  posts: collection,
+		  navTemplate: JST["pages/_search_nav_bar"],
+		  textTemplate: JST["posts/_show_text"]
+	  })
 
-	 this.$el.html(renderedContent);
-	 return this;
+	  this.$el.html(renderedContent);
+	  return this;
   }
 });

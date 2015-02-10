@@ -11,10 +11,9 @@ ProjectSkeleton.Views.NotificationsIndex = Backbone.View.extend({
 	  var that = this;
       setInterval(function(){
 		  that.collection.fetch()
-      }, 10*1000);
+      }, 10 * 1000);
 
 	  this.listenTo(this.collection, "sync", this.render);
-
   },
 
   render: function(){
@@ -36,20 +35,17 @@ ProjectSkeleton.Views.NotificationsIndex = Backbone.View.extend({
 	  notification.set({ is_read: true })
 	  notification.save({}, {
 
-		  success: function(response){
-		  },
+		  success: function(response){},
 
 		  error: function(response) {
-			  console.log("an error has occurred...", response);
+			  console.log("notification save error", response);
 		  }
 	  });
 
-	  //reduce notification count
 	  var count = $(".notifications-num").html();
 	  if (count > 0) {
 		  count -= 1;
 		  $(".notifications-num").html(count);
-
 	  }
   }
 });

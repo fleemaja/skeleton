@@ -24,13 +24,13 @@ ProjectSkeleton.Collections.Comments = Backbone.Collection.extend({
   },
 
   getOrFetch: function(id){
+		var comment = this.get(id);
 	  var comments = this;
-	  var comment = this.get(id);
 
 	  if (comment) {
 		  comment.fetch();
 	  } else {
-		  comment = new ProjectSkeleton.Models.Comment({id: id});
+		  comment = new ProjectSkeleton.Models.Comment({ id: id });
 		  comment.fetch({
 			  success: function(){
 				  comments.add(comment);

@@ -29,13 +29,14 @@ ProjectSkeleton.Collections.FrontPosts = Backbone.Collection.extend({
 	  if (post) {
 		  post.fetch();
 	  } else {
-		  post = new ProjectSkeleton.Models.Post({id: id});
+		  post = new ProjectSkeleton.Models.Post({ id: id });
 		  post.fetch({
 			  success: function(){
 				  posts.add(post);
 			  }
 		  });
 	  }
+    
 	  return post;
   }
 });

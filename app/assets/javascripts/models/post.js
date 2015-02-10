@@ -18,14 +18,13 @@ ProjectSkeleton.Models.Post = Backbone.Model.extend({
 			this.subReddit().set(response["subreddit"], { parse: true} );
 			delete response["subreddit"];
 		}
+
 		return response;
 	},
 
 	comments: function(){
 		if (!this.get('comments')) {
-			var postComments = new ProjectSkeleton.Collections.Comments(
-				[]
-			);
+			var postComments = new ProjectSkeleton.Collections.Comments([]);
 
 			this.set({
 				comments: postComments

@@ -1,4 +1,5 @@
 ProjectSkeleton.Models.User = Backbone.Model.extend({
+
 	urlRoot: "/api/users",
 
 	initialize: function(options) {
@@ -13,7 +14,7 @@ ProjectSkeleton.Models.User = Backbone.Model.extend({
 		}
 
 		if (response["posts"]) {
-			this.posts().set(response["posts"], { parse: true } );
+			this.posts().set(response["posts"], { parse: true });
 			delete response["posts"];
 		}
 
