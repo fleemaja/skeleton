@@ -28,8 +28,7 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
 
   pick: function () {
     var that = this;
-    filepicker.pick({maxSize: 1024*1024}, function (Blob) {
-      debugger
+    filepicker.pick({}, function (Blob) {
       that._lastFile = Blob.url;
     }, function (FPError) {
 
@@ -82,9 +81,10 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
 	  var that = this;
 	  var params = $("form.post-comment").serializeJSON();
 	  var comment = new ProjectSkeleton.Models.Comment(params["comment"]);
-	  comment.save({}, {
+	  comment.save({ filepicker_url: this._lastFile}, {
 		  success: function(){
 		    that.model.comments().add(comment);
+        that._lastFile = "";
 		  }
 	  });
   },
@@ -94,7 +94,7 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
 	  var that = this;
 	  var params = $(event.currentTarget).closest("form").serializeJSON();
 	  var comment = new ProjectSkeleton.Models.Comment(params["comment"]);
-	  comment.save({filepicker_url: this._lastFile}, {
+	  comment.save({ filepicker_url: this._lastFile}, {
 		  success: function(model){
 			  that.model.fetch({
 				  success: function(){

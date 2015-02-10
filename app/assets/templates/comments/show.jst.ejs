@@ -33,7 +33,12 @@
 
 	<p class="content">
 	  <%= comment.escape("content") %>
-		<img src="<%= comment.get('filepicker_url') %>" alt="" />
+
+		<% if (comment.get('filepicker_url')) { %>
+			<br><br>
+		<% } %>
+
+		<img src="<%= comment.get('filepicker_url') %>" class="filepicker">
 
 	  <p>
 			<span class="comment-link">

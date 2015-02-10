@@ -11,7 +11,6 @@
 			<a href="#/comments/<%= comment.id %>/downvote" rel="nofollow">
 			  <img src="assets/skeleFBdislike.png" height="32" width="32">
 			</a>
-
 		</div>
 	</div>
 
@@ -33,7 +32,12 @@
 
 	<p class="content">
 	  <%= comment.escape("content") %>
-		<img src="<%= comment.get('filepicker_url') %>">
+
+		<% if (comment.get('filepicker_url')) { %>
+		  <br><br>
+		<% } %>
+
+		<img src="<%= comment.get('filepicker_url') %>" class="filepicker">
 	  <p>
 		  <span class="comment-link">
 			  <a href="#/comments/<%= comment.id %>">

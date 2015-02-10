@@ -24,12 +24,12 @@
 		</div>
 
 		<div class="subreddit-details">
-			<p>Name: <%= comment.subReddit().escape("name") %></p>
-		  <p>Moderator: <a href="#/api/users/<%= comment.subReddit().escape("moderator_id")%>">
-      <%= comment.subReddit().escape("moderator") %></a></p>
-			<p>Title: <%= comment.subReddit().escape("title") %></p>
-			<p>Description: <%= comment.subReddit().escape("description") %></p>
-			<p>Sidebar: <%= comment.subReddit().escape("sidebar") %></p>
+			<p>Name: <%= comment.subReddit().escape("name") %></p><br>
+		  <p>Moderator: <a href="#/api/users/<%= comment.subReddit().escape("moderator_id")%>"><br>
+      <%= comment.subReddit().escape("moderator") %></a></p><br>
+			<p>Title: <%= comment.subReddit().escape("title") %></p><br>
+			<p>Description: <%= comment.subReddit().escape("description") %></p><br>
+			<p>Sidebar: <%= comment.subReddit().escape("sidebar") %></p><br>
 			<p>Submission text: <%= comment.subReddit().escape("submission_text") %></p>
 		</div>
 	</div>

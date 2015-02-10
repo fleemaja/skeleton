@@ -2,16 +2,26 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.text-post {
-	padding: 10px 0px;
+.post-title {
+	padding: 10px;
+	color: #3b5998;
+	display: block;
+	font-size: 36px;
+}
+
+.specs {
+	font-size: 24px;
+	margin-left: 20px;
 }
 
 .text-post a {
-	padding: 2px 5px;
+	// padding: 2px 5px;
+	display: inline;
 }
 
 .text-post span.username {
 	color: #3b5998;
+	font-size: 18px;
 	// background: lightgray;
 	// border: 2px solid white;
 	// border-radius: 5px;
@@ -23,26 +33,30 @@
 }
 
 .text-post span.subreddit-name {
-	color: white;
-	background: lightblue;
-	border: 2px solid white;
-	border-radius: 5px;
-	padding: 2px 5px;
-	margin-left: 20px;
+	// color: white;
+	color: #3b5998;
+	// padding: 2px 5px;
+	// margin-left: 20px;
+	font-size: 18px;
+}
+
+.text-post span.subreddit-name:hover{
+	text-decoration: underline;
 }
 
 .text-post span.time-ago{
-	margin-left: 20px;
+	// margin-left: 20px;
+	font-size: 12px;
 }
 
 .text-post span.karma {
-	background: white;
-	border: 2px solid black;
-	display: inline-block;
+	// background: white;
+	// border: 2px solid black;
+	// display: inline-block;
 	padding: 2px 5px 2px 1px;
-	border-radius: 10px;
-	margin: 0px 0px 0px 5px;
-	font-weight: bold;
+	// border-radius: 10px;
+	// margin: 0px 0px 0px 5px;
+	// font-weight: bold;
 }
 
 .text-post .upvote {
@@ -105,5 +119,5 @@
 }
 
 .post > p > a {
-	max-width: 1000px;
+	// max-width: 1000px;
 }

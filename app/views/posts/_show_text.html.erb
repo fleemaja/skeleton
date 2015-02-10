@@ -2,7 +2,7 @@
 	<div class="vote-buttons">
 		<div class="upvote">
 
-			<%= link_to "upvote", post_upvote_url(post), method: :post %> 
+			<%= link_to "upvote", post_upvote_url(post), method: :post %>
 
 		</div>
 
@@ -19,11 +19,29 @@
 	</div>
 
 
-	<p><%= post.title %> by <span class="username"><%= User.find(post.poster_id).username %></span> in <span class="subreddit-name"><%= SubReddit.find(post.subreddit_id).name %></span> <span class="time-ago"><%= time_ago_in_words(post.created_at) %></span> ago</p>
-	<p class="text"><%= post.text %></p>
-	<p><span class="karma"><%= post.karma %></span> karma </p>
+	<p>
+		<%= post.title %> by
+		<span class="username">
+			<%= User.find(post.poster_id).username %>
+		</span> in <span class="subreddit-name">
+			<%= SubReddit.find(post.subreddit_id).name %>
+		</span>
+
+	  <span class="time-ago">
+			<%= time_ago_in_words(post.created_at) %>
+		</span> ago
+	</p>
+
+	<p class="text">
+		<%= post.text %>
+	</p>
+	<p>
+		<span class="karma">
+			<%= post.karma %>
+		</span> karma
+	</p>
+
 	<div class="comments">
 		<a href="<%= post_url(post) %>"> <%= post.sum_comments %> comment(s)</a>
 	</div>
-
 </div>

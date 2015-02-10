@@ -83,7 +83,7 @@ button, input[type="submit"], input[type="file"], input[type="file"]::-webkit-fi
 nav.top {
 	background: white;
 	white-space: nowrap;
-	border-bottom: 1px solid gray;
+	border-bottom: 1px solid #3b5998;
 }
 
 .subreddit-details > .avatar-section > img {
@@ -101,7 +101,7 @@ nav.top > ul {
 
 nav.top > ul > .triangle {
 	float: left;
-	border-right: 1px solid black;
+	border-right: 1px solid #3b5998;
 }
 
 .triangle > a {
@@ -151,11 +151,11 @@ nav.top > ul > .subreddits-link {
 	position: absolute;
 	display: block;
 	padding: 5px 10px;
-	background: #f0f0f0;
+	background: white;
 	top: 0;
 	right: 0;
 	z-index: 2;
-	border-left: 1px solid black;
+	border-left: 1px solid #3b5998;
 }
 
 .groups > ul, .random-subreddits > ul {
@@ -164,7 +164,7 @@ nav.top > ul > .subreddits-link {
 
 .groups > ul > li, .random-subreddits > ul > li {
 	float: left;
-	border-right: 1px solid black;
+	border-right: 2px solid #f0f0f0;
 }
 
 .groups > ul > li > a, .random-subreddits > ul > li > a {
@@ -172,7 +172,7 @@ nav.top > ul > .subreddits-link {
 }
 
 .groups > ul > li:hover, .random-subreddits > ul > li:hover, nav.top > ul > .subreddits-link:hover, nav.top > ul > .triangle:hover {
-	background: darkgray;
+	background: #3b5998;
 	color: white;
 }
 
@@ -218,33 +218,35 @@ ul.user-info > li a {
 	/*text-decoration: underline;*/
 }
 
-footer {
-	background: #f0f0f0;
-	border-top: 1px solid black;
-	height: 30px;
+footer.clearfix {
+	background-color: #f0f0f0;
+	border-top: 1px solid #f0f0f0;
+	height: 75px;
 	display: block;
 	width: 100%;
+	font-size: 12px;
 }
 
-footer a:hover {
+/*footer a:hover {
 	text-decoration: underline;
 }
 
 footer p {
-}
+}*/
 
 footer > .info {
-	float: left;
+	text-align: center;
 	padding: 5px 10px;
 }
+
 footer > .info a {
 	display: inline;
 }
 
-footer > a {
+/*footer > a {
 	float: right;
 	padding: 5px 10px;
-}
+}*/
 
 .button_to input[type="submit"], .subscribe-button {
 	background: #f0f0f0;

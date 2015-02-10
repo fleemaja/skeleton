@@ -20,12 +20,12 @@
 }
 
 .subreddit-nav-bar {
-	border-right: 2px solid black;
+	border-right: 2px solid #f0f0f0;
 }
 
 .subreddit-nav-bar > ul > li {
 	float: left;
-	border-left: 2px solid black;
+	border-left: 2px solid #f0f0f0;
 }
 
 .subreddit-nav-bar > ul > li > a {
@@ -33,7 +33,7 @@
 }
 
 .subreddit-nav-bar > ul > li:hover {
-	background: darkgray;
+	background: #3b5998;
 	color: white;
 }
 
@@ -53,10 +53,10 @@
 }
 
 .search-submit-area > a {
-	background: darkgray;
+	background: #3b5998;
 	color: white;
 	border: 2px solid black;
-	border-radius: 2px;
+	border-radius: 10px;
 	padding: 5px 10px;
 	margin: 5px 0px;
 }
@@ -71,7 +71,7 @@
 }
 
 .subreddit-details {
-	border: 2px solid black;
+	border: 2px solid #3b5998;
 	padding: 10px;
 	padding-right: 0px;
 	z-index: 2;

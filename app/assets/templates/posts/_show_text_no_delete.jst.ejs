@@ -15,37 +15,46 @@
 	</div>
 
 	<p>
-	  <a href="#/posts/<%= post.id %>">
-		  <%= post.escape("title") %>
-		</a>
-
-		submitted by <a href="#/users/<%= post.escape("poster_id") %>">
-		<span class="username">
-		  <%= post.escape("poster") %>
+	  <span class="post-title">
+		  <a href="#/posts/<%= post.id %>">
+			  <%= post.escape("title") %>
 			</a>
 		</span>
 
-		in <a href="#/subreddits/<%= post.escape("subreddit_id") %>">
-			<span class="subreddit-name">
+	  <span class="karma">
+				<%= post.escape("karma") %> points
+		</span>
+
+		submitted by
+		<span class="username">
+		  <a href="#/users/<%= post.escape("poster_id") %>">
+		    <%= post.escape("poster") %>
+			</a>
+		</span>
+
+		in
+		<span class="subreddit-name">
+		  <a href="#/subreddits/<%= post.escape("subreddit_id") %>">
 			  <%= post.subReddit().escape("name") %>
-			</span>
-		</a>
+			</a>
+		</span>
 
-			<span class="time-ago">
-			  <%= jQuery.timeago(post.escape("created_at")) %>
-			</span>
-		</p>
+		<span class="time-ago">
+			<%= jQuery.timeago(post.escape("created_at")) %>
+		</span>
+	</p>
 
+  <br><br>
+  <p class="specs">
+		Project Specifications:
+	</p>
+
+	<br>
 	<p class="text">
 	  <%= post.escape("text") %>
 	</p>
 
-	<p class="p-karma">
-	  <span class="karma">
-		  <%= post.escape("karma") %>
-		</span>
-		karma
-	</p>
+	<br><br>
 
 	<div class="comments">
 		<a href="#/posts/<%= post.id %>">
@@ -54,4 +63,6 @@
 			</span> comment(s)
 		</a>
 	</div>
+
+	<br><br>
 </div>

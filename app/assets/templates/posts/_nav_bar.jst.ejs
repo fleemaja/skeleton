@@ -49,14 +49,14 @@
 		</div>
 
 		<div class="subreddit-details">
-			<p><%= post.subReddit().escape("name") %></p>
+			<p><%= post.subReddit().escape("name") %></p><br>
 		  <p>
         Moderator: <a href="#/users/<%= post.subReddit().escape("moderator_id")%>">
           <%= post.subReddit().escape("moderator") %>
         </a>
-      </p>
-			<p><%= post.subReddit().escape("title") %></p>
-			<p><%= post.subReddit().escape("description") %></p>
+      </p><br>
+			<p><%= post.subReddit().escape("title") %></p><br>
+			<p><%= post.subReddit().escape("description") %></p><br>
 			<p><%= post.subReddit().escape("sidebar") %></p>
 		</div>
 	</div>

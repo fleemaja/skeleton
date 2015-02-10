@@ -28,12 +28,12 @@
 
 		<% if @subreddit %>
 			<div class="subreddit-details">
-				<p>Name: <%= @subreddit.name %></p>
-			    <p>Moderator: <a href="<%= user_url(User.find(@subreddit.user_id)) %>"><%= User.find(@subreddit.user_id).username %></a></p>
-				<p>Title: <%= @subreddit.title %></p>
-				<p>Description: <%= @subreddit.description %></p>
-				<p>Sidebar: <%= @subreddit.sidebar %></p>
-				<p>Submission text: <%= @subreddit.submission_text %></p>
+				<p>Name: <%= @subreddit.name %></p><br>
+			  <p>Moderator: <a href="<%= user_url(User.find(@subreddit.user_id)) %>"><%= User.find(@subreddit.user_id).username %></a></p><br>
+				<p>Title: <%= @subreddit.title %></p><br>
+				<p>Description: <%= @subreddit.description %></p><br>
+				<p>Sidebar: <%= @subreddit.sidebar %></p><br>
+				<p>Submission text: <%= @subreddit.submission_text %></p><br>
 			</div>
 		<% end %>
 	</div>

@@ -21,19 +21,43 @@
 	</div>
 
 
-	<p><span class="username"><%= User.find(comment.user_id).username %></span> <span class="time-ago"><%= time_ago_in_words(comment.created_at) %></span> ago</p>
+	<p>
+		<span class="username">
+			<%= User.find(comment.user_id).username %>
+		</span>
 
-	<p class="content"><%= comment.content %>
-	<p> <span class="comment-link"><a href="<%= comment_url(comment) %>">permalink</a></span> <span class="reply"><a href="#">reply</a></span> </p>
-	<p><span class="karma"><%= comment.karma %></span> karma
-	 </p>
+	  <span class="time-ago">
+			<%= time_ago_in_words(comment.created_at) %>
+		</span> ago
+	</p>
+
+	<p class="content">
+		<%= comment.content %>
+	  <p>
+			<span class="comment-link">
+				<a href="<%= comment_url(comment) %>">
+					permalink
+				</a>
+			</span>
+		  <span class="reply">
+			  <a href="#">
+				  reply
+			  </a>
+		  </span>
+	  </p>
+	  <p>
+			<span class="karma">
+				<%= comment.karma %>
+			</span> karma
+	  </p>
+
 	<h6>comment on comment</h6>
 	<form action="<%= comment_comments_url(comment) %>" method="POST">
 		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
 		<textarea name="comment[content]"></textarea>
 		<br>
-		
+
 		<button type="button" class="shawnas">Upload a Photo </button>
 
 		<input type="submit" value="save">
