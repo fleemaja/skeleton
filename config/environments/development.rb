@@ -33,18 +33,6 @@ Rails.application.configure do
   config.assets.raise_runtime_errors = true
 
   # Raises error for missing translations
-  # config.action_view.raise_on_missing_translations = true
-  
-  config.paperclip_defaults = {                                   
-    :storage => :s3,                                              
-    :s3_protocol => 'http',                                       
-    :url =>':s3_domain_url',                                      
-    :path => '/:class/:attachment/:id_partition/:style/:filename',
-    :s3_credentials => {                                          
-      :bucket => ENV['DEVBUCKET'], #these values safely stored in application.yml thanks to figaro!                
-      :access_key_id => ENV['AWSACCESSKEYID'],                 
-      :secret_access_key => ENV['AWSSECRETKEY']          
-    }                                                             
-  }                                                               
-  
+  # config.action_view.raise_on_missing_translations = true                                                           
+
 end

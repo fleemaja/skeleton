@@ -17,13 +17,14 @@
 			</div>
 
 			<% end %>
-				
+
 	</div>
 
 
 	<p><span class="username"><%= User.find(comment.user_id).username %></span> <span class="time-ago"><%= time_ago_in_words(comment.created_at) %></span> ago</p>
 
 	<p class="content"><%= comment.content %>
+		<%= filepicker_image_tag comment.filepicker_url, w: 160, h: 160, fit: 'clip' %>
 	<p> <span class="comment-link"><a href="<%= comment_url(comment) %>">permalink</a></span> <span class="reply"><a href="#">reply</a></span> </p>
 	<p><span class="karma"><%= comment.karma %></span> karma
 	 </p>

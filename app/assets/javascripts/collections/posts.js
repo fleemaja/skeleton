@@ -40,3 +40,5 @@ ProjectSkeleton.Collections.Posts = Backbone.Collection.extend({
 	  return post;
   }
 });
+
+var posts = ProjectSkeleton.posts = new ProjectSkeleton.Collections.Posts();

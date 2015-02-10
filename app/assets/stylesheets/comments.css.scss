@@ -48,11 +48,19 @@
 }
 
 .comment .delete {
-	color: white;
+	// color: white;
+	// font-weight: bold;
+	// background: black;
+	// border: 2px solid white;
+	// border-radius: 5px;
+	font-size: 12px;
 	font-weight: bold;
-	background: black;
-	border: 2px solid white;
-	border-radius: 5px;
+	color: #3b5998;
+	// padding: 5px;
+}
+
+.comment .delete:hover{
+	text-decoration: underline;
 }
 
 .comment .upvote:hover {
@@ -91,6 +99,7 @@ span.reply{
 	// color: darkgray;
 	font-weight: bold;
 	color: #3b5998;
+	padding: 5px;
 }
 
 span.reply:hover{

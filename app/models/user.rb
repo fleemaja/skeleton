@@ -20,9 +20,6 @@ class User < ActiveRecord::Base
 
   has_many :notifications, inverse_of: :user, dependent: :destroy
 
-  has_attached_file :avatar, styles: {big: "600x600", small: "50x50"}
-  validates_attachment :avatar, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
-
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
     return nil if user.nil?

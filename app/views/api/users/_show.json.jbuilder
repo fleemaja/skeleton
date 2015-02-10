@@ -1,5 +1,5 @@
 json.(user, :id, :username, :created_at, :post_karma, :comment_karma)
-json.avatar_url user.avatar.url
+
 json.moderated_subreddits user.moderated_subreddits do |subreddit|
 	json.name subreddit.name
 	json.id subreddit.id

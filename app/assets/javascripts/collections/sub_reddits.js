@@ -18,7 +18,9 @@ ProjectSkeleton.Collections.SubReddits = Backbone.Collection.extend({
 			  }
 		  });
 	  }
-    
+
 	  return subReddit;
   }
 });
+
+var subReddits = ProjectSkeleton.subReddits = new ProjectSkeleton.Collections.SubReddits();

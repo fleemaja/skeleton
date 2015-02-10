@@ -23,17 +23,6 @@
 					<br>
 				<% }) %>
 			<% } %>
-
-			<div class="avatar-section">
-				<img src="<%= user.escape("avatar_url") %>" alt="avatar">
-				<form action="#/users/<%= user.id  %>" >
-					<label>upload an avatar!
-						<input type="file" name="user[avatar]" id="user-avatar-input">
-					</label>
-					<input type="submit" value="confirm selection">
-				</form>
-
-			</div>
 		</div>
 	</div>
 </div>

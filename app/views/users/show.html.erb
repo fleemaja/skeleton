@@ -3,18 +3,3 @@
 <% @posts.each do |post| %>
 	<%= render partial: "posts/show_text", locals: { post: post, subreddit: SubReddit.find(post.subreddit_id) } %>
 <% end %>
-
-<div="avatar-section">
-	<% if @user.avatar %>
-		<img src="<%= @user.avatar.url %>" alt="avatar">
-	<% end %>
-
-	<form action="<%= upload_avatar_user_url(@user) %>" method="POST" enctype="multipart/form-data">
-		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-
-		<label>upload an avatar!
-			<input type="file" name="user[avatar]">
-		</label>
-		<input type="submit" value="upload avatar">
-	</form>
-</div>

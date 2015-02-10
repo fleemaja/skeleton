@@ -3,8 +3,6 @@ ProjectSkeleton.Views.UserShow = Backbone.View.extend({
   events: {
     "click .downvote": "downvote",
     "click .upvote": "upvote",
-    "change #user-avatar-input": "fileSelect",
-    "submit form": "submitAvatar"
   },
 
   template: JST['users/show_posts'],
@@ -73,48 +71,5 @@ ProjectSkeleton.Views.UserShow = Backbone.View.extend({
  	  } else {
  		  $("#login-modal").addClass("is-active");
  	  };
-   },
-
-   fileSelect: function(event){
-     var that = this;
-     var imageFile = event.currentTarget.files[0];
-     var reader = new FileReader();
-
-     reader.onloadend = function(){
-       that.model.set("avatar", this.result);
-       that._updatePreview(this.result);
-     }
-
-     if(imageFile){
-       reader.readAsDataURL(imageFile);
-     } else {
-       this._updatePreview("");
-     }
-   },
-
-   _updatePreview: function(imageData){
-     this.$el.find(".avatar-section img").attr("src", imageData);
-   },
-
-  submitAvatar: function(event){
-    var that = this;
-    var formData = $(event.currentTarget).serializeJSON();
-
-    event.preventDefault();
-    this.model.save({
-      success: function(){
-        ProjectSkeleton.users.add(that.model);
-
-          // Remove the image attribute with raw data
-          // from the model after uploading it.
-          delete that.model.attributes.avatar;
-
-          Backbone.history.navigate("/users/" + that.model.id, { trigger: true });
-        },
-
-	  	error: function(response){
-			  console.log(response);
-	    }
-    })
   }
 });

@@ -41,3 +41,5 @@ ProjectSkeleton.Collections.Comments = Backbone.Collection.extend({
 	  return comment;
   }
 });
+
+var comments = ProjectSkeleton.comments = new ProjectSkeleton.Collections.Comments();

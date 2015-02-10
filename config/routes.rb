@@ -2,19 +2,11 @@ Rails.application.routes.draw do
 
   root to: "pages#root"
 
-  resources :users, only: [:new, :create, :show, :update] do
-    member do
-      post "upload_avatar", to: "users#upload_avatar"
-    end
-  end
+  resources :users, only: [:new, :create, :show]
 
   resources :subreddits, only: [:new, :create, :show, :update]
 
   resource :session, only: [:new, :create, :destroy]
-
-  # get "auth/google_oauth2/callback", to: "api/sessions#handle_oauth"
-  # get "oauth2callback", to: "api/sessions#handle_oauth"
-  #
 
 
   namespace :api do
@@ -34,22 +26,12 @@ Rails.application.routes.draw do
 
     get "search_posts", to: "posts#search"
 
-    resources :users, only: [:new, :create, :show, :update] do
-      member do
-        post "upload_avatar", to: "users#upload_avatar"
-      end
-    end
+    resources :users, only: [:new, :create, :show]
 
     resource :session, only: [:new, :create, :destroy]
 
     resources :subscriptions, only: [:create, :destroy, :show, :index]
 
     resources :notifications, only: [:index, :show, :update]
-
-
   end
-
-
-
-
 end

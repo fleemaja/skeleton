@@ -79,18 +79,6 @@ Rails.application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   # Do not dump schema after migrations.
-  config.active_record.dump_schema_after_migration = false
-  
-  config.paperclip_defaults = {                                   
-    :storage => :s3,                                              
-    :s3_protocol => 'http',                                       
-    :url =>':s3_domain_url',                                      
-    :path => '/:class/:attachment/:id_partition/:style/:filename',
-    :s3_credentials => {                                          
-      :bucket => ENV['PRODBUCKET'], #these values safely stored in application.yml thanks to figaro!                
-      :access_key_id => ENV['AWSACCESSKEYID'],                 
-      :secret_access_key => ENV['AWSSECRETKEY']          
-    }                                                             
-  }                                                               
-  
+  config.active_record.dump_schema_after_migration = false                                                          
+
 end

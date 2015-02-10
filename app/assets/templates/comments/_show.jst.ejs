@@ -3,21 +3,16 @@
 	<div class="vote-buttons">
 		<div class="upvote" comment-id="<%= comment.id %>">
 			<a href="#/comments/<%= comment.id %>/upvote" rel="nofollow">
-			  <img src="skeleFBlike.png" height="32" width="32">
+			  <img src="assets/skeleFBlike.png" height="32" width="32">
 			</a>
 		</div>
 
 		<div class="downvote" comment-id="<%= comment.id %>">
 			<a href="#/comments/<%= comment.id %>/downvote" rel="nofollow">
-			  <img src="skeleFBlike.png" height="32" width="32">
+			  <img src="assets/skeleFBdislike.png" height="32" width="32">
 			</a>
 
 		</div>
-			<% if (comment.escape("user_id") == ProjectSkeleton.currentUserId ) { %>
-				<div class="delete" comment-id="<%= comment.id %>">
-					<a href="#/comments/<%= comment.id %>" rel="nofollow">delete</a>
-				</div>
-			<% } %>
 	</div>
 
 	<p>
@@ -50,6 +45,14 @@
 				  reply
 				</a>
 			</span>
+
+			<% if (comment.escape("user_id") == ProjectSkeleton.currentUserId ) { %>
+				<span class="delete" comment-id="<%= comment.id %>">
+					<a href="#/comments/<%= comment.id %>" rel="nofollow">
+					  delete
+					</a>
+				</div>
+			<% } %>
 		</p>
 	</p>
 </div>

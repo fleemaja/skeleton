@@ -22,3 +22,5 @@ ProjectSkeleton.Collections.Subscriptions = Backbone.Collection.extend({
 	  return subscription;
   }
 });
+
+var subscriptions = ProjectSkeleton.subscriptions = new ProjectSkeleton.Collections.Subscriptions();

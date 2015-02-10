@@ -19,9 +19,6 @@ class Api::UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if (@user.update(user_params))
-       if params[:avatar]
-         @user.update_attribute(:avatar, params[:avatar])
-       end
       render "show"
     else
       render json: @user.errors.full_messages, status: :unprocessable_entity
@@ -45,17 +42,9 @@ class Api::UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def upload_avatar
-    @user = User.find(params[:id])
-    if params[:user][:avatar]
-      @user.update_attribute(:avatar, params[:user][:avatar])
-    end
-    redirect_to :back
-  end
-
   private
 
   def user_params
-    params.require(:user).permit(:username, :password, :password_confirmation, :avatar)
+    params.require(:user).permit(:username, :password, :password_confirmation)
   end
 end

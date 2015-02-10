@@ -25,3 +25,5 @@ ProjectSkeleton.Collections.Users = Backbone.Collection.extend({
 	  return user;
   }
 });
+
+var users = ProjectSkeleton.users = new ProjectSkeleton.Collections.Users();

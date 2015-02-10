@@ -13,11 +13,6 @@
 			</a>
 		</div>
 
-		<% if (comment.escape("user_id") == ProjectSkeleton.currentUserId ) { %>
-			<div class="delete" comment-id="<%= comment.id %>">
-			  <a href="#/comments/<%= comment.id %>" rel="nofollow">delete</a>
-			</div>
-		<% } %>
 	</div>
 
 	<p>
@@ -47,6 +42,12 @@
 			<span class="reply">
 			  <a href="#" data-id="<%= comment.id %>">reply</a>
 			</span>
+
+			<% if (comment.escape("user_id") == ProjectSkeleton.currentUserId ) { %>
+				<span class="delete" comment-id="<%= comment.id %>">
+					<a href="#/comments/<%= comment.id %>" rel="nofollow">delete</a>
+				</span>
+			<% } %>
 		</p>
 	</p>
 

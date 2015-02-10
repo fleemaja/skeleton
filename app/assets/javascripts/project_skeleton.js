@@ -19,7 +19,6 @@ window.ProjectSkeleton = {
   		$("#compose-modal").removeClass("is-active");
   		$("#new-subreddit-modal").removeClass("is-active");
   	  $("#delete-modal").removeClass("is-active");
-    	$("#preferences-modal").removeClass("is-active");
 	  });
 
 
@@ -46,13 +45,6 @@ window.ProjectSkeleton = {
 	    if(event.target.id == this.id){
 	      event.preventDefault();
 	      $("#delete-modal").removeClass("is-active");
-	    }
-	  })
-
-	  $("#preferences-modal").on("click", function(event){
-	    if(event.target.id == this.id){
-	      event.preventDefault();
-	      $("#preferences-modal").removeClass("is-active");
 	    }
 	  })
 
@@ -95,22 +87,6 @@ window.ProjectSkeleton = {
   		var str = $(event.currentTarget).html()
   		input.val(str)
 	  })
-
-	  $("#preferences-link").on("click", function(event){
-		  event.preventDefault();
-		  $("#preferences-modal").addClass("is-active");
-  	  $("input[type=password]").val("");
-		  var username = $(".user-info > li > a:first").html()
-		  $(".edit-user-form input[type=text]:first").val(username)
-	  })
-
-	  var subReddits = ProjectSkeleton.subReddits = new ProjectSkeleton.Collections.SubReddits();
-	  var users = ProjectSkeleton.users = new ProjectSkeleton.Collections.Users();
-	  var posts = ProjectSkeleton.posts = new ProjectSkeleton.Collections.Posts();
-	  var comments = ProjectSkeleton.comments = new ProjectSkeleton.Collections.Comments();
-	  var frontPosts = ProjectSkeleton.frontPosts = new ProjectSkeleton.Collections.FrontPosts();
-	  var subscriptions = ProjectSkeleton.subscriptions = new ProjectSkeleton.Collections.Subscriptions();
-	  var notifications = ProjectSkeleton.notifications = new ProjectSkeleton.Collections.Notifications();
 
 	  ProjectSkeleton.subRedditsRouter = new ProjectSkeleton.Routers.SubReddits(subReddits, $rootEl);
 	  new ProjectSkeleton.Routers.Users(users, $rootEl);

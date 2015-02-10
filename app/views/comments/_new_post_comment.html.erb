@@ -1,12 +1,19 @@
 <div class="new-comment">
 
 <h5>comment on post</h5>
-<form action="<%= post_comments_url(post) %>" method="POST">
-	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-	
-	<textarea name="comment[content]"></textarea>
-	<br>
-	<input type="submit" value="save">
-</form>
+	<form action="<%= post_comments_url(post) %>" method="POST">
+		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
+		<textarea name="comment[content]"></textarea>
+		<br>
+
+		<%= form_for comment do |f| %>
+			<div>
+				<%= f.label :filepicker_url, "Upload Your Avatar:" %>
+				<%= f.filepicker_field :filepicker_url %> <!-- User#filepicker_url is a regular string column -->
+			</div>
+
+			<%= f.submit %>
+	  <% end %>
+	</form>
 </div>

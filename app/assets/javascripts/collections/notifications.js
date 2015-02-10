@@ -29,3 +29,5 @@ ProjectSkeleton.Collections.Notifications = Backbone.Collection.extend({
 	  return notification;
   }
 });
+
+var notifications = ProjectSkeleton.notifications = new ProjectSkeleton.Collections.Notifications();

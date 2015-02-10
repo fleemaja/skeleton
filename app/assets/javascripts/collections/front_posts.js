@@ -36,7 +36,9 @@ ProjectSkeleton.Collections.FrontPosts = Backbone.Collection.extend({
 			  }
 		  });
 	  }
-    
+
 	  return post;
   }
 });
+
+var frontPosts = ProjectSkeleton.frontPosts = new ProjectSkeleton.Collections.FrontPosts();

@@ -17,6 +17,8 @@ gem 'coffee-rails', '~> 4.0.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
+gem 'filepicker-rails'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
@@ -38,7 +40,6 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem 'rails_12factor'
-gem 'paperclip', github: 'thoughtbot/paperclip'
 gem 'aws-sdk'
 gem 'figaro'
 gem 'pusher'
@@ -46,7 +47,6 @@ gem 'pusher'
 gem 'backbone-on-rails'
 
 gem 'pg_search'
-gem 'omniauth-google-oauth2'
 gem 'kaminari'
 
 group :development do
@@ -55,4 +55,3 @@ group :development do
 end
 
 gem 'bcrypt'
-
