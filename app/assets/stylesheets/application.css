@@ -204,7 +204,7 @@ ul.user-info > li:hover {
 }
 
 ul.user-info > li a {
-	text-decoration: underline;
+	/*text-decoration: underline;*/
 }
 
 footer {
