@@ -13,15 +13,22 @@
 
 .comment span.username {
 	padding: 2px 5px;
+	font-size: 18px;
+	color: #3b5998;
 }
 
-// .comment span.karma {
-// 	font-size: 12px;
-// }
-//
-// .comment span.time-ago{
-// 	font-size: 12px;
-// }
+.comment span.username:hover{
+	text-decoration: underline;
+}
+
+.comment span.karma {
+	font-size: 12px;
+	padding: 5px;
+}
+
+.comment span.time-ago{
+	font-size: 12px;
+}
 
 
 .comment .upvote {
@@ -77,33 +84,50 @@
 	padding: 25px;
 	display: inline-block;
 	background: #f0f0f0;
+	border-radius: 10px;
 }
 
-.permareply {
+span.comment-link {
 	font-size: 12px;
 	// color: darkgray;
 	font-weight: bold;
 	color: #3b5998;
 }
 
+span.comment-link:hover{
+	text-decoration: underline;
+}
+
+span.reply{
+	font-size: 12px;
+	// color: darkgray;
+	font-weight: bold;
+	color: #3b5998;
+}
+
+span.reply:hover{
+	text-decoration: underline;
+}
+
 .comment .child {
 	padding: 0px 0px 0px 50px;
-
 }
 
 .comment textarea {
-
 	height: 100px;
-	width: 400px;
-
+	width: 500px;
 }
 
 /* post show page text areas */
 
-.new-comment textarea {
+.new-comment {
+	margin-left: 20px;
+}
 
+.new-comment textarea {
+  // margin-left: 20px;
 	height: 100px;
-	width: 400px;
+	width: 500px;
 }
 
 .comment input[type="submit"] {

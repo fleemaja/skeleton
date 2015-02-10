@@ -365,7 +365,6 @@ input[type="submit"] {
 	font-weight: bold;
 	cursor: pointer;
 	color: gray;
-
 }
 
 #login-modal section.new-account {
@@ -523,7 +522,7 @@ ul.notifications-dropdown > li > a:hover {
 	font-weight: bold;
 	font-size: 12px;
 	color: white;
-	background: lightblue;
+	background: red;
 	margin-left: 5px;
 }
 
@@ -534,7 +533,7 @@ ul.notifications-dropdown > li > a:hover {
 	font-weight: bold;
 	font-size: 12px;
 	color: white;
-	background: black;
+	background: #3b5998;
 	margin-left: 5px;
 
 

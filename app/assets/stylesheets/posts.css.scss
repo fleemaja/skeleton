@@ -12,15 +12,15 @@
 }
 
 .text-post span.username {
-	color: black;
-	background: lightgray;
-	border: 2px solid white;
-	border-radius: 5px;
-	padding: 2px 5px;
+	color: #3b5998;
+	// background: lightgray;
+	// border: 2px solid white;
+	// border-radius: 5px;
+	// padding: 2px 5px;
 }
 
 .text-post span.username:hover {
-	background: darkgray;
+	text-decoration: underline;
 }
 
 .text-post span.subreddit-name {
@@ -29,7 +29,11 @@
 	border: 2px solid white;
 	border-radius: 5px;
 	padding: 2px 5px;
+	margin-left: 20px;
+}
 
+.text-post span.time-ago{
+	margin-left: 20px;
 }
 
 .text-post span.karma {
@@ -45,20 +49,18 @@
 
 
 .text-post .upvote {
-
-	color: black;
-	background: #f0f0f0;
-	border: 2px solid black;
-	border-radius: 5px;
-
+	// color: black;
+	// background: #f0f0f0;
+	// border: 2px solid black;
+	// border-radius: 5px;
 }
 
 .text-post .downvote {
 
-	color: black;
-	background: lightblue;
-	border: 2px solid black;
-	border-radius: 5px;
+	// color: black;
+	// background: lightblue;
+	// border: 2px solid black;
+	// border-radius: 5px;
 
 }
 
@@ -72,39 +74,37 @@
 }
 
 .text-post .upvote:hover {
-
 	background: darkgray;
-	color: white;
-
+	// color: white;
 }
 
 .text-post .downvote:hover {
-	background: darkblue;
-	color: white;
+	background: darkgray;
+	// color: white;
 }
 
 .text-post > .vote-buttons {
 	float: left;
-
+	margin-left: 20px;
 }
+
 .text-post .text {
 	padding: 5px;
-	// background: orange;
-	// border: 2px solid black;
-	// border-radius: 10px;
+	background: #f0f0f0;
+	border-radius: 10px;
 	display: inline-block;
-	max-width: 600px;
+	width: 780px;
+	margin-left: 20px;
 }
 
 .text-post .comments {
 	text-decoration: underline;
-	font-weight: bold;
-	margin-left: 90px;
+	margin-left: 20px;
 
 }
 
 .text-post .p-karma {
-	margin-left: 90px;
+	margin-left: 20px;
 }
 
 .post-show {
