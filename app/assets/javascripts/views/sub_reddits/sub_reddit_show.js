@@ -13,6 +13,7 @@ ProjectSkeleton.Views.SubRedditShow = Backbone.View.extend({
 	  "click .new-subreddit": "newSubReddit",
 	  "click .new-text": "newPost",
 	  "submit .search-posts": "searchPosts",
+    "submit .new-subreddit-form": "submitSubReddit",
 	  "click .delete": "showDeleteModal",
 	  "click #cancel-deletion": "cancelDelete"
    },
@@ -135,7 +136,7 @@ ProjectSkeleton.Views.SubRedditShow = Backbone.View.extend({
   },
 
   newSubReddit: function(event){
-  	  event.preventDefault();
+  	event.preventDefault();
 	  if (ProjectSkeleton.currentUserId) {
 		  $("#new-subreddit-modal").addClass("is-active");
 		  $(event.currentTarget).closest('form').find("input[type=text], textarea").val("");
@@ -149,6 +150,7 @@ ProjectSkeleton.Views.SubRedditShow = Backbone.View.extend({
   },
 
   submitSubReddit: function(event){
+    debugger;
 	  event.preventDefault();
 	  $("#new-subreddit-modal").removeClass("is-active");
 	  var form = $(event.currentTarget).closest("form");

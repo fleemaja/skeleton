@@ -265,6 +265,7 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
 
   submitSubReddit: function(event){
 	  event.preventDefault();
+    debugger;
 	  $("#new-subreddit-modal").removeClass("is-active");
 
 	  var form = $(event.currentTarget).closest("form");
