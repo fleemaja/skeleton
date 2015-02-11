@@ -28,6 +28,8 @@ ProjectSkeleton.Views.UserComments = Backbone.View.extend({
 
   downvote: function(event){
   	event.preventDefault();
+
+
 	  var that = this;
 	  if (ProjectSkeleton.currentUserId) {
 		var id = $(event.currentTarget).attr("comment-id")
@@ -37,6 +39,7 @@ ProjectSkeleton.Views.UserComments = Backbone.View.extend({
 			    data: { "comment_id": id }
 			  }).done(function(data){
 				  that.updateCommentKarma(data, id);
+          $(event.currentTarget).toggleClass("orange");
 			  })
 	  } else {
       $("#login-modal").addClass("is-active");
@@ -45,6 +48,7 @@ ProjectSkeleton.Views.UserComments = Backbone.View.extend({
 
   upvote: function(event){
   	event.preventDefault();
+
 	  var that = this;
 	  if (ProjectSkeleton.currentUserId) {
 		var id = $(event.currentTarget).attr("comment-id")
@@ -54,6 +58,7 @@ ProjectSkeleton.Views.UserComments = Backbone.View.extend({
 			    data: { "comment_id": id }
 			  }).done(function(data){
 				  that.updateCommentKarma(data, id);
+          $(event.currentTarget).toggleClass("orange");
 			  })
 	  } else {
 	  	$("#login-modal").addClass("is-active");

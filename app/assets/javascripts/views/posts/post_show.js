@@ -32,7 +32,6 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
       $(event.currentTarget).removeClass("shawnas");
       $(event.currentTarget).addClass("shawnas-disabled");
       $(event.currentTarget).html("Photo successfully uploaded!")
-      console.log(event.currentTarget);
       that._lastFile = Blob.url;
     }, function (FPError) {
 
@@ -82,7 +81,6 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
 
   submit: function(event) {
 	  event.preventDefault();
-    console.log(event.currentTarget)
 	  var that = this;
 	  var params = $("form.post-comment").serializeJSON();
 	  var comment = new ProjectSkeleton.Models.Comment(params["comment"]);
@@ -96,7 +94,6 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
 
   submitComment: function(event) {
 	  event.preventDefault();
-    console.log($(event.currentTarget).value)
 	  var that = this;
 	  var params = $(event.currentTarget).closest("form").serializeJSON();
 	  var comment = new ProjectSkeleton.Models.Comment(params["comment"]);
@@ -190,6 +187,8 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
 
   downvote: function(event){
   	event.preventDefault();
+    $(event.currentTarget).toggleClass("orange");
+
 	  var that = this;
 	  if (ProjectSkeleton.currentUserId) {
 		  var id = $(event.currentTarget).attr("post-id")
@@ -221,8 +220,9 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
 
   upvote: function(event){
     event.preventDefault();
+    $(event.currentTarget).toggleClass("orange");
+
 	  var that = this;
-    debugger;
 	  if (ProjectSkeleton.currentUserId) {
 		  var id = $(event.currentTarget).attr("post-id")
   		  if (id){

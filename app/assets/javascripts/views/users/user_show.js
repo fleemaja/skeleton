@@ -47,6 +47,7 @@ ProjectSkeleton.Views.UserShow = Backbone.View.extend({
    			    data: { "post_id": id}
    			  }).done(function(data){
  				    that.updatePostKarma(data, id);
+            $(event.currentTarget).toggleClass("orange");
    			  });
    		  }
  	  } else {
@@ -66,6 +67,7 @@ ProjectSkeleton.Views.UserShow = Backbone.View.extend({
    			    data: { "post_id": id }
    			  }).done(function(data){
  				    that.updatePostKarma(data, id);
+            // $(event.currentTarget).toggleClass("orange");
    			  });
    		  }
  	  } else {
