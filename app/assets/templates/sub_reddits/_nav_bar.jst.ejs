@@ -1,5 +1,9 @@
  <div class="subreddit-elements clearfix">
-	<h3><%= subReddit.escape("name") %></h3>
+	<h3>
+    <a href="#/subreddits/<%= subReddit.id %>">
+      <%= subReddit.escape("name") %>
+    </a>
+  </h3>
 
 	<div class="subreddit-nav-bar">
 		<ul>

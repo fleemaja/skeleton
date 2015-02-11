@@ -8,6 +8,11 @@
 	position: relative;
 }
 
+.subreddit-title:hover {
+	background-color: #3b5998;
+	color: white;
+}
+
 .subreddit-elements > h3 {
 	display: block;
 	float: left;
@@ -20,12 +25,12 @@
 }
 
 .subreddit-nav-bar {
-	border-right: 2px solid #f0f0f0;
+	border-right: 3px solid #f0f0f0;
 }
 
 .subreddit-nav-bar > ul > li {
 	float: left;
-	border-left: 2px solid #f0f0f0;
+	border-left: 3px solid #f0f0f0;
 }
 
 .subreddit-nav-bar > ul > li > a {

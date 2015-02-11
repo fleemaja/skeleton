@@ -1,21 +1,23 @@
 <div class="subreddit-elements clearfix">
- <h3>
-   <%= post.subReddit().escape("name") %>
- </h3>
+  <h3 class="subreddit-title">
+    <a href="#/subreddits/<%= post.subReddit().id %>">
+      <%= post.subReddit().escape("name") %>
+    </a>
+  </h3>
 
- <div class="subreddit-nav-bar">
-   <ul>
-	   <li>
-       <a class="hot" href="#/posts/" + "<%= post.id %>">
+  <div class="subreddit-nav-bar">
+    <ul>
+	    <li>
+        <a class="hot" href="#/posts/" + "<%= post.id %>">
          hot
-       </a>
-     </li>
+        </a>
+      </li>
 
-		 <li>
-       <a class="new" href="#/posts/" + "<%= post.id %>">
-         new
-       </a>
-     </li>
+		  <li>
+        <a class="new" href="#/posts/" + "<%= post.id %>">
+          new
+        </a>
+      </li>
 
 		 <li>
        <a class="controversial" href="#/posts/" + "<%= post.id %>">

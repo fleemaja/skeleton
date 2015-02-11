@@ -29,6 +29,7 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
   pick: function () {
     var that = this;
     filepicker.pick({}, function (Blob) {
+      console.log(Blob)
       that._lastFile = Blob.url;
     }, function (FPError) {
 
@@ -81,7 +82,7 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
 	  var that = this;
 	  var params = $("form.post-comment").serializeJSON();
 	  var comment = new ProjectSkeleton.Models.Comment(params["comment"]);
-	  comment.save({ filepicker_url: this._lastFile}, {
+    comment.save({ filepicker_url: this._lastFile}, {
 		  success: function(){
 		    that.model.comments().add(comment);
         that._lastFile = "";
@@ -217,6 +218,7 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
   upvote: function(event){
     event.preventDefault();
 	  var that = this;
+    debugger;
 	  if (ProjectSkeleton.currentUserId) {
 		  var id = $(event.currentTarget).attr("post-id")
   		  if (id){

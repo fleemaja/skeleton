@@ -14,17 +14,19 @@
 			</a>
 
 		</div>
-		<% if ( post.escape("poster_id") == ProjectSkeleton.currentUserId ) { %>
-				<div class="delete" post-id="<%= post.id %>">
-					<a href="#/posts/<%= post.id %>" rel="nofollow">delete</a>
-				</div>
-
-		<% } %>
 	</div>
 
 	<p>
-		<a href="#/posts/<%= post.id %>"><%= post.escape("title") %>
-		</a>
+		<span class="post-title">
+			<a href="#/posts/<%= post.id %>">
+				<%= post.escape("title") %>
+			</a><br>
+		</span>
+
+		<span class="karma">
+			<%= post.escape("karma") %> points
+		</span>
+
 		submitted by <a href="#/users/<%= post.escape("poster_id") %>">
 
 			<span class="username">
@@ -42,16 +44,9 @@
 		</span>
 	</p>
 
-	<p class="text">
+	<!-- <p class="text">
 		<%= post.escape("text") %>
-	</p>
-
-	<p class="p-karma">
-		<span class="karma">
-			<%= post.escape("karma") %>
-		</span>
-		 karma
-	</p>
+	</p> -->
 
 	<div class="comments">
 		<a href="#/posts/<%= post.id %>">
@@ -60,5 +55,11 @@
 			</span>
 			comment(s)
 		</a>
-	</div>
+	</div><br><br>
+
+	<% if ( post.escape("poster_id") == ProjectSkeleton.currentUserId ) { %>
+		<div class="deletePost" post-id="<%= post.id %>">
+			<a href="#/posts/<%= post.id %>" rel="nofollow">delete post</a>
+		</div>
+	<% } %>
 </div>

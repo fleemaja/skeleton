@@ -83,7 +83,7 @@ button, input[type="submit"], input[type="file"], input[type="file"]::-webkit-fi
 nav.top {
 	background: white;
 	white-space: nowrap;
-	border-bottom: 1px solid #3b5998;
+	border-bottom: 1px solid #f0f0f0;
 }
 
 .subreddit-details > .avatar-section > img {
@@ -101,7 +101,7 @@ nav.top > ul {
 
 nav.top > ul > .triangle {
 	float: left;
-	border-right: 1px solid #3b5998;
+	border-right: 3px solid #f0f0f0;
 }
 
 .triangle > a {
@@ -135,7 +135,7 @@ nav.top > ul > .triangle {
 }
 
 .triangle .dropdown-subreddits > li:hover {
-	background: darkgray;
+	background: #3b5998;
 	color: white;
 }
 
@@ -155,7 +155,7 @@ nav.top > ul > .subreddits-link {
 	top: 0;
 	right: 0;
 	z-index: 2;
-	border-left: 1px solid #3b5998;
+	border-left: 3px solid #f0f0f0;
 }
 
 .groups > ul, .random-subreddits > ul {
@@ -178,7 +178,7 @@ nav.top > ul > .subreddits-link {
 
 .second-row {
 	background: #f0f0f0;
-	border-bottom: 1px black;
+	border-bottom: 1px #f0f0f0;
 	position: relative;
 	height: 110px;
 }
@@ -192,6 +192,26 @@ a.reddit-main {
 
 .loginorout > ul.user-info {
 	float: right;
+}
+
+.deletePost {
+	margin-left: 20px;
+	color: #3b5998;
+}
+
+.deletePost:hover {
+	text-decoration: underline;
+}
+
+.about-ps {
+	font-family: helvetica;
+	margin-left: 20px;
+	background: #f0f0f0;
+	width: 70%;
+	padding: 20px;
+	border-radius: 10px;
+	font-size: 16px;
+	font-weight: 400;
 }
 
 ul.user-info a {
@@ -517,17 +537,6 @@ ul.notifications-dropdown > li > a:hover {
 	font-weight: bold;
 	font-size: 12px;
 	color: white;
-	background: red;
-	margin-left: 5px;
-}
-
-.notifications-num-black {
-	display: inline-block;
-	padding: 2px 5px;
-	border-radius: 10px;
-	font-weight: bold;
-	font-size: 12px;
-	color: white;
-	background: #3b5998;
+	background: orange;
 	margin-left: 5px;
 }

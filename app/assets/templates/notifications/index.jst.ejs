@@ -12,7 +12,7 @@
 	  notifications
 	</a>
 
-	<span class="notifications-num-black">
+	<span class="notifications-num">
 	  <%= 0 %>
 	</span>
 <% } %>
@@ -23,6 +23,6 @@
 		  <a class="link-to-content" data-id="<%= notification.id %>" href="<%= notification.escape("url") %>">
 			  <%= notification.escape("text") %>
 			</a>
-		</li>		
+		</li>
 	<% }) %>
 </ul>
