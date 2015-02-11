@@ -26,10 +26,13 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
     "click .shawnas": "pick"
   },
 
-  pick: function () {
+  pick: function (event) {
     var that = this;
     filepicker.pick({}, function (Blob) {
-      // console.log(Blob)
+      $(event.currentTarget).removeClass("shawnas");
+      $(event.currentTarget).addClass("shawnas-disabled");
+      $(event.currentTarget).html("Photo successfully uploaded!")
+      console.log(event.currentTarget);
       that._lastFile = Blob.url;
     }, function (FPError) {
 
@@ -52,7 +55,7 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
   updatePostKarma: function(karma){
 	  var currentKarma = parseInt($(".post .karma").html());
 	  currentKarma += parseInt(karma);
-	  $(".post .karma").html(currentKarma);
+	  $(".post .karma").html(currentKarma + " points");
 	  if (this.model.get("poster_id") === ProjectSkeleton.currentUserId) {
 		  this.updateCurrentUserKarma(karma)
 	  }
@@ -74,11 +77,12 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
 	  var str = "div[comment-id=" + comment_id + "] > p .karma";
 	  var currentKarma = parseInt($(str).html());
 	  currentKarma += parseInt(karma);
-	  $(str).html(currentKarma);
+	  $(str).html(currentKarma + " points");
   },
 
   submit: function(event) {
 	  event.preventDefault();
+    console.log(event.currentTarget)
 	  var that = this;
 	  var params = $("form.post-comment").serializeJSON();
 	  var comment = new ProjectSkeleton.Models.Comment(params["comment"]);
@@ -92,6 +96,7 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
 
   submitComment: function(event) {
 	  event.preventDefault();
+    console.log($(event.currentTarget).value)
 	  var that = this;
 	  var params = $(event.currentTarget).closest("form").serializeJSON();
 	  var comment = new ProjectSkeleton.Models.Comment(params["comment"]);
