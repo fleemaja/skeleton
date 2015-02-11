@@ -1,23 +1,30 @@
 <form class="new-text-form" >
-	<label><b>text form</b></label>
 
 	<!-- <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>"> -->
 	<label>
-		<p>title</p>
+		<p>Title</p>
 		<textarea name="post[title]"></textarea>
 	</label>
 
 	<label>
-		<p>text</p>
+		<p>Text</p>
 		<textarea name="post[text]"></textarea>
 	</label>
 
 	<br><br>
 
-	<label>
-		choose a sub
-		<input type="text" name="post[subreddit]" id="text-post-subreddit-input">
-	<label>
+  <label>
+	  <p>Sub</p>
+		<select name="post[subreddit]">
+			<% if signed_in? %>
+			  <% current_user.subscriptions().each do |sub| %>
+				  <option value="<%= SubReddit.find(sub.subreddit_id).name %>">
+					  <%= SubReddit.find(sub.subreddit_id).name %>
+				  <option>
+			  <% end %>
+			<% end %>
+		</select>
+	</label>
 
 	<br><br>
 

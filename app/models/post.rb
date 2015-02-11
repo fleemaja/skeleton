@@ -37,6 +37,8 @@ class Post < ActiveRecord::Base
     count
   end
 
+  # reddit's ranking algoritms
+  
   def hotness
     s = self.karma
     order = Math.log10([s, 1].max)

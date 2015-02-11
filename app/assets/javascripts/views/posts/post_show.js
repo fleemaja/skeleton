@@ -29,7 +29,7 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
   pick: function () {
     var that = this;
     filepicker.pick({}, function (Blob) {
-      console.log(Blob)
+      // console.log(Blob)
       that._lastFile = Blob.url;
     }, function (FPError) {
 
@@ -107,7 +107,6 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
 		  }
 	  });
   },
-
 
   showForm: function(event){
 	  event.preventDefault();

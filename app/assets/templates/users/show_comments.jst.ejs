@@ -2,7 +2,70 @@
 <div class="user-profile">
 	<div class="user-comments">
 		<% user.comments().forEach(function(comment){  %>
-			<%= commentTemplate({ comment: comment }) %>
+
+			<div class="comment"  comment-id="<%= comment.id %>">
+
+				<div class="vote-buttons">
+					<div class="upvote" comment-id="<%= comment.id %>">
+						<a href="#/comments/<%= comment.id %>/upvote" rel="nofollow">
+							<img src="assets/skeleFBlike.png" height="32" width="32">
+						</a>
+					</div>
+
+					<div class="downvote" comment-id="<%= comment.id %>">
+						<a href="#/comments/<%= comment.id %>/downvote" rel="nofollow">
+							<img src="assets/skeleFBdislike.png" height="32" width="32">
+						</a>
+					</div>
+				</div>
+
+				<p>
+					<span class="username">
+						<a href="#/users/<%= comment.escape("user_id") %>">
+							<%= comment.escape("author_username") %>
+						</a>
+					</span>
+
+					<span class="karma">
+						<%= comment.escape("karma") %> points
+					</span>
+
+					<span class="time-ago">
+						<%= jQuery.timeago(comment.escape("created_at")) %>
+					</span>
+				</p>
+
+				<p class="content">
+					<%= comment.escape("content") %>
+
+					<% if (comment.get('filepicker_url')) { %>
+						<br><br>
+					<% } %>
+
+					<img src="<%= comment.get('filepicker_url') %>" class="filepicker">
+					<p>
+						<span class="comment-link">
+							<a href="#/comments/<%= comment.id %>">
+								permalink
+							</a>
+						</span>
+
+						<span class="reply">
+							<a href="#/comments/<%= comment.id %>" data-id="<%= comment.id %>">
+								reply
+							</a>
+						</span>
+
+						<% if (comment.escape("user_id") == ProjectSkeleton.currentUserId ) { %>
+							<span class="delete" comment-id="<%= comment.id %>">
+								<a href="#/comments/<%= comment.id %>" rel="nofollow">
+									delete
+								</a>
+							</div>
+						<% } %>
+					</p>
+				</p>
+			</div>
 		<% }); %>
 	</div>
 </div>
