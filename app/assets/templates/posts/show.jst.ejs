@@ -3,22 +3,25 @@
 <div class="post-show">
 	<%= textTemplateFn({ post: post }) %>
 
-	<div class="new-comment">
+	<% if (ProjectSkeleton.currentUserId) { %>
 
-		<h5>comment on post</h5>
-		<form class="post-comment">
-			<input type="hidden" name="comment[post_id]" value="<%= post.id %>">
-			<textarea name="comment[content]"></textarea>
-			<br>
-			<button type="button" class="shawnas">Upload a Photo </button>
-			<!-- <label id="filepicker_url">
-				Upload A Picture:
-			<input type="filepicker_field" name="comment[filepicker_url]" id="filepicker_url">
-			<br> -->
+		<div class="new-comment">
+			<h5>comment on post</h5>
+			<form class="post-comment">
+				<input type="hidden" name="comment[post_id]" value="<%= post.id %>">
+				<textarea name="comment[content]"></textarea>
+				<br>
+				<button type="button" class="shawnas">Upload a Photo </button>
+				<!-- <label id="filepicker_url">
+					Upload A Picture:
+				<input type="filepicker_field" name="comment[filepicker_url]" id="filepicker_url">
+				<br> -->
 
-			<input type="submit" value="save">
-		</form>
-	</div>
+				<input type="submit" value="save">
+			</form>
+		</div>
+
+	<% } %>
 
 
 	<div id="link-post-comments">

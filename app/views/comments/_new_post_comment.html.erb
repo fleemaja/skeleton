@@ -1,14 +1,18 @@
 <div class="new-comment">
 
-<h5>comment on post</h5>
-	<form action="<%= post_comments_url(post) %>" method="POST">
-		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+<% if signed_in? %>
 
-		<textarea name="comment[content]"></textarea>
-		<br>
+	<h5>comment on post</h5>
+		<form action="<%= post_comments_url(post) %>" method="POST">
+			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
-		<button type="button" class="shawnas">Upload a Photo </button>
+			<textarea name="comment[content]"></textarea>
+			<br>
 
-		<input type="submit" value="save">
-	</form>
-</div>
+			<button type="button" class="shawnas">Upload a Photo </button>
+
+			<input type="submit" value="save">
+		</form>
+	</div>
+
+<% end %>
