@@ -19,7 +19,13 @@ body, header, nav, div, h1, h2, h3, h4, h5, h6, ul, li, span, p {
 	padding: 0;
 	border: 0;
 	vertical-align: normal;
-	font-family: helvetica;
+	font-family: 'Arvo', serif;
+}
+
+.fancy-front {
+	color: #3b5998;
+
+	margin-left: 20px;
 }
 
 .shawnas{
@@ -45,7 +51,7 @@ body, header, nav, div, h1, h2, h3, h4, h5, h6, ul, li, span, p {
 }
 
 body {
-	font-family: helvetica;
+	font-family: 'Arvo', serif;
 	font-size: 16px;
 	background: #f0f0f0;
 }
@@ -66,7 +72,7 @@ button, input[type="submit"], input[type="file"], input[type="file"]::-webkit-fi
 	border: 0;
 	outline: 0;
 	vertical-align: normal;
-	font-family: helvetica;
+	font-family: 'Arvo', serif;
 	-webkit-appearance: none;
 	background: transparent;
 	color: inherit;
@@ -215,7 +221,7 @@ a.reddit-main {
 }
 
 .about-ps {
-	font-family: helvetica;
+	font-family: 'Arvo', serif;
 	margin-left: 20px;
 	background: #f0f0f0;
 	width: 70%;
