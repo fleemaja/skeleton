@@ -58,7 +58,7 @@
 	</div><br><br>
 
 	<% if ( post.escape("poster_id") == ProjectSkeleton.currentUserId ) { %>
-		<div class="deletePost" post-id="<%= post.id %>">
+		<div class="delete" id="post" post-id="<%= post.id %>">
 			<a href="#/posts/<%= post.id %>" rel="nofollow">delete post</a>
 		</div>
 	<% } %>

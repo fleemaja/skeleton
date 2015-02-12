@@ -39,6 +39,7 @@ body, header, nav, div, h1, h2, h3, h4, h5, h6, ul, li, span, p {
 
 .fancy-words {
 	font-size: 24px;
+	color: #3b5998;
 }
 
 .shawnas{
@@ -228,15 +229,6 @@ a.reddit-main {
 
 .loginorout > ul.user-info {
 	float: right;
-}
-
-.deletePost {
-	margin-left: 20px;
-	color: #3b5998;
-}
-
-.deletePost:hover {
-	text-decoration: underline;
 }
 
 .about-ps {

@@ -9,6 +9,15 @@
 	font-size: 36px;
 }
 
+.post .delete {
+	margin-left: 20px;
+	color: #3b5998;
+}
+
+.post .delete:hover {
+	text-decoration: underline;
+}
+
 .specs {
 	font-size: 24px;
 	margin-left: 20px;
