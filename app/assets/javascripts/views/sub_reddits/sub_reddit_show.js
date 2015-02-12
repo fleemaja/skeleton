@@ -150,7 +150,7 @@ ProjectSkeleton.Views.SubRedditShow = Backbone.View.extend({
   },
 
   submitSubReddit: function(event){
-    debugger;
+
 	  event.preventDefault();
 	  $("#new-subreddit-modal").removeClass("is-active");
 	  var form = $(event.currentTarget).closest("form");
@@ -161,7 +161,9 @@ ProjectSkeleton.Views.SubRedditShow = Backbone.View.extend({
 	  subReddit.save({}, {
 		  success: function(model){
 			  ProjectSkeleton.subReddits.unshift(model);
-		  }
+        Backbone.history.navigate("/subreddits/" + subReddit.get("id"), { trigger: true })
+        window.location.reload(true);
+      }
 	  });
   },
 
@@ -194,6 +196,7 @@ ProjectSkeleton.Views.SubRedditShow = Backbone.View.extend({
 		  success: function(model){
 			  ProjectSkeleton.posts.unshift(post);
 			  that.model.fetch();
+        Backbone.history.navigate("/posts/" + post.get("id"), { trigger: true })
 		  }
 	  });
 

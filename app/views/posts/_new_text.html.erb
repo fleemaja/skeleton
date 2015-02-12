@@ -20,7 +20,7 @@
 			  <% current_user.subscriptions().each do |sub| %>
 				  <option value="<%= SubReddit.find(sub.subreddit_id).name %>">
 					  <%= SubReddit.find(sub.subreddit_id).name %>
-				  <option>
+				  </option>
 			  <% end %>
 			<% end %>
 		</select>

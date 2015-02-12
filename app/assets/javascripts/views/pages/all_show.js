@@ -159,7 +159,9 @@ ProjectSkeleton.Views.AllShow = Backbone.View.extend({
 	  subReddit.save({}, {
 		  success: function(model){
 			  ProjectSkeleton.subReddits.unshift(model);
-		  }
+        Backbone.history.navigate("/subreddits/" + subReddit.get("id"), { trigger: true })
+        window.location.reload(true);
+      }
 	  });
   },
 

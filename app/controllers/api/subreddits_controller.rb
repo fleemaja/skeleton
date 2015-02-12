@@ -10,7 +10,8 @@ class Api::SubredditsController < ApplicationController
     @subreddit = current_user.moderated_subreddits.new(subreddit_params)
 
     if @subreddit.save
-      render json: ["Your subreddit has been created"]
+      current_user.subscriptions.create!(subreddit_id: @subreddit.id)
+      render json: @subreddit
     else
       render json: @subreddit.errors.full_messages
     end

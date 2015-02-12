@@ -29,9 +29,11 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
   pick: function (event) {
     var that = this;
     filepicker.pick({}, function (Blob) {
+
       $(event.currentTarget).removeClass("shawnas");
       $(event.currentTarget).addClass("shawnas-disabled");
       $(event.currentTarget).html("Photo successfully uploaded!")
+
       that._lastFile = Blob.url;
     }, function (FPError) {
 
@@ -265,7 +267,6 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
 
   submitSubReddit: function(event){
 	  event.preventDefault();
-    debugger;
 	  $("#new-subreddit-modal").removeClass("is-active");
 
 	  var form = $(event.currentTarget).closest("form");
@@ -278,7 +279,11 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
 	  subReddit.save({}, {
 		  success: function(model){
 			  ProjectSkeleton.subReddits.unshift(model);
-		  }
+        Backbone.history.navigate("/subreddits/" + subReddit.get("id"), { trigger: true })
+        window.location.reload(true);
+      },
+      error: function () {
+      }
 	  });
   },
 

@@ -5,6 +5,11 @@ json.moderated_subreddits user.moderated_subreddits do |subreddit|
 	json.id subreddit.id
 end
 
+json.subscriptions user.subscribed_subreddits do |sub|
+	json.name subreddit.name
+	json.id subreddit.id
+end
+
 json.comments user.comments do |comment|
 	json.partial!("api/comments/comment", comment: comment)
 end
