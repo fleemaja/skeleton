@@ -190,7 +190,9 @@ ProjectSkeleton.Views.AllShow = Backbone.View.extend({
 	  var post = new ProjectSkeleton.Models.Post(params);
 	  var that = this;
 	  post.save({}, {
-		  success: function(model){}
+		  success: function(model){
+        Backbone.history.navigate("/posts/" + post.get("id"), { trigger: true })
+      }
 	  });
 
 	  $("a.new").click();

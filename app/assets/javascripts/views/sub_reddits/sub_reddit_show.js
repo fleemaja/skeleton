@@ -195,7 +195,7 @@ ProjectSkeleton.Views.SubRedditShow = Backbone.View.extend({
 	  post.save({}, {
 		  success: function(model){
 			  ProjectSkeleton.posts.unshift(post);
-			  that.model.fetch();
+			  // that.model.fetch();
         Backbone.history.navigate("/posts/" + post.get("id"), { trigger: true })
 		  }
 	  });

@@ -187,13 +187,11 @@ ProjectSkeleton.Views.FrontShow = Backbone.View.extend({
 
 	  var post = new ProjectSkeleton.Models.Post(params);
 	  var that = this;
-    debugger
 	  post.save({}, {
 		  success: function(model){
 			  ProjectSkeleton.posts.unshift(model);
-			  that.collection.fetch();
+			  // that.collection.fetch();
         Backbone.history.navigate("/posts/" + post.get("id"), { trigger: true })
-		    debugger;
       }
 	  });
 

@@ -229,6 +229,7 @@ ProjectSkeleton.Views.CommentShow = Backbone.View.extend({
 	  post.save({}, {
 		  success: function(model){
 			  ProjectSkeleton.posts.unshift(model);
+        Backbone.history.navigate("/posts/" + post.get("id"), { trigger: true })
 		  }
 	  });
   },
