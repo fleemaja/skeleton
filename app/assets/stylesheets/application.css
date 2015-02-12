@@ -29,7 +29,7 @@ body, header, nav, div, h1, h2, h3, h4, h5, h6, ul, li, span, p {
 }
 
 .shawnas{
-	background: #f0f0f0;
+	background: #d8d8d8;
 	padding: 10px 5px;
 	color: black;
 	border: 1px solid #ccc;
@@ -53,7 +53,7 @@ body, header, nav, div, h1, h2, h3, h4, h5, h6, ul, li, span, p {
 body {
 	font-family: 'Arvo', serif;
 	font-size: 16px;
-	background: #f0f0f0;
+	background: #d8d8d8;
 }
 
 a {
@@ -100,7 +100,7 @@ button, input[type="submit"], input[type="file"], input[type="file"]::-webkit-fi
 nav.top {
 	background: white;
 	white-space: nowrap;
-	border-bottom: 1px solid #f0f0f0;
+	border-bottom: 1px solid #d8d8d8;
 }
 
 .subreddit-details > .avatar-section > img {
@@ -118,7 +118,7 @@ nav.top > ul {
 
 nav.top > ul > .triangle {
 	float: left;
-	border-right: 3px solid #f0f0f0;
+	border-right: 3px solid #d8d8d8;
 }
 
 .triangle > a {
@@ -134,7 +134,7 @@ nav.top > ul > .triangle {
 .triangle .dropdown-subreddits {
 	display: none;
 	position: absolute;
-	background: #f0f0f0;
+	background: #d8d8d8;
 	border-top: 1px solid black;
 	border-right: 1px solid black;
 	z-index: 4;
@@ -172,7 +172,7 @@ nav.top > ul > .subreddits-link {
 	top: 0;
 	right: 0;
 	z-index: 2;
-	border-left: 3px solid #f0f0f0;
+	border-left: 3px solid #d8d8d8;
 }
 
 .groups > ul, .random-subreddits > ul {
@@ -181,7 +181,7 @@ nav.top > ul > .subreddits-link {
 
 .groups > ul > li, .random-subreddits > ul > li {
 	float: left;
-	border-right: 2px solid #f0f0f0;
+	border-right: 2px solid #d8d8d8;
 }
 
 .groups > ul > li > a, .random-subreddits > ul > li > a {
@@ -194,8 +194,8 @@ nav.top > ul > .subreddits-link {
 }
 
 .second-row {
-	background: #f0f0f0;
-	border-bottom: 1px #f0f0f0;
+	background: #d8d8d8;
+	border-bottom: 1px #d8d8d8;
 	position: relative;
 	height: 110px;
 }
@@ -223,7 +223,7 @@ a.reddit-main {
 .about-ps {
 	font-family: 'Arvo', serif;
 	margin-left: 20px;
-	background: #f0f0f0;
+	background: #d8d8d8;
 	width: 70%;
 	padding: 20px;
 	border-radius: 10px;
@@ -256,8 +256,8 @@ ul.user-info > li a {
 }
 
 footer.clearfix {
-	background-color: #f0f0f0;
-	border-top: 1px solid #f0f0f0;
+	background-color: #d8d8d8;
+	border-top: 1px solid #d8d8d8;
 	height: 75px;
 	display: block;
 	width: 100%;
@@ -286,7 +286,7 @@ footer > .info a {
 }*/
 
 .button_to input[type="submit"], .subscribe-button {
-	background: #f0f0f0;
+	background: #d8d8d8;
 	padding: 10px 5px;
 	color: black;
 	border: 1px solid #ccc;
@@ -335,7 +335,7 @@ footer > .info a {
 }
 
 input[type="submit"] {
-	background: #f0f0f0;
+	background: #d8d8d8;
 	padding: 10px 5px;
 	width: 100px;
 	color: black;
@@ -464,7 +464,7 @@ input[type="file"]::-webkit-file-upload-button {
 	size: 8px;
 	padding: 5px 10px;
 	border: 1px solid black;
-	background: #f0f0f0;
+	background: #d8d8d8;
 }
 
 input[type="file"] {
@@ -513,7 +513,7 @@ input[type="file"] {
 
 #notifications-li ul.notifications-dropdown {
 	position: absolute;
-	background: #f0f0f0;
+	background: #d8d8d8;
 	overflow: visible;
 	border-left: 1px solid black;
 	border-right: 1px solid black;
