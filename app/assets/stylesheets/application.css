@@ -387,7 +387,8 @@ input[type="submit"] {
 	padding: 50px;
 	background: white;
 	border-radius: 5px;
-	border: 1px solid black;
+	color: #3b5998;
+	border: 5px solid orange;
 }
 
 #login-modal, #new-post-modal, #compose-modal, #new-subreddit-modal {
@@ -410,7 +411,7 @@ input[type="submit"] {
 	display: block;
 }
 
-#login-modal > article, #compose-modal > article, #new-subreddit-modal > article {
+#login-modal > article, #compose-modal > article {
 	position: fixed;
 	top: 50px;
 	left: 15%;
@@ -423,11 +424,24 @@ input[type="submit"] {
 	border: 1px solid black;
 }
 
+#new-subreddit-modal > article {
+	position: fixed;
+	top: 50px;
+	left: 15%;
+	width: 50%;
+	margin-bottom: 100px;
+	min-height: 200px;
+	padding: 35px;
+	background: white;
+	border-radius: 5px;
+	border: 1px solid black;
+}
+
 #new-post-modal > article {
 	position: fixed;
 	top: 50px;
-	left: 25%;
-	width: 40%;
+	left: 15%;
+	width: 50%;
 	margin-bottom: 100px;
 	min-height: 200px;
 	padding: 35px;
@@ -454,19 +468,23 @@ input[type="submit"] {
 	float: left;
 }
 
- section.new-text {
+.fancy-form {
+	color: #3b5998;
+}
+
+/*section.new-text {
  	display: block;
  	width: 300px;
  	border-right: 1px solid #ccc;
 	padding-right: 50px;
  	float: left;
- }
-
+ }*/
+/*
 section.new-text {
 
 	border-right: 0;
   padding-left: 50px;
-}
+}*/
 
 #login-modal section.sign-in {
 	display: block;
@@ -532,16 +550,33 @@ input[type="file"] {
 }
 
 .new-subreddit-form  {
-	margin-left: 200px;
+	margin-left: 25%;
 }
 
 .new-subreddit-form input[type="text"], .new-subreddit-form textarea {
-	width: 400px;
+	width: 60%;
 	border: 1px solid black;
 }
 
 .new-subreddit-form  input[type="submit"] {
-	margin-left: 145px;
+	margin-left: 20%;
+}
+
+#new-post-modal h3 {
+	text-align: center;
+}
+
+.new-text-form  {
+	margin-left: 25%;
+}
+
+.new-text-form input[type="text"], .new-text-form textarea, .new-text-form select {
+	width: 60%;
+	border: 1px solid black;
+}
+
+.new-text-form  input[type="submit"] {
+	margin-left: 20%;
 }
 
 #notifications-li {
