@@ -276,9 +276,10 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
 	  var subReddit = new ProjectSkeleton.Models.SubReddit(params);
 	  var that = this;
 
-	  subReddit.save({}, {
+	  subReddit.save({ filepicker_url: that._lastFile }, {
 		  success: function(model){
 			  ProjectSkeleton.subReddits.unshift(model);
+        that._lastFile = "";
         Backbone.history.navigate("/subreddits/" + subReddit.get("id"), { trigger: true })
         window.location.reload(true);
       },
