@@ -14,6 +14,7 @@
 //= require jquery.timeago.js
 //= require jquery_ujs
 //= require jquery.serializejson
+//= require app_assets
 //= require underscore
 //= require backbone
 //= require project_skeleton

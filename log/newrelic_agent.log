@@ -155,3 +155,63 @@ Migrations are pending. To resolve this issue, run:
 	bin/rake db:migrate RAILS_ENV=development
 
 
+[02/12/15 13:51:55 -0800 Drews-MacBook-Air.local (14522)] INFO : Starting the New Relic agent in "development" environment.
+[02/12/15 13:51:55 -0800 Drews-MacBook-Air.local (14522)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[02/12/15 13:51:55 -0800 Drews-MacBook-Air.local (14522)] WARN : No configuration file found. Working directory = /Users/drew/Desktop/skeleton
+[02/12/15 13:51:55 -0800 Drews-MacBook-Air.local (14522)] WARN : Looked in these locations (based on defaults): /Users/drew/Desktop/skeleton/config/newrelic.yml, /Users/drew/Desktop/skeleton/newrelic.yml, /Users/drew/Desktop/skeleton/config/newrelic.yml, /Users/drew/Desktop/skeleton/newrelic.yml, /Users/drew/.newrelic/newrelic.yml, /Users/drew/newrelic.yml
+[02/12/15 13:51:55 -0800 Drews-MacBook-Air.local (14522)] INFO : Environment: development
+[02/12/15 13:51:55 -0800 Drews-MacBook-Air.local (14522)] INFO : No known dispatcher detected.
+[02/12/15 13:51:55 -0800 Drews-MacBook-Air.local (14522)] INFO : Application: development
+[02/12/15 13:51:55 -0800 Drews-MacBook-Air.local (14522)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'.
+[02/12/15 13:51:55 -0800 Drews-MacBook-Air.local (14522)] INFO : Installing ActiveRecord 4 instrumentation
+[02/12/15 13:51:55 -0800 Drews-MacBook-Air.local (14522)] INFO : Installing Net instrumentation
+[02/12/15 13:51:55 -0800 Drews-MacBook-Air.local (14522)] INFO : Installing deferred Rack instrumentation
+[02/12/15 13:51:55 -0800 Drews-MacBook-Air.local (14522)] INFO : Installing Rack::Builder middleware instrumentation
+[02/12/15 13:51:55 -0800 Drews-MacBook-Air.local (14522)] INFO : Installing Rails 3+ middleware instrumentation
+[02/12/15 13:51:55 -0800 Drews-MacBook-Air.local (14522)] INFO : Installing Rails 4 Controller instrumentation
+[02/12/15 13:51:56 -0800 Drews-MacBook-Air.local (14522)] INFO : Installing Rails 4 view instrumentation
+[02/12/15 13:51:56 -0800 Drews-MacBook-Air.local (14522)] INFO : Installing Rails 4 Error instrumentation
+[02/12/15 13:51:56 -0800 Drews-MacBook-Air.local (14522)] INFO : Finished instrumentation
+[02/12/15 13:53:14 -0800 Drews-MacBook-Air.local (12390)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: couldn't find file 'app_assets'
+[02/12/15 13:53:26 -0800 Drews-MacBook-Air.local (12390)] INFO : Starting Agent shutdown
+[02/12/15 13:53:31 -0800 Drews-MacBook-Air.local (14539)] INFO : Starting the New Relic agent in "development" environment.
+[02/12/15 13:53:31 -0800 Drews-MacBook-Air.local (14539)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[02/12/15 13:53:31 -0800 Drews-MacBook-Air.local (14539)] WARN : No configuration file found. Working directory = /Users/drew/Desktop/skeleton
+[02/12/15 13:53:31 -0800 Drews-MacBook-Air.local (14539)] WARN : Looked in these locations (based on defaults): /Users/drew/Desktop/skeleton/config/newrelic.yml, /Users/drew/Desktop/skeleton/newrelic.yml, /Users/drew/Desktop/skeleton/config/newrelic.yml, /Users/drew/Desktop/skeleton/newrelic.yml, /Users/drew/.newrelic/newrelic.yml, /Users/drew/newrelic.yml
+[02/12/15 13:53:31 -0800 Drews-MacBook-Air.local (14539)] INFO : Environment: development
+[02/12/15 13:53:31 -0800 Drews-MacBook-Air.local (14539)] INFO : Dispatcher: webrick
+[02/12/15 13:53:31 -0800 Drews-MacBook-Air.local (14539)] INFO : Application: development
+[02/12/15 13:53:31 -0800 Drews-MacBook-Air.local (14539)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'.
+[02/12/15 13:53:32 -0800 Drews-MacBook-Air.local (14539)] INFO : Installing ActiveRecord 4 instrumentation
+[02/12/15 13:53:32 -0800 Drews-MacBook-Air.local (14539)] INFO : Installing Net instrumentation
+[02/12/15 13:53:32 -0800 Drews-MacBook-Air.local (14539)] INFO : Installing deferred Rack instrumentation
+[02/12/15 13:53:32 -0800 Drews-MacBook-Air.local (14539)] INFO : Installing Rack::Builder middleware instrumentation
+[02/12/15 13:53:32 -0800 Drews-MacBook-Air.local (14539)] INFO : Installing Rails 3+ middleware instrumentation
+[02/12/15 13:53:32 -0800 Drews-MacBook-Air.local (14539)] INFO : Installing Rails 4 Controller instrumentation
+[02/12/15 13:53:32 -0800 Drews-MacBook-Air.local (14539)] INFO : Installing Rails 4 view instrumentation
+[02/12/15 13:53:32 -0800 Drews-MacBook-Air.local (14539)] INFO : Installing Rails 4 Error instrumentation
+[02/12/15 13:53:32 -0800 Drews-MacBook-Air.local (14539)] INFO : Finished instrumentation
+[02/12/15 13:53:32 -0800 Drews-MacBook-Air.local (14539)] INFO : Doing deferred dependency-detection before Rack startup
+[02/12/15 13:53:36 -0800 Drews-MacBook-Air.local (14539)] ERROR : Invalid license key, please contact support@newrelic.com
+[02/12/15 13:53:36 -0800 Drews-MacBook-Air.local (14539)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[02/12/15 14:00:50 -0800 Drews-MacBook-Air.local (14539)] INFO : Starting Agent shutdown
+[02/12/15 14:00:56 -0800 Drews-MacBook-Air.local (14611)] INFO : Starting the New Relic agent in "development" environment.
+[02/12/15 14:00:56 -0800 Drews-MacBook-Air.local (14611)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[02/12/15 14:00:56 -0800 Drews-MacBook-Air.local (14611)] WARN : No configuration file found. Working directory = /Users/drew/Desktop/skeleton
+[02/12/15 14:00:56 -0800 Drews-MacBook-Air.local (14611)] WARN : Looked in these locations (based on defaults): /Users/drew/Desktop/skeleton/config/newrelic.yml, /Users/drew/Desktop/skeleton/newrelic.yml, /Users/drew/Desktop/skeleton/config/newrelic.yml, /Users/drew/Desktop/skeleton/newrelic.yml, /Users/drew/.newrelic/newrelic.yml, /Users/drew/newrelic.yml
+[02/12/15 14:00:56 -0800 Drews-MacBook-Air.local (14611)] INFO : Environment: development
+[02/12/15 14:00:56 -0800 Drews-MacBook-Air.local (14611)] INFO : Dispatcher: webrick
+[02/12/15 14:00:56 -0800 Drews-MacBook-Air.local (14611)] INFO : Application: development
+[02/12/15 14:00:56 -0800 Drews-MacBook-Air.local (14611)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'.
+[02/12/15 14:00:56 -0800 Drews-MacBook-Air.local (14611)] INFO : Installing ActiveRecord 4 instrumentation
+[02/12/15 14:00:56 -0800 Drews-MacBook-Air.local (14611)] INFO : Installing Net instrumentation
+[02/12/15 14:00:56 -0800 Drews-MacBook-Air.local (14611)] INFO : Installing deferred Rack instrumentation
+[02/12/15 14:00:56 -0800 Drews-MacBook-Air.local (14611)] INFO : Installing Rack::Builder middleware instrumentation
+[02/12/15 14:00:56 -0800 Drews-MacBook-Air.local (14611)] INFO : Installing Rails 3+ middleware instrumentation
+[02/12/15 14:00:56 -0800 Drews-MacBook-Air.local (14611)] INFO : Installing Rails 4 Controller instrumentation
+[02/12/15 14:00:56 -0800 Drews-MacBook-Air.local (14611)] INFO : Installing Rails 4 view instrumentation
+[02/12/15 14:00:56 -0800 Drews-MacBook-Air.local (14611)] INFO : Installing Rails 4 Error instrumentation
+[02/12/15 14:00:56 -0800 Drews-MacBook-Air.local (14611)] INFO : Finished instrumentation
+[02/12/15 14:00:57 -0800 Drews-MacBook-Air.local (14611)] INFO : Doing deferred dependency-detection before Rack startup
+[02/12/15 14:00:58 -0800 Drews-MacBook-Air.local (14611)] ERROR : Invalid license key, please contact support@newrelic.com
+[02/12/15 14:00:58 -0800 Drews-MacBook-Air.local (14611)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.

@@ -45,6 +45,7 @@ gem 'figaro'
 gem 'pusher'
 
 gem 'backbone-on-rails'
+gem 'js_assets'
 
 gem 'pg_search'
 gem 'kaminari'
