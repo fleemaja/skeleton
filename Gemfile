@@ -49,6 +49,8 @@ gem 'backbone-on-rails'
 gem 'pg_search'
 gem 'kaminari'
 
+gem 'newrelic_rpm'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
