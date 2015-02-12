@@ -213,10 +213,9 @@ ProjectSkeleton.Views.CommentShow = Backbone.View.extend({
 	  var subReddit = new ProjectSkeleton.Models.SubReddit(params);
 	  var that = this;
 
-	  subReddit.save({ filepicker_url: this._lastFile }, {
+	  subReddit.save({}, {
 		  success: function(model){
 			  ProjectSkeleton.subReddits.unshift(model);
-        this._lastFile = "";
         Backbone.history.navigate("/subreddits/" + subReddit.get("id"), { trigger: true })
         window.location.reload(true);
       }

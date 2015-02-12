@@ -31,7 +31,6 @@
 			  <p>Moderator: <a href="<%= user_url(User.find(@subreddit.user_id)) %>"><%= User.find(@subreddit.user_id).username %></a></p><br>
 				<p>Title: <%= @subreddit.title %></p><br>
 				<p>Description: <%= @subreddit.description %></p><br>
-        <img src="<%= @subreddit.get('filepicker_url') %>" class="filepicker">
 			</div>
 		<% end %>
 	</div>

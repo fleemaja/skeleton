@@ -66,6 +66,6 @@ class SubredditsController < ApplicationController
   private
 
   def subreddit_params
-    params.require(:subreddit).permit(:name, :title, :description, :filepicker_url)
+    params.require(:subreddit).permit(:name, :title, :description)
   end
 end

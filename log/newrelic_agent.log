@@ -19,3 +19,139 @@
 [02/12/15 09:18:14 -0800 Drews-MacBook-Air.local (12390)] INFO : Doing deferred dependency-detection before Rack startup
 [02/12/15 09:18:17 -0800 Drews-MacBook-Air.local (12390)] ERROR : Invalid license key, please contact support@newrelic.com
 [02/12/15 09:18:17 -0800 Drews-MacBook-Air.local (12390)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[02/12/15 10:18:40 -0800 Drews-MacBook-Air.local (13027)] INFO : Starting the New Relic agent in "development" environment.
+[02/12/15 10:18:40 -0800 Drews-MacBook-Air.local (13027)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[02/12/15 10:18:40 -0800 Drews-MacBook-Air.local (13027)] WARN : No configuration file found. Working directory = /Users/drew/Desktop/skeleton
+[02/12/15 10:18:40 -0800 Drews-MacBook-Air.local (13027)] WARN : Looked in these locations (based on defaults): /Users/drew/Desktop/skeleton/config/newrelic.yml, /Users/drew/Desktop/skeleton/newrelic.yml, /Users/drew/Desktop/skeleton/config/newrelic.yml, /Users/drew/Desktop/skeleton/newrelic.yml, /Users/drew/.newrelic/newrelic.yml, /Users/drew/newrelic.yml
+[02/12/15 10:18:40 -0800 Drews-MacBook-Air.local (13027)] INFO : Environment: development
+[02/12/15 10:18:40 -0800 Drews-MacBook-Air.local (13027)] INFO : No known dispatcher detected.
+[02/12/15 10:18:40 -0800 Drews-MacBook-Air.local (13027)] INFO : Application: development
+[02/12/15 10:18:40 -0800 Drews-MacBook-Air.local (13027)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'.
+[02/12/15 10:18:40 -0800 Drews-MacBook-Air.local (13027)] INFO : Installing ActiveRecord 4 instrumentation
+[02/12/15 10:18:40 -0800 Drews-MacBook-Air.local (13027)] INFO : Installing Net instrumentation
+[02/12/15 10:18:40 -0800 Drews-MacBook-Air.local (13027)] INFO : Installing deferred Rack instrumentation
+[02/12/15 10:18:40 -0800 Drews-MacBook-Air.local (13027)] INFO : Installing Rack::Builder middleware instrumentation
+[02/12/15 10:18:40 -0800 Drews-MacBook-Air.local (13027)] INFO : Installing Rails 3+ middleware instrumentation
+[02/12/15 10:18:40 -0800 Drews-MacBook-Air.local (13027)] INFO : Installing Rails 4 Controller instrumentation
+[02/12/15 10:18:40 -0800 Drews-MacBook-Air.local (13027)] INFO : Installing Rails 4 view instrumentation
+[02/12/15 10:18:40 -0800 Drews-MacBook-Air.local (13027)] INFO : Installing Rails 4 Error instrumentation
+[02/12/15 10:18:40 -0800 Drews-MacBook-Air.local (13027)] INFO : Finished instrumentation
+[02/12/15 10:22:04 -0800 Drews-MacBook-Air.local (12390)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: 
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+
+[02/12/15 10:22:14 -0800 Drews-MacBook-Air.local (12390)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: 
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+
+[02/12/15 10:22:24 -0800 Drews-MacBook-Air.local (12390)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: 
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+
+[02/12/15 10:22:34 -0800 Drews-MacBook-Air.local (12390)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: 
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+
+[02/12/15 10:22:44 -0800 Drews-MacBook-Air.local (12390)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: 
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+
+[02/12/15 10:22:54 -0800 Drews-MacBook-Air.local (12390)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: 
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+
+[02/12/15 10:23:04 -0800 Drews-MacBook-Air.local (12390)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: 
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+
+[02/12/15 10:23:14 -0800 Drews-MacBook-Air.local (12390)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: 
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+
+[02/12/15 10:23:24 -0800 Drews-MacBook-Air.local (12390)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: 
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+
+[02/12/15 10:23:34 -0800 Drews-MacBook-Air.local (12390)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: 
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+
+[02/12/15 10:23:44 -0800 Drews-MacBook-Air.local (12390)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: 
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+
+[02/12/15 10:23:54 -0800 Drews-MacBook-Air.local (12390)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: 
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+
+[02/12/15 10:24:04 -0800 Drews-MacBook-Air.local (12390)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: 
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+
+[02/12/15 10:24:14 -0800 Drews-MacBook-Air.local (12390)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: 
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+
+[02/12/15 10:24:24 -0800 Drews-MacBook-Air.local (12390)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: 
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+
+[02/12/15 10:24:34 -0800 Drews-MacBook-Air.local (12390)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: 
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+
+[02/12/15 10:24:37 -0800 Drews-MacBook-Air.local (12390)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: 
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+

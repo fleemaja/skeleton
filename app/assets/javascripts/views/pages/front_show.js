@@ -19,7 +19,6 @@ ProjectSkeleton.Views.FrontShow = Backbone.View.extend({
    },
 
    pick: function (event) {
-     debugger;
      var that = this;
      filepicker.pick({}, function (Blob) {
 
@@ -40,7 +39,8 @@ ProjectSkeleton.Views.FrontShow = Backbone.View.extend({
 
   showDeleteModal: function(event){
 	  event.preventDefault();
-	  var type; var typeId;
+	  var type;
+    var typeId;
 	  var outerDiv = $(event.currentTarget).closest("div")
 
 	  if (outerDiv.attr("post-id")){
@@ -170,10 +170,9 @@ ProjectSkeleton.Views.FrontShow = Backbone.View.extend({
 	  var subReddit = new ProjectSkeleton.Models.SubReddit(params);
 	  var that = this;
 
-	  subReddit.save({ filepicker_url: this._lastFile }, {
+	  subReddit.save({ }, {
 		  success: function(model){
 			  ProjectSkeleton.subReddits.unshift(model);
-        this._lastFile = "";
         Backbone.history.navigate("/subreddits/" + subReddit.get("id"), { trigger: true })
         window.location.reload(true);
       }
