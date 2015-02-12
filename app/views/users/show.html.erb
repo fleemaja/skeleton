@@ -1,4 +1,4 @@
-<h3><%= @user.username %></h3>
+<h3 class="fancy-front"><%= @user.username %></h3>
 
 <% @posts.each do |post| %>
 	<%= render partial: "posts/show_text", locals: { post: post, subreddit: SubReddit.find(post.subreddit_id) } %>

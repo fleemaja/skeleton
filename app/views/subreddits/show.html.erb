@@ -1,6 +1,6 @@
  <div class="subreddit-elements clearfix">
 	<% if @subreddit %>
-		<h3><%= @subreddit.name %></h3>
+		<h3 class="fancy-front"><%= @subreddit.name %></h3>
 	<% end %>
 
 	<div class="subreddit-nav-bar">
@@ -21,8 +21,8 @@
 			<form>
 				<input type="text" placeholder="search reddit">
 			</form>
-			<a href="<%= new_post_url %>">Submit a new text post</a>
-			<a href="<%= new_subreddit_url %>">Create your own sub</a>
+			<a href="<%= new_post_url %>">Submit a new post</a>
+			<a href="<%= new_subreddit_url %>">Create a sub</a>
 		</div>
 
 		<% if @subreddit %>
@@ -31,8 +31,7 @@
 			  <p>Moderator: <a href="<%= user_url(User.find(@subreddit.user_id)) %>"><%= User.find(@subreddit.user_id).username %></a></p><br>
 				<p>Title: <%= @subreddit.title %></p><br>
 				<p>Description: <%= @subreddit.description %></p><br>
-				<p>Sidebar: <%= @subreddit.sidebar %></p><br>
-				<p>Submission text: <%= @subreddit.submission_text %></p><br>
+        <img src="<%= @subreddit.get('filepicker_url') %>" class="filepicker">
 			</div>
 		<% end %>
 	</div>

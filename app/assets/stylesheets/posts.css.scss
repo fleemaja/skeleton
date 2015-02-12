@@ -46,7 +46,7 @@
 
 .text-post span.time-ago{
 	// margin-left: 20px;
-	font-size: 12px;
+	font-size: 18px;
 }
 
 .text-post span.karma {
@@ -61,7 +61,7 @@
 
 .text-post .orange {
 	// color: black;
-	// background: #f0f0f0;
+	// background: #d8d8d8;
 	// border: 2px solid black;
 	// border-radius: 5px;
 	background: orange;
@@ -99,7 +99,7 @@
 
 .text-post .text {
 	padding: 5px;
-	background: #f0f0f0;
+	background: #d8d8d8;
 	border-radius: 10px;
 	display: inline-block;
 	width: 900px;
@@ -116,7 +116,7 @@
 }
 
 .post-show {
-	border-top: 1px solid #f0f0f0;
+	border-top: 1px solid #d8d8d8;
 }
 
 .post > p > a {

@@ -1,5 +1,5 @@
 <div class="subreddit-elements clearfix">
-  <h3 class="subreddit-title">
+  <h3 class="fancy-front">
     <a href="#/subreddits/<%= post.subReddit().id %>">
       <%= post.subReddit().escape("name") %>
     </a>
@@ -46,8 +46,8 @@
 				<input type="text" name="search" placeholder="Search Project Skeleton">
 			</form>
 
-			<a class="new-text" href="#/posts/new">Submit a new text post</a>
-			<a class="new-subreddit" href="#/subreddits/new">Create your own sub</a>
+			<a class="new-text" href="#/posts/new">Submit a new post</a>
+			<a class="new-subreddit" href="#/subreddits/new">Create a sub</a>
 		</div>
 
 		<div class="subreddit-details">
@@ -59,7 +59,7 @@
       </p><br>
 			<p><%= post.subReddit().escape("title") %></p><br>
 			<p><%= post.subReddit().escape("description") %></p><br>
-			<p><%= post.subReddit().escape("sidebar") %></p>
-		</div>
+      <p><img src="<%= post.subReddit().get('filepicker_url') %>" class="filepicker"></p>
+    </div>
 	</div>
 </div>

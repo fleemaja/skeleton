@@ -15,7 +15,23 @@ ProjectSkeleton.Views.SubRedditShow = Backbone.View.extend({
 	  "submit .search-posts": "searchPosts",
     "submit .new-subreddit-form": "submitSubReddit",
 	  "click .delete": "showDeleteModal",
-	  "click #cancel-deletion": "cancelDelete"
+	  "click #cancel-deletion": "cancelDelete",
+    "click .shawnas": "pick"
+   },
+
+   pick: function (event) {
+     debugger;
+     var that = this;
+     filepicker.pick({}, function (Blob) {
+
+       $(event.currentTarget).removeClass("shawnas");
+       $(event.currentTarget).addClass("shawnas-disabled");
+       $(event.currentTarget).html("Photo successfully uploaded!")
+
+       that._lastFile = Blob.url;
+     }, function (FPError) {
+
+     })
    },
 
   initialize: function() {
@@ -158,9 +174,10 @@ ProjectSkeleton.Views.SubRedditShow = Backbone.View.extend({
 	  var subReddit = new ProjectSkeleton.Models.SubReddit(params);
 	  var that = this;
 
-	  subReddit.save({}, {
+	  subReddit.save({ filepicker_url: this._lastFile }, {
 		  success: function(model){
 			  ProjectSkeleton.subReddits.unshift(model);
+        this._lastFile = "";
         Backbone.history.navigate("/subreddits/" + subReddit.get("id"), { trigger: true })
         window.location.reload(true);
       }

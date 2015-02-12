@@ -1,5 +1,5 @@
  <div class="subreddit-elements clearfix">
-	<h3>
+	<h3 class="fancy-front">
     <a href="#/subreddits/<%= subReddit.id %>">
       <%= subReddit.escape("name") %>
     </a>
@@ -22,11 +22,11 @@
 			</form>
 
 			<a class="new-text" href="#/posts/new">
-        Submit a new text post
+        Submit a new post
       </a>
 
 			<a class="new-subreddit" href="#/subreddits/new">
-        Create your own sub
+        Create a sub
       </a>
 		</div>
 
@@ -39,7 +39,7 @@
 
 			<p><%= subReddit.escape("title") %></p>
 			<p><%= subReddit.escape("description") %></p>
-			<p><%= subReddit.escape("sidebar") %></p>
-		</div>
+      <p><img src="<%= subReddit.get('filepicker_url') %>" class="filepicker"></p>
+    </div>
 	</div>
 </div>
