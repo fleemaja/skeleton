@@ -301,7 +301,7 @@ footer > .info a {
 	color: black;
 	border: 1px solid #ccc;
 	margin: 5px;
-	min-width: 100px;
+	width: 100px;
 	text-align: center;
 	float: left;
 }
@@ -316,7 +316,8 @@ footer > .info a {
 	padding: 10px 5px;
 	margin: 5px;
 	border: 1px solid #ccc;
-	min-width: 100px;
+	width: 300px;
+	margin-left: 20px;
 	text-align: center;
 	display: inline-block;
 }
@@ -338,7 +339,7 @@ footer > .info a {
 	border: 1px solid black;
 	background: #ccc;
 	display: block;
-	width: 500px;
+	width: 600px;
 	margin-left: 10px;
 	float: left;
 	margin-top: 5px;
