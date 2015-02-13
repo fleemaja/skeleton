@@ -558,16 +558,21 @@ input[type="file"] {
 }
 
 .new-text-form  {
-	margin-left: 25%;
+	margin-left: 10%;
 }
 
-.new-text-form input[type="text"], .new-text-form textarea, .new-text-form select {
-	width: 60%;
+.new-text-form input[type="text"], .new-text-form textarea {
+	width: 90%;
+	height: 70px;
+	border: 1px solid black;
+}
+
+.new-text-form select {
 	border: 1px solid black;
 }
 
 .new-text-form  input[type="submit"] {
-	margin-left: 20%;
+	margin-left: 35%;
 }
 
 #notifications-li {
