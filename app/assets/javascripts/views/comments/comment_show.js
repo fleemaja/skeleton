@@ -53,7 +53,7 @@ ProjectSkeleton.Views.CommentShow = Backbone.View.extend({
 	  var str = "div[comment-id=" + comment_id + "] > p .karma";
 	  var currentKarma = parseInt($(str).html());
 	  currentKarma += parseInt(karma);
-	  $(str).html(currentKarma);
+	  $(str).html(currentKarma + " points");
   },
 
   submitComment: function(event) {

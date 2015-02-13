@@ -23,7 +23,7 @@ ProjectSkeleton.Views.UserShow = Backbone.View.extend({
  	  var str = "div[post-id=" + postId + "] > p .karma";
  	  var currentKarma = parseInt($(str).html());
  	  currentKarma += parseInt(karma);
- 	  $(str).html(currentKarma);
+ 	  $(str).html(currentKarma + " points");
  	  if (this.model.posts().get(postId).get("poster_id") === ProjectSkeleton.currentUserId) {
  	    this.updateCurrentUserKarma(karma)
  	  }
