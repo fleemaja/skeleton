@@ -31,13 +31,13 @@
 		</div>
 
 		<div class="subreddit-details">
-			<p><%= subReddit.escape("name") %></p>
+			<p><%= subReddit.escape("name") %></p><br><br>
 		  <p>Moderator: <a href="#/users/<%= subReddit.escape("moderator_id") %>">
           <%= subReddit.escape("moderator") %>
         </a>
-      </p>
+      </p><br><br>
 
-			<p><%= subReddit.escape("title") %></p>
+			<p><%= subReddit.escape("title") %></p><br><br>
 			<p><%= subReddit.escape("description") %></p>
     </div>
 	</div>
