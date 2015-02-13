@@ -1,20 +1,20 @@
-<h3>Create Account</h3>
+<h3>Create Account</h3><br>
 
 
 <form class="new-user-form" action="<%= api_users_url %>" enctype="multipart/form-data" method="POST">
 	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 	<label>
-		<p>username:</p>
+		<p>Username:</p>
 		<input type="text" name="user[username]">
 	</label>
 
 	<label>
-		<p>password:</p>
+		<p>Password:</p>
 		<input type="password" name="user[password]">
 	</label>
 
 	<label>
-		<p>verify password:</p>
+		<p>Verify Password:</p>
 		<input type="password" name="user[password_confirmation]">
 	</label>
 
