@@ -11,7 +11,7 @@
 }
 
 img.filepicker {
-	max-width: 900px;
+	max-width: 100%;
 }
 
 .comment span.username {
@@ -84,6 +84,7 @@ img.filepicker {
 }
 .comment .content {
 	padding: 25px;
+	max-width: 70%;
 	display: inline-block;
 	background: #d8d8d8;
 	border-radius: 10px;
