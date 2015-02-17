@@ -61,7 +61,6 @@ ProjectSkeleton.Views.CommentShow = Backbone.View.extend({
 	  var that = this;
 	  var params = $(event.currentTarget).closest("form").serializeJSON();
 	  var comment = new ProjectSkeleton.Models.Comment(params["comment"]);
-	  console.log(params)
 	  comment.save({}, {
 		  success: function(model){
 			  that.model.fetch({

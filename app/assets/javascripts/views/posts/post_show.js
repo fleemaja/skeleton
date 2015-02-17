@@ -84,7 +84,6 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
   submit: function(event) {
 	  event.preventDefault();
 
-
 	  var that = this;
 	  var params = $("form.post-comment").serializeJSON();
 	  var comment = new ProjectSkeleton.Models.Comment(params["comment"]);
@@ -92,13 +91,13 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
 		  success: function(){
 		    that.model.comments().add(comment);
         that._lastFile = "";
-        $("input.submit-comment").prop('disabled', true);
-        $("input.submit-comment").val("Comment Submitted!")
+        $("input.submit-post-comment").prop('disabled', true);
+        $("input.submit-post-comment").val("Comment Submitted!")
 		  }
 	  });
     setInterval(function () {
-      $("input.submit-comment").prop('disabled', false);
-      $("input.submit-comment").val("submit")
+      $("input.submit-post-comment").prop('disabled', false);
+      $("input.submit-post-comment").val("submit")
     }, 5000);
 
   },
@@ -118,8 +117,16 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
 					  that.render()
 				  }
 			  });
+
+        $("input.submit-comment-comment").prop('disabled', true);
+        $("input.submit-comment-comment").val("Comment Submitted!")
 		  }
 	  });
+
+    setInterval(function () {
+      $("input.submit-comment-comment").prop('disabled', false);
+      $("input.submit-comment-comment").val("submit")
+    }, 5000);
   },
 
   showForm: function(event){

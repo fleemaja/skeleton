@@ -146,6 +146,14 @@ span.reply:hover{
 	background: darkgray;
 }
 
+.comment input[type="submit"]:disabled {
+	padding: 10px 10px;
+	width: 200px;
+	background: darkgray;
+	cursor: pointer;
+	font-weight: bold;
+}
+
 .post-comment input[type="submit"] {
 	padding: 10px 10px;
 	background: #d8d8d8;
