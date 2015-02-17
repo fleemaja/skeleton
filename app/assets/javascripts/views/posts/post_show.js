@@ -92,13 +92,13 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
 		  success: function(){
 		    that.model.comments().add(comment);
         that._lastFile = "";
-        $("input").prop('disabled', true);
-        $("input").val("Comment Submitted!")
+        $("input.submit-comment").prop('disabled', true);
+        $("input.submit-comment").val("Comment Submitted!")
 		  }
 	  });
     setInterval(function () {
-      $("input").prop('disabled', false);
-      $("input").val("submit")
+      $("input.submit-comment").prop('disabled', false);
+      $("input.submit-comment").val("submit")
     }, 5000);
 
   },
