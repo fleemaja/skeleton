@@ -139,13 +139,32 @@ span.reply:hover{
 	background: #d8d8d8;
 	cursor: pointer;
 	font-weight: bold;
-
 }
+
 .comment input[type="submit"]:hover {
 	color: white;
 	background: darkgray;
 }
 
+.post-comment input[type="submit"] {
+	padding: 10px 10px;
+	background: #d8d8d8;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+.post-comment input[type="submit"]:disabled {
+	padding: 10px 10px;
+	width: 200px;
+	background: darkgray;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+.post-comment input[type="submit"]:hover {
+	color: white;
+	background: darkgray;
+}
 
 .comment .child {
 	border-left: 1px dashed #ccc;

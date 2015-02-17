@@ -83,6 +83,8 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
 
   submit: function(event) {
 	  event.preventDefault();
+
+
 	  var that = this;
 	  var params = $("form.post-comment").serializeJSON();
 	  var comment = new ProjectSkeleton.Models.Comment(params["comment"]);
@@ -90,12 +92,20 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
 		  success: function(){
 		    that.model.comments().add(comment);
         that._lastFile = "";
+        $("input").prop('disabled', true);
+        $("input").val("Comment Submitted!")
 		  }
 	  });
+    setInterval(function () {
+      $("input").prop('disabled', false);
+      $("input").val("submit")
+    }, 5000);
+
   },
 
   submitComment: function(event) {
 	  event.preventDefault();
+
 	  var that = this;
 	  var params = $(event.currentTarget).closest("form").serializeJSON();
 	  var comment = new ProjectSkeleton.Models.Comment(params["comment"]);
