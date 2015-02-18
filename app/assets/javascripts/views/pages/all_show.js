@@ -190,6 +190,9 @@ ProjectSkeleton.Views.AllShow = Backbone.View.extend({
 	  var that = this;
 	  if (ProjectSkeleton.currentUserId) {
 		  $("#new-post-modal").addClass("is-active");
+
+      $("body > *").not('#new-post-modal').css("opacity", '0.2');
+
 		  $("input.new-post").off();
 	  	$("input.new-post").one("click", that.submitPost);
 
