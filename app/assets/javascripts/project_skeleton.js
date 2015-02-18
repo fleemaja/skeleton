@@ -39,8 +39,6 @@ window.ProjectSkeleton = {
 	    if(event.target.id == this.id){
 	      event.preventDefault();
 	      $("#new-post-modal").removeClass("is-active");
-
-        // $("body > *").not('#new-post-modal').css("opacity", '0.2');
 	    }
 	  })
 
