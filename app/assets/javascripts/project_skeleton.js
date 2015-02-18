@@ -19,6 +19,7 @@ window.ProjectSkeleton = {
   		$("#compose-modal").removeClass("is-active");
   		$("#new-subreddit-modal").removeClass("is-active");
   	  $("#delete-modal").removeClass("is-active");
+      $("body > *").css("opacity", '1');
 	  });
 
 
