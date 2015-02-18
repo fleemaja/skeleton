@@ -40,7 +40,7 @@ window.ProjectSkeleton = {
 	      event.preventDefault();
 	      $("#new-post-modal").removeClass("is-active");
 
-        $("body > *").not('#new-post-modal').css("opacity", '0.2');
+        // $("body > *").not('#new-post-modal').css("opacity", '0.2');
 	    }
 	  })
 

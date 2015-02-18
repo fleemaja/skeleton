@@ -282,6 +282,9 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
   	event.preventDefault();
 	  if (ProjectSkeleton.currentUserId) {
 		  $("#new-subreddit-modal").addClass("is-active");
+
+      $("body > *").not('#new-subreddit-modal').css("opacity", '0.2');
+
 		  $("input.new-subreddit").off();
 	  	$("input.new-subreddit").one("click", this.submitSubReddit);
 
