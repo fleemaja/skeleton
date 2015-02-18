@@ -20,6 +20,7 @@ ProjectSkeleton.Views.SubRedditsIndex = Backbone.View.extend({
   showLoginModal: function(event){
 	  event.preventDefault();
 	  $("#login-modal").addClass("is-active");
+    $("body > *").not('#login-modal').css("opacity", '0.2');
   },
 
   unsubscribe: function(event){

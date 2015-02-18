@@ -82,6 +82,8 @@ ProjectSkeleton.Views.CommentShow = Backbone.View.extend({
 
 	  } else {
 		  $("#login-modal").addClass("is-active");
+
+      $("body > *").not('#login-modal').css("opacity", '0.2');
 	  };
   },
 
@@ -168,6 +170,8 @@ ProjectSkeleton.Views.CommentShow = Backbone.View.extend({
 		  })
 	  } else {
 		 $("#login-modal").addClass("is-active");
+
+     $("body > *").not('#login-modal').css("opacity", '0.2');
 	  };
   },
 
@@ -188,6 +192,8 @@ ProjectSkeleton.Views.CommentShow = Backbone.View.extend({
 		  })
 	  } else {
 	      $("#login-modal").addClass("is-active");
+
+        $("body > *").not('#login-modal').css("opacity", '0.2');
 	  };
   },
 
@@ -201,6 +207,8 @@ ProjectSkeleton.Views.CommentShow = Backbone.View.extend({
 
 	  } else {
 		    $("#login-modal").addClass("is-active");
+
+        $("body > *").not('#login-modal').css("opacity", '0.2');
 	  };
   },
 
@@ -230,6 +238,8 @@ ProjectSkeleton.Views.CommentShow = Backbone.View.extend({
 	  	$("input.new-post").one("click", that.submitPost);
 	  } else {
 		  $("#login-modal").addClass("is-active");
+
+      $("body > *").not('#login-modal').css("opacity", '0.2');
 	  };
   },
 

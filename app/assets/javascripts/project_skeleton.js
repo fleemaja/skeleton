@@ -67,12 +67,16 @@ window.ProjectSkeleton = {
  	    event.preventDefault();
   	    $("input[type=password]").val("");
 	      $("#login-modal").addClass("is-active");
+
+        $("body > *").not('#login-modal').css("opacity", '0.2');
 	  });
 
 	  $(".show-register").on("click", function(event){
  	      event.preventDefault();
 	      $("#login-modal").addClass("is-active");
   	  	$("input[type=password]").val("");
+
+        $("body > *").not('#login-modal').css("opacity", '0.2');
 	   });
 
 		$("#guest-sign-in").on("click", function(event){

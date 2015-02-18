@@ -139,6 +139,9 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
 
 	  } else {
 		  $("#login-modal").addClass("is-active");
+
+      $("body > *").not('#login-modal').css("opacity", '0.2');
+
   	  $("input[type=password]").val("");
 	  };
   },
@@ -233,6 +236,9 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
   		  }
 	  } else {
       $("#login-modal").addClass("is-active");
+
+      $("body > *").not('#login-modal').css("opacity", '0.2');
+
 	  	$("input[type=password]").val("");
 	  };
   },
@@ -265,6 +271,9 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
   		  }
 	  } else {
       $("#login-modal").addClass("is-active");
+
+      $("body > *").not('#login-modal').css("opacity", '0.2');
+
 	  	$("input[type=password]").val("");
 	  };
   },
@@ -278,6 +287,9 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
 
 	  } else {
 		  $("#login-modal").addClass("is-active");
+
+      $("body > *").not('#login-modal').css("opacity", '0.2');
+
   	  $("input[type=password]").val("");
 	  };
   },
@@ -315,6 +327,9 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
 
     } else {
 		  $("#login-modal").addClass("is-active");
+
+      $("body > *").not('#login-modal').css("opacity", '0.2');
+
   	  $("input[type=password]").val("");
 	  };
   },

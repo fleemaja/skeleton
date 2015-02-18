@@ -52,6 +52,8 @@ ProjectSkeleton.Views.UserShow = Backbone.View.extend({
    		  }
  	  } else {
  	    $("#login-modal").addClass("is-active");
+
+      $("body > *").not('#login-modal').css("opacity", '0.2');
  	  };
    },
 
@@ -72,6 +74,8 @@ ProjectSkeleton.Views.UserShow = Backbone.View.extend({
    		  }
  	  } else {
  		  $("#login-modal").addClass("is-active");
+
+      $("body > *").not('#login-modal').css("opacity", '0.2');
  	  };
   }
 });
