@@ -7,7 +7,7 @@ ProjectSkeleton.Collections.FrontPosts = Backbone.Collection.extend({
   },
 
   comparator: function(post) {
-	  return post.get("karma");
+	  return -post.get("karma");
   },
 
   sortingOptions: {
