@@ -165,7 +165,6 @@ ProjectSkeleton.Views.CommentShow = Backbone.View.extend({
 		  })
 		  .done(function(data){
 			  that.updateCommentKarma(data, id);
-        $(event.currentTarget).toggleClass("orange");
 
 		  })
 	  } else {
@@ -188,7 +187,6 @@ ProjectSkeleton.Views.CommentShow = Backbone.View.extend({
 		  })
 		  .done(function(data){
 			  that.updateCommentKarma(data, id);
-        $(event.currentTarget).toggleClass("orange");
 		  })
 	  } else {
 	      $("#login-modal").addClass("is-active");
@@ -204,7 +202,7 @@ ProjectSkeleton.Views.CommentShow = Backbone.View.extend({
 		  $("#new-subreddit-modal").addClass("is-active");
 
       $("body > *").not('#new-subreddit-modal').css("opacity", '0.2');
-      
+
 		  $("input.new-subreddit").off();
 	  	$("input.new-subreddit").one("click", that.submitSubReddit);
 

@@ -259,7 +259,7 @@ ProjectSkeleton.Views.FrontShow = Backbone.View.extend({
 
   downvote: function(event){
   	event.preventDefault();
-    $(event.currentTarget).toggleClass("orange")
+
 	  var that = this;
 	  if (ProjectSkeleton.currentUserId) {
 		  var id = $(event.currentTarget).attr("post-id")
@@ -284,7 +284,6 @@ ProjectSkeleton.Views.FrontShow = Backbone.View.extend({
 
   upvote: function(event){
   	event.preventDefault();
-    $(event.currentTarget).toggleClass("orange");
 
 	  var that = this;
 	  if (ProjectSkeleton.currentUserId) {

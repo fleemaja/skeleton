@@ -78,6 +78,7 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
 	  var str = "div[comment-id=" + comment_id + "] > p .karma";
 	  var currentKarma = parseInt($(str).html());
 	  currentKarma += parseInt(karma);
+
 	  $(str).html(currentKarma + " points");
   },
 
@@ -209,7 +210,6 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
 
   downvote: function(event){
   	event.preventDefault();
-    $(event.currentTarget).toggleClass("orange");
 
 	  var that = this;
 	  if (ProjectSkeleton.currentUserId) {
@@ -245,7 +245,6 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
 
   upvote: function(event){
     event.preventDefault();
-    $(event.currentTarget).toggleClass("orange");
 
 	  var that = this;
 	  if (ProjectSkeleton.currentUserId) {
