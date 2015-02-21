@@ -70,13 +70,13 @@ img.filepicker {
 }
 
 .comment .upvote:hover {
-	background: darkgray;
-	// color: white;
+	-webkit-filter: grayscale; /*sepia, hue-rotate, invert....*/
+  -webkit-filter: brightness(50%);
 }
 
 .comment .downvote:hover {
-	background: darkgray;
-	// color: white;
+	-webkit-filter: grayscale; /*sepia, hue-rotate, invert....*/
+  -webkit-filter: brightness(50%);
 }
 
 .comment > .vote-buttons {
