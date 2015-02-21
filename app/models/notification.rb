@@ -68,7 +68,7 @@ class Notification < ActiveRecord::Base
 
   def default_url_options
     options = {}
-    options[:host] = Rails.env.production? ? "projectskeleton.herokuapp.com" : "localhost:3000"
+    options[:host] = Rails.env.production? ? "www.projectskeleton.com" : "localhost:3000"
     options
   end
 end
