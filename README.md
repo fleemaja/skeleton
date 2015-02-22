@@ -11,3 +11,5 @@ There is still plenty to work on for Project Skeleton. Here are a few features I
 + Use Filepicker to add avatars for sub sidebars
 + Visual feedback on likes and dislikes.
   Use cookies to save the visual feedback for each particular user's votes.
++ infinite scrolling, pagination, and friendly URLS (words instead of numbers)
++ user private messaging
