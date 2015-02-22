@@ -21,10 +21,6 @@ ProjectSkeleton.Routers.SubReddits = Backbone.Router.extend({
 				});
 
 				router._swapView(subRedditIndexView);
-			},
-
-			error: function(response){
-        console.log("error fetching subs", response)
 			}
 		})
 	},
@@ -37,10 +33,6 @@ ProjectSkeleton.Routers.SubReddits = Backbone.Router.extend({
 				var randNum = Math.floor((Math.random() * num) + 1);
 				router.navigate("#/subreddits/" + randNum, { trigger: true });
 				router.show(randNum)
-			},
-
-			error: function(response){
-				console.log("error fetching random subreddit", response)
 			}
 		})
 	},

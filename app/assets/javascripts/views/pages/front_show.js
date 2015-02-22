@@ -92,7 +92,6 @@ ProjectSkeleton.Views.FrontShow = Backbone.View.extend({
 		  success: function(collection){
 			  collection.changeSort("hotPosts");
 			  collection.sort();
-			  console.log(collection);
 		  }
 	  })
   },
@@ -312,7 +311,6 @@ ProjectSkeleton.Views.FrontShow = Backbone.View.extend({
 
 	  var data = $(event.currentTarget).serializeJSON();
 	  var that = this;
-	  console.log(data)
 	  $.ajax({
 	    type: "GET",
 	    url: "/api/search_posts",

@@ -14,10 +14,6 @@ ProjectSkeleton.Collections.Users = Backbone.Collection.extend({
 		  user.fetch({
 			  success: function(){
 				  users.add(user);
-			  },
-
-			  error: function(error){
-				  console.log("error fetching user", error)
 			  }
 		  });
 	  }

@@ -35,11 +35,7 @@ ProjectSkeleton.Views.NotificationsIndex = Backbone.View.extend({
 	  notification.set({ is_read: true })
 	  notification.save({}, {
 
-		  success: function(response){},
-
-		  error: function(response) {
-			  console.log("notification save error", response);
-		  }
+		  success: function(response){}
 	  });
 
 	  var count = $(".notifications-num").html();

@@ -94,7 +94,6 @@ ProjectSkeleton.Views.SubRedditShow = Backbone.View.extend({
 		  success: function(model){
 			  model.posts().changeSort("hotPosts");
 			  model.posts().sort();
-			  console.log(model.posts());
 		  }
 	  })
   },
@@ -107,7 +106,6 @@ ProjectSkeleton.Views.SubRedditShow = Backbone.View.extend({
 		  success: function(model){
 			  model.posts().changeSort("topPosts");
 			  model.posts().sort();
-			  console.log(model.posts());
 		  }
 	  })
   },
@@ -120,7 +118,6 @@ ProjectSkeleton.Views.SubRedditShow = Backbone.View.extend({
 		  success: function(model){
 			  model.posts().changeSort("newPosts");
 			  model.posts().sort();
-			  console.log(model.posts());
 		  }
 	  })
   },
@@ -133,7 +130,6 @@ ProjectSkeleton.Views.SubRedditShow = Backbone.View.extend({
 		  success: function(model){
 			  model.posts().changeSort("conPosts");
 			  model.posts().sort();
-			  console.log(model.posts());
 		  }
 	  })
   },
@@ -146,7 +142,6 @@ ProjectSkeleton.Views.SubRedditShow = Backbone.View.extend({
 		  success: function(model){
 			  model.posts().changeSort("bestPosts");
 			  model.posts().sort();
-			  console.log(model.posts());
 		  }
 	  })
   },

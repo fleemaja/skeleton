@@ -95,7 +95,6 @@ ProjectSkeleton.Views.CommentShow = Backbone.View.extend({
 		  success: function(model){
 			  model.comments().changeSort("hotPosts");
 			  model.comments().sort();
-			  console.log(model.comments());
 		  }
 	  })
   },
@@ -108,7 +107,6 @@ ProjectSkeleton.Views.CommentShow = Backbone.View.extend({
 		  success: function(model){
 			  model.comments().changeSort("topPosts");
 			  model.comments().sort();
-			  console.log(model.comments());
 		  }
 	  })
   },
@@ -121,7 +119,6 @@ ProjectSkeleton.Views.CommentShow = Backbone.View.extend({
 		  success: function(model){
 			  model.comments().changeSort("newPosts");
 			  model.comments().sort();
-			  console.log(model.comments());
 		  }
 	  })
   },
@@ -134,7 +131,6 @@ ProjectSkeleton.Views.CommentShow = Backbone.View.extend({
 		  success: function(model){
 			  model.comments().changeSort("conPosts");
 			  model.comments().sort();
-			  console.log(model.comments());
 		  }
 	  })
   },
@@ -147,7 +143,6 @@ ProjectSkeleton.Views.CommentShow = Backbone.View.extend({
 		  success: function(model){
 			  model.comments().changeSort("bestPosts");
 			  model.comments().sort();
-			  console.log(model.comments());
 		  }
 	  })
   },

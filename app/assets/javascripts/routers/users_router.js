@@ -21,10 +21,6 @@ ProjectSkeleton.Routers.Users = Backbone.Router.extend({
 				});
 
 				router._swapView(userIndexView);
-			},
-
-			error: function(response){
-				console.log("error fetching users", response)
 			}
 		});
 	},

@@ -23,10 +23,6 @@ ProjectSkeleton.Routers.Pages = Backbone.Router.extend({
 				});
 
 				router._swapView(frontView);
-			},
-
-			error: function(response){
-				console.log("error fetching the front page", response)
 			}
 		});
 	},
@@ -42,10 +38,6 @@ ProjectSkeleton.Routers.Pages = Backbone.Router.extend({
 				});
 
 				router._swapView(allView);
-			},
-
-			error: function(response){
-				console.log("error fetching all subs", response)
 			}
 		});
 	},
