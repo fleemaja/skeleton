@@ -1,5 +1,5 @@
 # Project Skeleton
-[Project Skeleton](https://www.projectskeleton.com) is a web forum devoted to projects, challenges, and prompts.
+[Project Skeleton](http://www.projectskeleton.com) is a web forum devoted to projects, challenges, and prompts.
 
 It allows you to use project specifications and a creative community to spark your imagination to make cool things.
 
