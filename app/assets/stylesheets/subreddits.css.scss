@@ -111,11 +111,12 @@ ul.subreddit-posts {
 
 ul.subreddit-posts > li {
 	display: block;
-	border: 3px solid #d8d8d8;
+	border: 1px dashed #d8d8d8;
 }
 
 ul.subreddit-posts > li:hover {
-	background: rgb(230, 230, 230);
+	transition: background-color 0.5s ease;
+  background-color: #d8d8d8;
 }
 
 input[type="text"], input[type="password"], textarea {
