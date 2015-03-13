@@ -222,7 +222,6 @@ nav.top > ul > .subreddits-link {
 a.reddit-main {
 	position: absolute;
 	display: block;
-	/*bottom: 1px;*/
 	left: 10px;
 }
 
@@ -261,10 +260,6 @@ ul.user-info > li:hover {
 
 }
 
-ul.user-info > li a {
-	/*text-decoration: underline;*/
-}
-
 footer.clearfix {
 	background-color: #d8d8d8;
 	// border-top: 1px dashed #3b5998;
@@ -274,13 +269,6 @@ footer.clearfix {
 	font-size: 12px;
 }
 
-/*footer a:hover {
-	text-decoration: underline;
-}
-
-footer p {
-}*/
-
 footer > .info {
 	text-align: center;
 	padding: 5px 10px;
@@ -289,11 +277,6 @@ footer > .info {
 footer > .info a {
 	display: inline;
 }
-
-/*footer > a {
-	float: right;
-	padding: 5px 10px;
-}*/
 
 .button_to input[type="submit"], .subscribe-button {
 	background: #d8d8d8;
@@ -464,20 +447,6 @@ input[type="submit"] {
 .fancy-form {
 	color: #3b5998;
 }
-
-/*section.new-text {
- 	display: block;
- 	width: 300px;
- 	border-right: 1px solid #ccc;
-	padding-right: 50px;
- 	float: left;
- }*/
-/*
-section.new-text {
-
-	border-right: 0;
-  padding-left: 50px;
-}*/
 
 #login-modal section.sign-in {
 	display: block;

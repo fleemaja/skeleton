@@ -1,7 +1,6 @@
 ProjectSkeleton.Routers.Pages = Backbone.Router.extend({
 
 	initialize: function(posts, frontPosts, $rootEl) {
-		this.allPosts = posts;
 		this.frontPosts = frontPosts;
 		this.$rootEl = $rootEl;
 	},
@@ -9,8 +8,7 @@ ProjectSkeleton.Routers.Pages = Backbone.Router.extend({
 	routes: {
 		"": "front",
 		"#": "front",
-		"front": "front",
-		"all":"all"
+		"front": "front"
 	},
 
 	front: function(){
@@ -23,21 +21,6 @@ ProjectSkeleton.Routers.Pages = Backbone.Router.extend({
 				});
 
 				router._swapView(frontView);
-			}
-		});
-	},
-
-
-	all: function(){
-		var router = this;
-		this.allPosts.fetch({
-
-			success: function(collection){
-				var allView = new ProjectSkeleton.Views.AllShow({
-					collection: collection
-				});
-
-				router._swapView(allView);
 			}
 		});
 	},

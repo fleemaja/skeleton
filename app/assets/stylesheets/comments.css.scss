@@ -46,15 +46,9 @@ img.filepicker {
 }
 
 .comment .delete {
-	// color: white;
-	// font-weight: bold;
-	// background: black;
-	// border: 2px solid white;
-	// border-radius: 5px;
 	font-size: 12px;
 	font-weight: bold;
 	color: #3b5998;
-	// padding: 5px;
 }
 
 .comment .delete:hover{
@@ -62,12 +56,12 @@ img.filepicker {
 }
 
 .comment .upvote:hover {
-	-webkit-filter: grayscale; /*sepia, hue-rotate, invert....*/
+	-webkit-filter: grayscale;
   -webkit-filter: brightness(50%);
 }
 
 .comment .downvote:hover {
-	-webkit-filter: grayscale; /*sepia, hue-rotate, invert....*/
+	-webkit-filter: grayscale;
   -webkit-filter: brightness(50%);
 }
 
@@ -84,7 +78,6 @@ img.filepicker {
 
 span.comment-link {
 	font-size: 12px;
-	// color: darkgray;
 	font-weight: bold;
 	color: #3b5998;
 }
@@ -95,7 +88,6 @@ span.comment-link:hover{
 
 span.reply{
 	font-size: 12px;
-	// color: darkgray;
 	font-weight: bold;
 	color: #3b5998;
 	padding: 5px;
@@ -121,7 +113,6 @@ span.reply:hover{
 }
 
 .new-comment textarea {
-  // margin-left: 20px;
 	height: 100px;
 	width: 500px;
 }

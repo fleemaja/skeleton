@@ -26,17 +26,12 @@
 }
 
 .text-post a {
-	// padding: 2px 5px;
 	display: inline;
 }
 
 .text-post span.username {
 	color: #3b5998;
 	font-size: 18px;
-	// background: lightgray;
-	// border: 2px solid white;
-	// border-radius: 5px;
-	// padding: 2px 5px;
 }
 
 .text-post span.username:hover {
@@ -44,11 +39,8 @@
 }
 
 .text-post span.subreddit-name {
-	// color: white;
 	color: white;
 	background: orange;
-	// padding: 2px 5px;
-	// margin-left: 20px;
 	border-radius: 10px;
 	padding: 3px;
 	font-size: 16px;
@@ -64,46 +56,17 @@
 }
 
 .text-post span.karma {
-	// background: white;
-	// border: 2px solid black;
-	// display: inline-block;
 	padding: 2px 5px 2px 1px;
 	margin-left: 20px;
-	// border-radius: 10px;
-	// margin: 0px 0px 0px 5px;
-	// font-weight: bold;
-}
-
-.text-post .orange {
-	// color: black;
-	// background: #d8d8d8;
-	// border: 2px solid black;
-	// border-radius: 5px;
-	// background: orange;
-}
-
-.text-post .downvote {
-	// color: black;
-	// background: lightblue;
-	// border: 2px solid black;
-	// border-radius: 5px;
-}
-
-.text-post .delete {
-	// color: white;
-	// font-weight: bold;
-	// background: black;
-	// border: 2px solid white;
-	// border-radius: 5px;
 }
 
 .text-post .upvote:hover {
-	-webkit-filter: grayscale; /*sepia, hue-rotate, invert....*/
+	-webkit-filter: grayscale;
   -webkit-filter: brightness(50%);
 }
 
 .text-post .downvote:hover {
-	-webkit-filter: grayscale; /*sepia, hue-rotate, invert....*/
+	-webkit-filter: grayscale;
   -webkit-filter: brightness(50%);
 }
 
@@ -132,8 +95,4 @@
 
 .post-show {
 	border-top: 1px solid #d8d8d8;
-}
-
-.post > p > a {
-	// max-width: 1000px;
 }

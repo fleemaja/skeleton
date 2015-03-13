@@ -4,12 +4,6 @@ class PagesController < ApplicationController
 
   end
 
-  def all
-    @posts = Post.all
-    @posts.sort_by(&:created_at).reverse
-    render "all"
-  end
-
   def front
     @posts = collect_front_posts
     @posts.sort_by(&:created_at).reverse
