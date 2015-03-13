@@ -92,7 +92,6 @@ ProjectSkeleton.Views.AllShow = Backbone.View.extend({
 		  success: function(collection){
 			  collection.changeSort("hotPosts");
 			  collection.sort();
-			  console.log(collection);
 		  }
 	  })
   },
@@ -105,7 +104,6 @@ ProjectSkeleton.Views.AllShow = Backbone.View.extend({
 		  success: function(collection){
 			  collection.changeSort("topPosts");
 			  collection.sort();
-			  console.log(collection);
 		  }
 	  })
   },
@@ -130,7 +128,6 @@ ProjectSkeleton.Views.AllShow = Backbone.View.extend({
 		  success: function(collection){
 			  collection.changeSort("conPosts");
 			  collection.sort();
-			  console.log(collection);
 		  }
 	  })
   },
@@ -143,7 +140,6 @@ ProjectSkeleton.Views.AllShow = Backbone.View.extend({
 		  success: function(collection){
 			  collection.changeSort("bestPosts");
 			  collection.sort();
-			  console.log(collection);
 		  }
 	  })
   },

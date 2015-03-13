@@ -41,7 +41,6 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
   },
 
   render: function(){
-    console.log(this.model);
 	  var renderedContent = this.template({
 		  post: this.model,
 		  textTemplateFn: JST["posts/_show_text_no_delete"],
@@ -410,7 +409,6 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
 	  event.preventDefault();
 	  var data = $(event.currentTarget).serializeJSON();
 	  var that = this;
-	  console.log(data)
 	  $.ajax({
 	    type: "GET",
 	    url: "/api/search_posts",
