@@ -220,6 +220,7 @@ ProjectSkeleton.Views.SubRedditShow = Backbone.View.extend({
 			  ProjectSkeleton.posts.unshift(post);
 			  // that.model.fetch();
         Backbone.history.navigate("/posts/" + post.get("id"), { trigger: true })
+        $("body > *").not('#new-post-modal').css("opacity", '1');
 		  }
 	  });
 

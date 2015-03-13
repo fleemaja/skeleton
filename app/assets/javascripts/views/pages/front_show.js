@@ -219,6 +219,7 @@ ProjectSkeleton.Views.FrontShow = Backbone.View.extend({
 			  ProjectSkeleton.posts.unshift(model);
 			  // that.collection.fetch();
         Backbone.history.navigate("/posts/" + post.get("id"), { trigger: true })
+        $("body > *").not('#new-post-modal').css("opacity", '1');
       }
 	  });
 
