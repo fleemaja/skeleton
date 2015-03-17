@@ -50,6 +50,6 @@ class User < ActiveRecord::Base
   end
 
   def comment_karma
-    self.comments.inject(0){|sum, c| sum + c.karma }
+    self.comments.inject(0) {|sum, c| sum + c.karma }
   end
 end

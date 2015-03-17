@@ -72,7 +72,7 @@ body, header, nav, div, h1, h2, h3, h4, h5, h6, ul, li, span, p {
 body {
 	font-family: 'Arvo', serif;
 	font-size: 16px;
-	background: #d8d8d8;
+	background: white;
 }
 
 a {
@@ -213,7 +213,7 @@ nav.top > ul > .subreddits-link {
 }
 
 .second-row {
-	background: #d8d8d8;
+	background-image: url("skeletons_collage.png");
 	border-bottom: 1px #d8d8d8;
 	position: relative;
 	height: 120px;
@@ -232,7 +232,7 @@ a.reddit-main {
 .about-ps {
 	font-family: 'Arvo', serif;
 	margin-left: 20px;
-	background: #d8d8d8;
+	background: #E4E4E4;
 	width: 70%;
 	padding: 20px;
 	border-radius: 10px;
@@ -261,8 +261,7 @@ ul.user-info > li:hover {
 }
 
 footer.clearfix {
-	background-color: #d8d8d8;
-	// border-top: 1px dashed #3b5998;
+	background-image: url("skeletons_collage.png");
 	height: 75px;
 	display: block;
 	width: 100%;
@@ -556,7 +555,7 @@ input[type="file"] {
 
 #notifications-li ul.notifications-dropdown {
 	position: absolute;
-	background: #d8d8d8;
+	background: #E4E4E4;
 	overflow: visible;
 	border-left: 1px solid black;
 	border-right: 1px solid black;
