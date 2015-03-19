@@ -37,7 +37,9 @@
 		  <br><br>
 		<% } %>
 
-		<img src="<%= comment.get('filepicker_url') %>" class="filepicker">
+		<a href="comment.get('filepicker_url')">
+		  <img src="<%= comment.get('filepicker_url') %>" class="filepicker">
+		</a>
 	  <p>
 		  <span class="comment-link">
 			  <a href="#/comments/<%= comment.id %>">
