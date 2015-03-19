@@ -58,7 +58,7 @@ class Notification < ActiveRecord::Base
       post_user = post.user
       subreddit = post.subreddit
 
-      "#{post_user.username} posted in your subreddit: #{subreddit.title}"
+      "#{post_user.username} posted in your sub: #{subreddit.title}"
     end
   end
 
