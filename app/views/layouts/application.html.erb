@@ -17,11 +17,12 @@
 
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+  <%= javascript_include_tag 'application' %>
+  <%= filepicker_js_include_tag %>
 </head>
 
 <body>
-    <%= javascript_include_tag 'application' %>
-    <%= filepicker_js_include_tag %>
 
 		<%= yield %>
 </body>
