@@ -3,3 +3,13 @@
 <% @posts.each do |post| %>
 	<%= render partial: "posts/show_text", locals: { post: post, subreddit: SubReddit.find(post.subreddit_id) } %>
 <% end %>
+
+<div="avatar-section">
+
+	<% if @user.filepicker_url %>
+
+		<img src="<%= @user.filepicker_url %>" alt="<%= image_path('default_avatar.jpg') %>">
+
+	<% end %>
+
+</div>

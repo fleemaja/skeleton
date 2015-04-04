@@ -10,6 +10,25 @@ window.ProjectSkeleton = {
 	  // pull divs from root
 	  var $rootEl = $("#content");
 	  var $notificationsEl = $("#notifications-li");
+    new ProjectSkeleton.Routers.Users(users, $rootEl);
+
+
+    $(".shawnas").on("click", function(event) {
+      var that = this;
+      var user = users.getOrFetch( { id: ProjectSkeleton.currentUserId })
+      filepicker.pick({}, function (Blob) {
+
+        $(event.currentTarget).removeClass("shawnas");
+        $(event.currentTarget).addClass("shawnas-disabled");
+        $(event.currentTarget).html("Photo successfully uploaded!")
+
+        that._lastFile = Blob.url;
+        user.save({ filepicker_url: that._lastFile })
+        that.lastFile = ""
+      }, function (FPError) {
+
+      })
+    });
 
 	  // monitor modal clicks
 	  $(".hide-modal").on("click", function(event){
@@ -19,6 +38,7 @@ window.ProjectSkeleton = {
   		$("#compose-modal").removeClass("is-active");
   		$("#new-subreddit-modal").removeClass("is-active");
   	  $("#delete-modal").removeClass("is-active");
+      $("#preferences-modal").removeClass("is-active");
       $("body > *").css("opacity", '1');
 	  });
 
@@ -48,6 +68,13 @@ window.ProjectSkeleton = {
 	      $("#delete-modal").removeClass("is-active");
 	    }
 	  })
+
+    $("#preferences-modal").on("click", function(event){
+	    if(event.target.id == this.id){
+	      event.preventDefault();
+	      $("#preferences-modal").removeClass("is-active");
+	    }
+	   })
 
 	  $("#compose-modal").on("click", function(event){
 	    if(event.target.id == this.id){
@@ -93,8 +120,18 @@ window.ProjectSkeleton = {
   		input.val(str)
 	  })
 
+    //stuff for preferences form
+
+	  $("#preferences-link").on("click", function(event){
+		  event.preventDefault();
+		  $("#preferences-modal").addClass("is-active");
+  	  	  $("input[type=password]").val("");
+		  var username = $(".user-info > li > a:first").html()
+		  $(".edit-user-form input[type=text]:first").val(username)
+      $("body > *").not('#preferences-modal').css("opacity", '0.2');
+	  })
+
 	  ProjectSkeleton.subRedditsRouter = new ProjectSkeleton.Routers.SubReddits(subReddits, $rootEl);
-	  new ProjectSkeleton.Routers.Users(users, $rootEl);
 	  new ProjectSkeleton.Routers.Posts(posts, $rootEl);
 	  new ProjectSkeleton.Routers.Comments(comments, $rootEl);
 	  new ProjectSkeleton.Routers.Pages(posts, frontPosts, $rootEl);

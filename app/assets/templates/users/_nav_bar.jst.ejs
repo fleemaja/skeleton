@@ -12,10 +12,10 @@
 
 	<div class="subreddit-sidebar">
 		<div class="subreddit-details user-details">
-			<p><%= user.escape("username") %></p>
-			<p>account created <%= $.timeago(user.escape("created_at")) %> </p>
-			<p>post karma: <%= user.escape("post_karma") %></p>
-			<p>comment karma: <%= user.escape("comment_karma") %></p>
+			<p><%= user.escape("username") %></p><br>
+			<p>account created <%= $.timeago(user.escape("created_at")) %> </p><br>
+			<p>post karma: <%= user.escape("post_karma") %></p><br>
+			<p>comment karma: <%= user.escape("comment_karma") %></p><br>
 			<% var subReddits = user.get("moderated_subreddits"); %>
 			<% if (subReddits) { %>
 				<% subReddits.forEach(function(subReddit){ %>
@@ -23,6 +23,11 @@
 					<br>
 				<% }) %>
 			<% } %>
+
+      <div class="avatar-section">
+				<img src="<%= user.escape("filepicker_url") %>">
+			</div>
+
 		</div>
 	</div>
 </div>

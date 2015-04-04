@@ -1,0 +1,35 @@
+<div id="preferences-modal" class="">
+
+  <article class="clearfix">
+    <h3>Edit User Info</h3><br>
+
+      <span class="hide-modal">&times;</span>
+    <% if current_user %>
+    <section class="edit-preferences-form">
+
+      <form class="edit-user-form" action="<%= user_url(current_user) %>" enctype="multipart/form-data" method="POST">
+       <input type="hidden" name="_method" value="patch">
+       <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+       <input type="hidden" name="user[username]" value="<%= current_user.username %>">
+
+      Password:
+       <input type="password" name="user[password]"><br><br>
+
+      Password Confirmation:
+       <input type="password" name="user[password_confirmation]"><br><br>
+
+       <button type="button" class="shawnas" id="avatar">Upload a New User Avatar</button><br><br><br>
+
+       <input type="submit" value="submit" class="submit-user-updates">
+
+     </form>
+   </section>
+  <% else %>
+   <p> No current user! This page shouldn't be displayed! How did you get here?</p>
+  <% end %>
+ </article>
+
+
+
+</div>

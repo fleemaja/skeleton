@@ -1,4 +1,4 @@
-json.(user, :id, :username, :created_at, :post_karma, :comment_karma)
+json.(user, :id, :username, :created_at, :post_karma, :comment_karma, :filepicker_url)
 
 json.moderated_subreddits user.moderated_subreddits do |subreddit|
 	json.name subreddit.name

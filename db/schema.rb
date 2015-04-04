@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150212181840) do
+ActiveRecord::Schema.define(version: 20150403220524) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "comments", force: true do |t|
+  create_table "comments", force: :cascade do |t|
     t.text     "content",          null: false
     t.integer  "user_id"
     t.integer  "commentable_id"
@@ -26,10 +26,10 @@ ActiveRecord::Schema.define(version: 20150212181840) do
     t.string   "filepicker_url"
   end
 
-  add_index "comments", ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type", using: :btree
+  add_index "comments", ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
-  create_table "notifications", force: true do |t|
+  create_table "notifications", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "notifiable_id"
     t.string   "notifiable_type"
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20150212181840) do
     t.datetime "updated_at"
   end
 
-  create_table "posts", force: true do |t|
+  create_table "posts", force: :cascade do |t|
     t.string   "title",        null: false
     t.text     "text"
     t.integer  "subreddit_id"
@@ -48,7 +48,10 @@ ActiveRecord::Schema.define(version: 20150212181840) do
     t.datetime "updated_at"
   end
 
-  create_table "sub_reddits", force: true do |t|
+  add_index "posts", ["poster_id"], name: "index_posts_on_poster_id", using: :btree
+  add_index "posts", ["subreddit_id"], name: "index_posts_on_subreddit_id", using: :btree
+
+  create_table "sub_reddits", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "title"
     t.text     "description"
@@ -59,7 +62,7 @@ ActiveRecord::Schema.define(version: 20150212181840) do
 
   add_index "sub_reddits", ["user_id"], name: "index_sub_reddits_on_user_id", using: :btree
 
-  create_table "subscriptions", force: true do |t|
+  create_table "subscriptions", force: :cascade do |t|
     t.integer  "subreddit_id"
     t.integer  "user_id"
     t.datetime "created_at"
@@ -69,7 +72,7 @@ ActiveRecord::Schema.define(version: 20150212181840) do
   add_index "subscriptions", ["subreddit_id"], name: "index_subscriptions_on_subreddit_id", using: :btree
   add_index "subscriptions", ["user_id"], name: "index_subscriptions_on_user_id", using: :btree
 
-  create_table "user_votes", force: true do |t|
+  create_table "user_votes", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "votable_id"
     t.string   "votable_type"
@@ -80,12 +83,17 @@ ActiveRecord::Schema.define(version: 20150212181840) do
 
   add_index "user_votes", ["user_id"], name: "index_user_votes_on_user_id", using: :btree
 
-  create_table "users", force: true do |t|
-    t.string   "username",        null: false
-    t.string   "password_digest", null: false
+  create_table "users", force: :cascade do |t|
+    t.string   "username",            null: false
+    t.string   "password_digest",     null: false
     t.string   "session_token"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.string   "filepicker_url"
   end
 
 end

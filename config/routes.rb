@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root to: "pages#root"
 
-  resources :users, only: [:new, :create, :show]
+  resources :users, only: [:new, :create, :show, :update]
 
   resources :subreddits, only: [:new, :create, :show, :update]
 
@@ -26,7 +26,7 @@ Rails.application.routes.draw do
 
     get "search_posts", to: "posts#search"
 
-    resources :users, only: [:new, :create, :show]
+    resources :users, only: [:new, :create, :show, :update]
 
     resource :session, only: [:new, :create, :destroy]
 

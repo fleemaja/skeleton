@@ -2,7 +2,7 @@ ProjectSkeleton.Views.UserShow = Backbone.View.extend({
 
   events: {
     "click .downvote": "downvote",
-    "click .upvote": "upvote",
+    "click .upvote": "upvote"
   },
 
   template: JST['users/show_posts'],
@@ -59,7 +59,7 @@ ProjectSkeleton.Views.UserShow = Backbone.View.extend({
 
   upvote: function(event){
    	event.preventDefault();
-     
+
  	  var that = this;
  	  if (ProjectSkeleton.currentUserId) {
  		  var id = $(event.currentTarget).attr("post-id")

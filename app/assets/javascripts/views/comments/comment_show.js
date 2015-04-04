@@ -35,7 +35,6 @@ ProjectSkeleton.Views.CommentShow = Backbone.View.extend({
   },
 
   pick: function (event) {
-    debugger;
     var that = this;
     filepicker.pick({}, function (Blob) {
 

@@ -3,9 +3,24 @@ ProjectSkeleton.Views.UserComments = Backbone.View.extend({
   events: {
 	  "click .downvote": "downvote",
 	  "click .upvote": "upvote",
+    "click .shawnas": "pick"
   },
 
   template: JST['users/show_comments'],
+
+  pick: function (event) {
+    var that = this;
+    filepicker.pick({}, function (Blob) {
+
+      $(event.currentTarget).removeClass("shawnas");
+      $(event.currentTarget).addClass("shawnas-disabled");
+      $(event.currentTarget).html("Photo successfully uploaded!")
+
+      that._lastFile = Blob.url;
+    }, function (FPError) {
+
+    })
+  },
 
   render: function(){
 	 var renderedContent = this.template({
