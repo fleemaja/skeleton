@@ -13,6 +13,8 @@ ProjectSkeleton.Routers.Pages = Backbone.Router.extend({
 
 	front: function(){
 		var router = this;
+		this._generateLoadingScreen();
+
 		this.frontPosts.fetch({
 
 			success: function(collection){
@@ -29,5 +31,10 @@ ProjectSkeleton.Routers.Pages = Backbone.Router.extend({
 		this._currentView && this._currentView.remove();
 		this._currentView = view;
 		this.$rootEl.html(view.render().$el);
-	}
+	},
+
+	_generateLoadingScreen: function () {
+    var loading = new ProjectSkeleton.Views.Loading();
+    this._swapView(loading);
+  }
 });

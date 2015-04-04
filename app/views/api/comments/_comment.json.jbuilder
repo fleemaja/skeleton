@@ -9,5 +9,4 @@ end
 
 json.subreddit do
 	json.partial!("api/subreddits/subreddit_no_posts", subreddit: comment.subreddit)
-
 end

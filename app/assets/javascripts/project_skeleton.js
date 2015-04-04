@@ -2,6 +2,7 @@ window.ProjectSkeleton = {
   Models: {},
   Collections: {},
   Views: {},
+  Utils: {},
   Routers: {},
   initialize: function() {
 	  // timeago library

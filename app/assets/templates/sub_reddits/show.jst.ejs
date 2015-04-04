@@ -1,9 +1,13 @@
 <%= navTemplate({ subReddit: subReddit }) %>
 
 <ul class="subreddit-posts">
-	<% subReddit.posts().forEach(function(post){  %>
-		<li>
-			<%= textTemplate({ post: post }) %>
-		</li>
-	<% }) %>
+  <% if (subReddit.posts().length > 0) { %>
+		<% subReddit.posts().forEach(function(post){  %>
+			<li>
+				<%= textTemplate({ post: post }) %>
+			</li>
+		<% }) } else { %>
+      <h1 class="no-posts">No Posts Yet! <br>
+			Submit a New Post to Get Things Started!</h1>
+			<% } %>
 </ul>
