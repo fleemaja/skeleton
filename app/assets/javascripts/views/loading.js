@@ -3,7 +3,7 @@ ProjectSkeleton.Views.Loading = Backbone.View.extend({
 
   initialize: function (options) {
     if (typeof options == "undefined") {
-      var top = '10%';
+      var top = '50%';
     } else {
       var top = options.top;
     }
