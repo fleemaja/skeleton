@@ -16,7 +16,7 @@ ProjectSkeleton.Views.Loading = Backbone.View.extend({
       corners: 1, // Corner roundness (0..1)
       rotate: 0, // The rotation offset
       direction: 1, // 1: clockwise, -1: counterclockwise
-      color: '#1ABDD6', // #rgb or #rrggbb or array of colors
+      color: '#3b5998', // #rgb or #rrggbb or array of colors
       speed: 1.3, // Rounds per second
       trail: 100, // Afterglow percentage
       shadow: false, // Whether to render a shadow
@@ -24,7 +24,7 @@ ProjectSkeleton.Views.Loading = Backbone.View.extend({
       className: 'spinner', // The CSS class to assign to the spinner
       zIndex: 2e9, // The z-index (defaults to 2000000000)
       top: top, // Top position relative to parent
-      left: '45%' // Left position relative to parent
+      left: '50%' // Left position relative to parent
     }
   },
 
