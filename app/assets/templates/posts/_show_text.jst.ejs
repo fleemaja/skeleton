@@ -5,8 +5,11 @@
 			<a href="#/posts/<%= post.id %>/upvote" rel="nofollow">
 				<img src="skeleFBlike.png" height="30" width="32">
 			</a>
-
 		</div>
+
+		<span class="karma">
+			<%= post.escape("karma") %>
+		</span>
 
 		<div class="downvote" post-id="<%= post.id %>">
 			<a href="#/posts/<%= post.id %>/downvote" rel="nofollow">
@@ -21,10 +24,6 @@
 			<a href="#/posts/<%= post.id %>">
 				<%= post.escape("title") %>
 			</a><br>
-		</span>
-
-		<span class="karma">
-			<%= post.escape("karma") %> points
 		</span>
 
 		submitted by <a href="#/users/<%= post.escape("poster_id") %>">

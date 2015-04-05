@@ -7,6 +7,10 @@
 			</a>
 		</div>
 
+		<span class="karma">
+				<%= post.escape("karma") %>
+		</span>
+
 		<div class="downvote" post-id="<%= post.id %>">
 			<a href="#/posts/<%= post.id %>/downvote" rel="nofollow">
 		    <img src="skeleFBdislike.png" height="30" width="32">
@@ -19,10 +23,6 @@
 		  <a href="#/posts/<%= post.id %>">
 			  <%= post.escape("title") %>
 			</a>
-		</span>
-
-	  <span class="karma">
-				<%= post.escape("karma") %> points
 		</span>
 
 		submitted by
