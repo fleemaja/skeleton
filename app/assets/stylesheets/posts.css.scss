@@ -64,6 +64,10 @@
 	color: darkgray;
 }
 
+.text-post span.poster {
+	margin-left: 20px;
+}
+
 .text-post .upvote:hover {
 	-webkit-filter: grayscale;
   -webkit-filter: brightness(50%);

@@ -26,7 +26,9 @@
 			</a><br>
 		</span>
 
-		submitted by <a href="#/users/<%= post.escape("poster_id") %>">
+		<span class="poster">
+			submitted by <a href="#/users/<%= post.escape("poster_id") %>">
+		</span>
 
 			<span class="username">
 			  <%= post.escape("poster") %>
@@ -42,10 +44,6 @@
 			<%= jQuery.timeago(post.escape("created_at")) %>
 		</span>
 	</p>
-
-	<!-- <p class="text">
-		<%= post.escape("text") %>
-	</p> -->
 
 	<div class="comments">
 		<a href="#/posts/<%= post.id %>">
