@@ -525,18 +525,12 @@ input[type="submit"] {
 
 .show-login, .show-register {
   cursor: pointer;
-	background: #d8d8d8;
-	opacity: 0.7;
-	color: black;
-	font-size: 16px;
-	border-radius: 10px;
-	padding: 5px 10px;
-	margin: 5px 0px;
+	color: #3b5998;
+	font-size: 18px;
 }
 
 .show-login:hover, .show-register:hover {
-  background: black;
-	color: white;
+  text-decoration: underline;
 }
 
 .join-text {
