@@ -25,11 +25,13 @@
 			</a>
 		</span>
 
-		submitted by
-		<span class="username">
-		  <a href="#/users/<%= post.escape("poster_id") %>">
-		    <%= post.escape("poster") %>
-			</a>
+    <span class="poster">
+			submitted by
+			<span class="username">
+			  <a href="#/users/<%= post.escape("poster_id") %>">
+			    <%= post.escape("poster") %>
+				</a>
+			</span>
 		</span>
 
 		in
