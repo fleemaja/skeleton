@@ -237,6 +237,7 @@ a.reddit-main {
 
 .loginorout > ul.user-info {
 	float: right;
+	margin-top: 27px;
 }
 
 .about-ps {
@@ -255,20 +256,12 @@ ul.user-info a {
 	display: inline;
 }
 
-ul.user-info a:hover {
-
-}
-
 ul.user-info > li {
 	float: left;
 	margin-top: 45px;
 	padding-bottom: 5px;
 	margin-left: 20px;
 	margin-right: 20px;
-}
-
-ul.user-info > li:hover {
-
 }
 
 footer.clearfix {
@@ -531,10 +524,6 @@ input[type="submit"] {
 
 .show-login:hover, .show-register:hover {
   text-decoration: underline;
-}
-
-.join-text {
-	margin-top: 27px;
 }
 
 input[type="submit"] {
