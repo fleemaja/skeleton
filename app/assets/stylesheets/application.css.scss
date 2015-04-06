@@ -132,9 +132,18 @@ nav.top {
 	border-bottom: 1px solid #d8d8d8;
 }
 
-.subreddit-details > .avatar-section > img {
+.sub-avatar-section > img {
 	width: 240px;
 	border-radius: 10px;
+}
+
+.sub-avatar {
+	max-height: 100px;
+	max-width: 100px;
+	float: left;
+	display: block;
+	margin-right: 10px;
+	margin-top: 10px;
 }
 
 nav.top a {

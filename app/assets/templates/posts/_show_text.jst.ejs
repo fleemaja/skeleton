@@ -15,11 +15,19 @@
 			<a href="#/posts/<%= post.id %>/downvote" rel="nofollow">
 				<img src="skeleFBdislike.png" height="30" width="32">
 			</a>
-
 		</div>
+
 	</div>
 
 	<p>
+		<span>
+			<% if (post.subReddit().escape("filepicker_url")) { %>
+				<img class="sub-avatar" src="<%= post.subReddit().escape("filepicker_url") %>">
+		  <% } else { %>
+				<img class="sub-avatar" src="https://www.filepicker.io/api/file/YjHgU2xSPG63ndUHWnJw">
+			<% } %>
+		</span>
+
 		<span class="post-title">
 			<a href="#/posts/<%= post.id %>">
 				<%= post.escape("title") %>

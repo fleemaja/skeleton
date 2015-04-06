@@ -30,6 +30,13 @@
 				<p>Name: <%= @subreddit.name %></p><br>
 			  <p>Moderator: <a href="<%= user_url(User.find(@subreddit.user_id)) %>"><%= User.find(@subreddit.user_id).username %></a></p><br>
 				<p>Description: <%= @subreddit.description %></p><br>
+
+        <div="sub-avatar-section">
+        	<% if @subreddit.filepicker_url %>
+        		<img src="<%= @subreddit.filepicker_url %>">
+        	<% end %>
+        </div>
+
 			</div>
 		<% end %>
 	</div>

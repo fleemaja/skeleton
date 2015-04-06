@@ -49,7 +49,6 @@ ProjectSkeleton.Routers.SubReddits = Backbone.Router.extend({
 		});
 	},
 
-
 	_getSubReddit: function(id, callback){
 		var that = this;
 		var subReddit = ProjectSkeleton.subReddits.get(id);

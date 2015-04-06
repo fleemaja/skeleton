@@ -37,7 +37,18 @@
         </a>
       </p><br><br>
 
-			<p><%= subReddit.escape("description") %></p>
+      <div class="sub-avatar-section">
+        <% if (subReddit.get("filepicker_url")) { %>
+    		  <img src="<%= subReddit.get('filepicker_url') %>">
+    		<% } else { %>
+    		  <img src="https://www.filepicker.io/api/file/YjHgU2xSPG63ndUHWnJw">
+    	  <% } %>
+			</div>
+
+      <p>
+        <%= subReddit.escape("description") %>
+      </p>
+
     </div>
 	</div>
 </div>

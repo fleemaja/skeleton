@@ -52,6 +52,15 @@
 
 		<div class="subreddit-details">
 			<p><%= post.subReddit().escape("name") %></p><br><br>
+
+      <div class="sub-avatar-section">
+        <% if (post.subReddit().get("filepicker_url")) { %>
+    		  <img src="<%= post.subReddit().get('filepicker_url') %>">
+    		<% } else { %>
+    		  <img src="https://www.filepicker.io/api/file/YjHgU2xSPG63ndUHWnJw">
+    	  <% } %>
+			</div>
+
 			<p><%= post.subReddit().escape("description") %></p>
     </div>
 	</div>

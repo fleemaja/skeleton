@@ -19,6 +19,18 @@ class SubredditsController < ApplicationController
     end
   end
 
+  def edit
+    @subreddit = SubReddit.find(params[:id])
+  end
+
+  def update
+    @subreddit = SubReddit.find(params[:id])
+    if (@subreddit.update(subreddit_params))
+    end
+
+    redirect_to :back
+  end
+
   def show
     @subreddit = SubReddit.find(params[:id])
     @posts = @subreddit.posts.sort_by(&:created_at).reverse
@@ -66,6 +78,6 @@ class SubredditsController < ApplicationController
   private
 
   def subreddit_params
-    params.require(:subreddit).permit(:name, :title, :description)
+    params.require(:subreddit).permit(:name, :title, :description, :filepicker_url)
   end
 end

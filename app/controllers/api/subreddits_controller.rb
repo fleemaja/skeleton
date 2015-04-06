@@ -17,6 +17,18 @@ class Api::SubredditsController < ApplicationController
     end
   end
 
+  def edit
+    @subreddit = SubReddit.find(params[:id])
+  end
+
+  def update
+    @subreddit = SubReddit.find(params[:id])
+    if (@subreddit.update(subreddit_params))
+    end
+
+    redirect_to :back
+  end
+
   def posts
     @posts = SubReddit.find(params[:id]).posts
   end
@@ -71,6 +83,6 @@ class Api::SubredditsController < ApplicationController
   private
 
   def subreddit_params
-    params.require(:subreddit).permit(:name, :title, :description)
+    params.require(:subreddit).permit(:name, :title, :description, :filepicker_url)
   end
 end

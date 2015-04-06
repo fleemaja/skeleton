@@ -1,0 +1,27 @@
+<h3 class="fancy-form">Edit Sub</h3>
+
+<form class="new-subreddit-form" action="<%= subreddit_url(@subreddit) %>" method="POST">
+  <input type="hidden" name="_method" value="patch">
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <input type="hidden" name="subreddit[name]" value="<%= @subreddit.name %>">
+
+  <input type="hidden" name="subreddit[title]" value="<%= @subreddit.title %>">
+
+
+	<label>description
+		<br>
+		<textarea name="subreddit[description]"></textarea>
+	</label>
+  <br><br>
+
+  <label>filepicker_url
+    <br>
+    <input type="text" name="subreddit[filepicker_url]">
+  </label>
+
+	<br><br>
+
+	<input type="submit" value="Edit Sub">
+
+</form>

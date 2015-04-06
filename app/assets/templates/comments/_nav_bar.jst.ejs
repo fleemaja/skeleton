@@ -28,6 +28,15 @@
 		  <p>Moderator: <a href="#/api/users/<%= comment.subReddit().escape("moderator_id")%>"><br><br>
       <%= comment.subReddit().escape("moderator") %></a></p><br><br>
 			<p>Description: <%= comment.subReddit().escape("description") %></p>
+
+      <div class="sub-avatar-section">
+        <% if (comment.subReddit().get("filepicker_url")) { %>
+          <img src="<%= comment.subReddit().get('filepicker_url') %>">
+    		<% } else { %>
+    		  <img src="https://www.filepicker.io/api/file/YjHgU2xSPG63ndUHWnJw">
+    	  <% } %>
+			</div>
+
     </div>
 	</div>
 </div>
