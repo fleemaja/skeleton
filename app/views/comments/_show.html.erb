@@ -1,10 +1,9 @@
 <div class="comment">
 
 			<% if comment.user == current_user %>
-			<div class="delete">
-
-				<%= link_to "delete", comment_url(comment), method: :delete  %>
-			</div>
+				<div class="delete">
+					<%= link_to "delete", comment_url(comment), method: :delete  %>
+				</div>
 
 			<% end %>
 
@@ -60,10 +59,9 @@
 	</form>
 
 	<% comment.comments.each do |child| %>
-	<div class="child">
-
-		<%= render partial: "comments/show", locals: { comment: child } %>
-	</div>
+		<div class="child">
+			<%= render partial: "comments/show", locals: { comment: child } %>
+		</div>
 	<% end %>
 
 </div>
