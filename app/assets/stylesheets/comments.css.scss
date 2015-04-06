@@ -6,6 +6,15 @@
 	padding: 10px 0px 10px 50px;
 }
 
+.comment-user-avatar {
+	width: 70px;
+	height: 70px;
+	float: left;
+	border-radius: 35px;
+	-webkit-border-radius: 35px;
+	-moz-border-radius: 35px;
+}
+
 .comment a {
 	display: inline;
 }
@@ -40,10 +49,6 @@ img.filepicker {
 
 .comment span.time-ago{
 	font-size: 12px;
-}
-
-.comment .vote-buttons a {
-	padding: 10px 10px;
 }
 
 .comment .delete {

@@ -5,19 +5,9 @@
 
 			<div class="comment"  comment-id="<%= comment.id %>">
 
-				<div class="vote-buttons">
-					<div class="upvote" comment-id="<%= comment.id %>">
-						<a href="#/comments/<%= comment.id %>/upvote" rel="nofollow">
-							<img src="skeleFBlike.png" height="30" width="32">
-						</a>
-					</div>
-
-					<div class="downvote" comment-id="<%= comment.id %>">
-						<a href="#/comments/<%= comment.id %>/downvote" rel="nofollow">
-							<img src="skeleFBdislike.png" height="30" width="32">
-						</a>
-					</div>
-				</div>
+			<span>
+				<img class="comment-user-avatar" src="<%= comment.get('author_avatar') %>">
+			</span>
 
 				<p>
 					<span class="username">
@@ -56,6 +46,18 @@
 						<span class="reply">
 							<a href="#/comments/<%= comment.id %>" data-id="<%= comment.id %>">
 								reply
+							</a>
+						</span>
+
+						<span class="upvote" comment-id="<%= comment.id %>">
+							<a href="#/comments/<%= comment.id %>/upvote" rel="nofollow">
+								<img src="skeleFBlike.png" height="15" width="16">
+							</a>
+						</span>
+
+						<span class="downvote" comment-id="<%= comment.id %>">
+							<a href="#/comments/<%= comment.id %>/downvote" rel="nofollow">
+								<img src="skeleFBdislike.png" height="15" width="16">
 							</a>
 						</span>
 

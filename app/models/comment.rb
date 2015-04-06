@@ -94,6 +94,10 @@ class Comment < ActiveRecord::Base
     self.user.username
   end
 
+  def author_avatar
+    self.user.filepicker_url
+  end
+
   def root_post
     parent = self.commentable
     while (parent.class.to_s == "Comment")

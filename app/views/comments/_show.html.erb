@@ -1,14 +1,8 @@
 <div class="comment">
 
-	<div class="vote-buttons">
-		<div class="upvote">
-			<%= link_to "upvote", comment_upvote_url(comment), method: :post %>
-		</div>
-
-		<div class="downvote">
-			<%= link_to "downvote", comment_downvote_url(comment), method: :post %>
-
-		</div>
+	<span>
+		<img class="comment-user-avatar" src="<%= comment.get('author_avatar') %>">
+	</span>
 
 			<% if comment.user == current_user %>
 			<div class="delete">
@@ -17,9 +11,6 @@
 			</div>
 
 			<% end %>
-
-	</div>
-
 
 	<p>
 		<span class="username">
@@ -44,6 +35,15 @@
 				  reply
 			  </a>
 		  </span>
+
+			<span class="upvote">
+				<%= link_to "upvote", comment_upvote_url(comment), method: :post %>
+			</span>
+
+			<span class="downvote">
+				<%= link_to "downvote", comment_downvote_url(comment), method: :post %>
+			</span>
+
 	  </p>
 	  <p>
 			<span class="karma">

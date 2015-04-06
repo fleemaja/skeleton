@@ -1,30 +1,40 @@
 <div class="comment" comment-id="<%= comment.id %>">
 
-	<div class="vote-buttons">
-		<div class="upvote">
-			<a href="#/comments/<%= comment.id %>/upvote" rel="nofollow">
-			  <img src="skeleFBlike.png" height="30" width="32">
-			</a>
-		</div>
-
-		<div class="downvote">
-			<a href="#/comments/<%= comment.id %>/downvote" rel="nofollow">
-				<img src="skeleFBdislike.png" height="30" width="32">
-			</a>
-		</div>
+	<span>
+		<img class="comment-user-avatar" src="<%= comment.get('author_avatar') %>">
+	</span>
 
 			<% if (comment.escape("user_id") == ProjectSkeleton.currentUserId ) { %>
 				<div class="delete">
 					<a href="#/comments/<%= comment.id %>" rel="nofollow">delete</a>
 				</div>
-			<% } %>
-	</div>
 
 	<p><span class="username"><%= comment.escape("author_username") %></span> <span class="time-ago">
 		<%= jQuery.timeago(comment.escape("created_at")) %></span></p>
 
 	<p class="content"><%= comment.escape("content") %>
-	<p> <span class="comment-link"><a href="#/comments/<%= comment.id %>">permalink</a></span> <span class="reply"><a href="#" data-id="<%= comment.id %>">reply</a></span> </p>
+	<p>
+	  <span class="comment-link">
+		  <a href="#/comments/<%= comment.id %>">permalink</a>
+		</span>
+
+	  <span class="reply">
+		  <a href="#" data-id="<%= comment.id %>">reply</a>
+		</span>
+
+		<span class="upvote">
+			<a href="#/comments/<%= comment.id %>/upvote" rel="nofollow">
+			  <img src="skeleFBlike.png" height="22" width="24">
+			</a>
+		</span>
+
+		<span class="downvote">
+			<a href="#/comments/<%= comment.id %>/downvote" rel="nofollow">
+				<img src="skeleFBdislike.png" height="22" width="24">
+			</a>
+		</span>
+	</p>
+	
 	<p><span class="karma"><%= comment.escape("karma") %></span> karma
 	 </p>
 </div>

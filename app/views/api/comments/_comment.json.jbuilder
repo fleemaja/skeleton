@@ -1,4 +1,4 @@
-json.(comment, :content, :created_at, :id, :user_id, :author_username, :karma, :hotness, :controversy, :bestness, :filepicker_url)
+json.(comment, :content, :created_at, :id, :user_id, :author_username, :author_avatar, :karma, :hotness, :controversy, :bestness, :filepicker_url)
 json.rootPost comment.root_post
 json.sum_comments comment.sum_comments
 json.createInt comment.created_at.to_i
