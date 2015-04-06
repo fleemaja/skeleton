@@ -1,7 +1,11 @@
 <div class="comment" comment-id="<%= comment.id %>">
 
 	<span>
-		<img class="comment-user-avatar" src="<%= comment.get('author_avatar') %>">
+		<% if (comment.get('author_avatar')) { %>
+		  <img class="comment-user-avatar" src="<%= comment.get('author_avatar') %>">
+		<% } else { %>
+		  <img class="comment-user-avatar" src="https://www.filepicker.io/api/file/YjHgU2xSPG63ndUHWnJw">
+	  <% } %>
 	</span>
 
 			<% if (comment.escape("user_id") == ProjectSkeleton.currentUserId ) { %>
@@ -34,7 +38,7 @@
 			</a>
 		</span>
 	</p>
-	
+
 	<p><span class="karma"><%= comment.escape("karma") %></span> karma
 	 </p>
 </div>

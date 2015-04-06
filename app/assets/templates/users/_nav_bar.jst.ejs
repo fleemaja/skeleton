@@ -25,9 +25,12 @@
 			<% } %>
 
       <div class="avatar-section">
-				<img src="<%= user.escape("filepicker_url") %>">
+        <% if (user.get("filepicker_url")) { %>
+    		  <img src="<%= user.get('filepicker_url') %>">
+    		<% } else { %>
+    		  <img src="https://www.filepicker.io/api/file/YjHgU2xSPG63ndUHWnJw">
+    	  <% } %>
 			</div>
-
 		</div>
 	</div>
 </div>
