@@ -55,7 +55,7 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
   updatePostKarma: function(karma){
 	  var currentKarma = parseInt($(".post .karma").html());
 	  currentKarma += parseInt(karma);
-	  $(".post .karma").html(currentKarma + " points");
+	  $(".post .karma").html(currentKarma);
 	  if (this.model.get("poster_id") === ProjectSkeleton.currentUserId) {
 		  this.updateCurrentUserKarma(karma)
 	  }
