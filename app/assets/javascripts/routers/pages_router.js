@@ -8,7 +8,8 @@ ProjectSkeleton.Routers.Pages = Backbone.Router.extend({
 	routes: {
 		"": "front",
 		"#": "front",
-		"front": "front"
+		"front": "front",
+		"about": "about"
 	},
 
 	front: function(){
@@ -25,6 +26,11 @@ ProjectSkeleton.Routers.Pages = Backbone.Router.extend({
 				router._swapView(frontView);
 			}
 		});
+	},
+
+	about: function(){
+		var aboutView = new ProjectSkeleton.Views.AboutShow()
+		router._swapView(aboutView)
 	},
 
 	_swapView: function(view) {

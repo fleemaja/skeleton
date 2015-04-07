@@ -1,7 +1,6 @@
 class PagesController < ApplicationController
 
   def root
-
   end
 
   def front

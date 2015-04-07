@@ -78,7 +78,7 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
 	  var currentKarma = parseInt($(str).html());
 	  currentKarma += parseInt(karma);
 
-	  $(str).html(currentKarma + " points");
+	  $(str).html(currentKarma + " point(s)");
   },
 
   submit: function(event) {
