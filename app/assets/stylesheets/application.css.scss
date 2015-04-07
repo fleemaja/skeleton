@@ -539,16 +539,6 @@ input[type="submit"] {
 	cursor: pointer;
 }
 
-input[type="file"]::-webkit-file-upload-button {
-	display: block;
-	color: white;
-	font-weight: bold;
-	size: 8px;
-	padding: 5px 10px;
-	border: 1px solid black;
-	background: #d8d8d8;
-}
-
 input[type="file"] {
 
 }
