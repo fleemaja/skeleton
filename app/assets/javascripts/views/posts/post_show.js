@@ -4,7 +4,10 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
 
   initialize: function() {
 	  this.listenTo(this.model.comments(), "add remove sort", this.render);
-	  this.listenTo(this.model, "fetch", this.render)
+	  this.listenTo(this.model, "fetch", this.render);
+    $(document).ready(function () {
+        window.scrollTo(0,0);
+    });
   },
 
   events: {

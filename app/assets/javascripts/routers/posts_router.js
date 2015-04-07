@@ -11,6 +11,7 @@ ProjectSkeleton.Routers.Posts = Backbone.Router.extend({
 
 	show: function(id) {
 		var that = this;
+
 		this._getPost(id, function(post){
 			var postView = new ProjectSkeleton.Views.PostShow({
 				model: post
