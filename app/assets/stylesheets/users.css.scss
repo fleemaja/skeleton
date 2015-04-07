@@ -10,17 +10,18 @@
 	border-top: 1px solid black;
 }
 
-.user-details {
-
-}
-
 #guest-sign-in {
 	margin-top: 10px;
 	display: inline-block;
 	color: white;
 	font-weight: bold;
-	padding: 5px 10px;
+	padding: 10px 20px;
+	border-radius: 5px;
 	background: orange;
-	border: 2px solid black;
+	opacity: 0.7;
 	cursor: pointer;
+}
+
+#guest-sign-in:hover {
+	opacity: 1;
 }

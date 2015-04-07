@@ -111,3 +111,14 @@
 .post-show {
 	border-top: 1px solid #d8d8d8;
 }
+
+.sub-selector {
+	font-size: 12px;
+	font-family: 'Arvo';
+	width: 232px;
+	height: 35px;
+}
+
+.sub-selector:focus {
+	outline: 1px solid #3b5998;
+}

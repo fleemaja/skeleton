@@ -4,18 +4,16 @@
 	<label>
 		<p>Title</p>
 		<textarea name="post[title]"></textarea>
-	</label>
+	</label><br><br>
 
 	<label>
-		<p>Text</p>
+		<p>Project Specifications</p>
 		<textarea name="post[text]"></textarea>
-	</label>
-
-	<br><br>
+	</label><br><br>
 
   <label>
 	  <p>Sub</p>
-		<select name="post[subreddit]">
+		<select name="post[subreddit]" class="sub-selector">
 			<% if signed_in? %>
 			  <% current_user.subscriptions().each do |sub| %>
 				  <option value="<%= SubReddit.find(sub.subreddit_id).name %>">
