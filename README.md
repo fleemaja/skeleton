@@ -1,7 +1,7 @@
 # Project Skeleton
 [Project Skeleton](http://www.projectskeleton.com) is a web forum devoted to projects, challenges, and prompts.
 
-It allows you to use project specifications and a creative community to spark your imagination to make cool things.
+It allows you to use project specifications and a creative community to bring your ideas to life.
 
 ## Features to Implement
 There is still plenty to work on for Project Skeleton. Here are a few features I plan to add:
