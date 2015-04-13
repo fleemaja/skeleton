@@ -166,36 +166,28 @@ nav.top > ul > .triangle {
 .triangle > a {
 	padding: 5px 10px;
 	position: relative;
-	color: black
-}
-
-.triangle > a:hover {
-	color: white
 }
 
 .triangle .dropdown-subreddits {
 	display: none;
 	position: absolute;
-	background: #d8d8d8;
-	border-top: 1px solid black;
-	border-right: 1px solid black;
+	background: white;
 	z-index: 4;
 	min-width: 167px;
 }
 
 .triangle .dropdown-subreddits > li {
-	border-bottom: 1px solid black;
 	padding: 5px 5px;
 	color: black;
 }
 
 .triangle:hover .dropdown-subreddits {
 	display: block;
+	border: 1px solid lightgrey;
 }
 
 .triangle .dropdown-subreddits > li:hover {
-	background: #3b5998;
-	color: white;
+	background: #dfdfdf;
 }
 
 nav.top > ul > .groups {
