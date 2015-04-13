@@ -596,21 +596,14 @@ input[type="submit"] {
 	margin-left: 35%;
 }
 
-#notifications-li {
-
-}
-
 #notifications-li > .notifications-link {
 	text-decoration: none;
 }
 
 #notifications-li ul.notifications-dropdown {
 	position: absolute;
-	background: #E4E4E4;
+	background: white;
 	overflow: visible;
-	border-left: 1px solid black;
-	border-right: 1px solid black;
-	border-top: 1px solid black;
 	margin-right: 5px;
 	z-index: 3;
 	display: none;
@@ -622,22 +615,23 @@ input[type="submit"] {
 
 #notifications-li:hover ul.notifications-dropdown {
 	display: block;
+	border: 1px solid lightgray;
+	border-radius: 10px;
 }
 
 ul.notifications-dropdown > li {
-
+	font-size: 14px;
 }
 
 ul.notifications-dropdown > li > a {
 	display: block;
 	text-decoration: none;
 	padding: 5px 10px;
-	border-bottom: 1px solid black;
+	border-radius: 10px;
 }
 
 ul.notifications-dropdown > li > a:hover {
-	background: darkgray;
-	color: white;
+	background: #dfdfdf;
 }
 
 .notifications-num {

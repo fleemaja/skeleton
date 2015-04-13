@@ -51,7 +51,7 @@ class Notification < ActiveRecord::Base
       comment_user = comment.user
       comment = comment.commentable
 
-      "#{comment_user.username} commented on your comment: #{comment.content}"
+      "#{comment_user.username} commented on your comment: #{comment.content[0...140]}..."
 
     when :new_post_in_subreddit
       post = self.notifiable
