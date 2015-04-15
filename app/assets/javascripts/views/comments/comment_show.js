@@ -13,7 +13,7 @@ ProjectSkeleton.Views.CommentShow = Backbone.View.extend({
 		 templateFn: JST["comments/show"],
 		 navTemplateFn: JST["comments/_nav_bar"]
 	 });
-
+   
 	 this.$el.html(renderedContent);
 	 return this;
   },

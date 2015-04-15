@@ -353,7 +353,6 @@ ProjectSkeleton.Views.PostShow = Backbone.View.extend({
 	  post.save({}, {
 		  success: function(model){
 			  ProjectSkeleton.posts.unshift(post);
-			  // that.model.fetch()
         Backbone.history.navigate("/posts/" + post.get("id"), { trigger: true })
         $("body > *").not('#new-post-modal').css("opacity", '1');
 		  }

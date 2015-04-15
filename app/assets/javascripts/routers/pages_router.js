@@ -7,13 +7,28 @@ ProjectSkeleton.Routers.Pages = Backbone.Router.extend({
 
 	routes: {
 		"": "front",
-		"#": "front",
-		"front": "front"
+		"#": "frontSort",
+		"front": "frontSort"
 	},
 
 	front: function(){
 		var router = this;
 		this._generateLoadingScreen();
+
+		this.frontPosts.fetch({
+
+			success: function(collection){
+				var frontView = new ProjectSkeleton.Views.FrontShow({
+					collection: collection
+				});
+
+				router._swapView(frontView);
+			}
+		});
+	},
+
+	frontSort: function(){
+		var router = this;
 
 		this.frontPosts.fetch({
 

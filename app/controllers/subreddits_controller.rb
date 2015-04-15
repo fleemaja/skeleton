@@ -7,11 +7,9 @@ class SubredditsController < ApplicationController
 
   def create
     @subreddit = current_user.moderated_subreddits.new(subreddit_params)
-    # fail
 
     if @subreddit.save
       flash.now[:message] = ["Your subreddit has been created"]
-      # current_user.subscriptions.create!(subreddit_id: @subreddit.id)
       redirect_to subreddit_url(@subreddit)
     else
       flash.now[:errors] = @subreddit.errors.full_messages

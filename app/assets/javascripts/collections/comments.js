@@ -8,7 +8,7 @@ ProjectSkeleton.Collections.Comments = Backbone.Collection.extend({
   url: "api/comments",
 
   comparator: function(comment) {
-	  return comment.get("karma");
+	  return -comment.get("karma");
   },
 
   sortingOptions: {

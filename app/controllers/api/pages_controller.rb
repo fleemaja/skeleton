@@ -38,34 +38,4 @@ class Api::PagesController < ApplicationController
     @posts = collect_front_posts.sort_by(&:karma).reverse
     render "front"
   end
-
-  def all_hot
-    @posts = Post.all
-    @posts.sort_by(&:karma).reverse
-    render "all"
-  end
-
-  def all_newest
-    @posts = Post.all
-    @posts.sort_by(&:created_at).reverse
-    render "all"
-  end
-
-  def all_rising
-    @posts = Post.all
-    @posts.sort_by(&:karma).reverse
-    render "all"
-  end
-
-  def all_controversial
-    @posts = Post.all
-    @posts.sort_by(&:karma).reverse
-    render "all"
-  end
-
-  def all_top
-    @posts = Post.all
-    @posts.sort_by(&:karma).reverse
-    render "all"
-  end
 end
