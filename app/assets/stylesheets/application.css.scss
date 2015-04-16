@@ -142,7 +142,7 @@ nav.top {
 }
 
 .sub-avatar {
-	max-height: 100px;
+	max-height: 80px;
 	max-width: 100px;
 	float: left;
 	display: block;
@@ -641,9 +641,11 @@ html {
     position: relative;
     min-height: 100%;
 }
+
 body {
     margin: 0 0 100px; /* bottom = footer height */
 }
+
 footer {
     position: absolute;
     left: 0;

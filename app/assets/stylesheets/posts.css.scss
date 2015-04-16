@@ -3,11 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .post-title {
-	padding: 10px;
+	padding: 2px;
 	margin-left: 60px;
 	color: #3b5998;
 	display: block;
-	font-size: 24px;
+	font-size: 20px;
 	max-width: 75%;
 	opacity: 0.8;
 }
@@ -62,12 +62,13 @@
 .text-post span.karma {
 	padding: 0px 25px 0px 1px;
 	margin-left: 8px;
-	font-size: 32px;
+	font-size: 26px;
+	font-style: bold;
 	color: darkgray;
 }
 
 .text-post span.poster {
-	margin-left: 20px;
+	margin-left: 0px;
 	font-size: 14px;
 }
 
@@ -98,10 +99,14 @@
 .text-post .comments {
 	color: #8c8c8c;
 	font-weight: 900;
-	margin-left: 20px;
+	margin-left: 0px;
 	font-size: 14px;
-	padding-bottom: 25px;
+	padding-bottom: 35px;
 	display: inline-block;
+}
+
+.text-post .buffer-zone {
+	height: 13px;
 }
 
 .text-post .comments:hover {
