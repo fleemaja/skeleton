@@ -9,6 +9,12 @@
 	display: block;
 	font-size: 24px;
 	max-width: 75%;
+	opacity: 1;
+}
+
+.post-title:hover {
+	transition: opacity 0.5s ease;
+  opacity: 0.7;
 }
 
 .post .delete {
@@ -109,10 +115,6 @@
 
 .text-post .p-karma {
 	margin-left: 20px;
-}
-
-.post-show {
-	border-top: 1px solid #d8d8d8;
 }
 
 .sub-selector {
