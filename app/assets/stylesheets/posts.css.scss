@@ -17,6 +17,10 @@
 	color: #3b5998;
 }
 
+.post-show {
+	border-top: 1px solid #d8d8d8;
+}
+
 .post .delete:hover {
 	text-decoration: underline;
 }
@@ -114,6 +118,15 @@
 
 .text-post .p-karma {
 	margin-left: 20px;
+}
+
+.post-title#bigger-title {
+	font-size: 28px;
+	padding-top: 20px;
+}
+
+.text-post .p-karma#bigger-karma {
+	font-size: 32px;
 }
 
 .sub-selector {

@@ -3,23 +3,23 @@
 	<div class="vote-buttons">
 		<div class="upvote" post-id="<%= post.id %>">
 			<a href="#/posts/<%= post.id %>/upvote" rel="nofollow">
-			  <img src="skeleFBlike.png" height="22" width="24">
+			  <img src="skeleFBlike.png" height="30" width="32">
 			</a>
 		</div>
 
-		<span class="karma">
+		<span class="karma" id="bigger-karma">
 				<%= post.escape("karma") %>
 		</span>
 
 		<div class="downvote" post-id="<%= post.id %>">
 			<a href="#/posts/<%= post.id %>/downvote" rel="nofollow">
-		    <img src="skeleFBdislike.png" height="22" width="24">
+		    <img src="skeleFBdislike.png" height="30" width="32">
 			</a>
 		</div>
 	</div>
 
 	<p>
-	  <span class="post-title">
+	  <span class="post-title" id="bigger-title">
 		  <a href="#/posts/<%= post.id %>">
 			  <%= post.escape("title") %>
 			</a>
