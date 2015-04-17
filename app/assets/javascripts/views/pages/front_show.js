@@ -15,15 +15,15 @@ ProjectSkeleton.Views.FrontShow = Backbone.View.extend({
 	  "submit .search-posts": "searchPosts",
 	  "click .delete": "showDeleteModal",
 	  "click #cancel-deletion": "cancelDelete",
-    "click .shawnas": "pick"
+    "click .filepick": "pick"
    },
 
    pick: function (event) {
      var that = this;
      filepicker.pick({}, function (Blob) {
 
-       $(event.currentTarget).removeClass("shawnas");
-       $(event.currentTarget).addClass("shawnas-disabled");
+       $(event.currentTarget).removeClass("filepick");
+       $(event.currentTarget).addClass("filepick-disabled");
        $(event.currentTarget).html("Photo successfully uploaded!")
 
        that._lastFile = Blob.url;

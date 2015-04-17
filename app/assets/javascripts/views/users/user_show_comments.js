@@ -3,7 +3,7 @@ ProjectSkeleton.Views.UserComments = Backbone.View.extend({
   events: {
 	  "click .downvote": "downvote",
 	  "click .upvote": "upvote",
-    "click .shawnas": "pick"
+    "click .filepick": "pick"
   },
 
   template: JST['users/show_comments'],
@@ -12,8 +12,8 @@ ProjectSkeleton.Views.UserComments = Backbone.View.extend({
     var that = this;
     filepicker.pick({}, function (Blob) {
 
-      $(event.currentTarget).removeClass("shawnas");
-      $(event.currentTarget).addClass("shawnas-disabled");
+      $(event.currentTarget).removeClass("filepick");
+      $(event.currentTarget).addClass("filepick-disabled");
       $(event.currentTarget).html("Photo successfully uploaded!")
 
       that._lastFile = Blob.url;

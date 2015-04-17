@@ -14,13 +14,13 @@ window.ProjectSkeleton = {
     new ProjectSkeleton.Routers.Users(users, $rootEl);
 
 
-    $(".shawnas").on("click", function(event) {
+    $(".filepick").on("click", function(event) {
       var that = this;
       var user = users.getOrFetch( { id: ProjectSkeleton.currentUserId })
       filepicker.pick({}, function (Blob) {
 
-        $(event.currentTarget).removeClass("shawnas");
-        $(event.currentTarget).addClass("shawnas-disabled");
+        $(event.currentTarget).removeClass("filepick");
+        $(event.currentTarget).addClass("filepick-disabled");
         $(event.currentTarget).html("Photo successfully uploaded!")
 
         that._lastFile = Blob.url;
