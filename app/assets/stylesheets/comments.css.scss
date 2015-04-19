@@ -20,11 +20,6 @@
 	display: inline;
 }
 
-img.filepicker {
-	max-width: 900px;
-	max-height: 450px;
-}
-
 .comment span.username {
 	padding: 2px 5px;
 	font-size: 18px;
@@ -38,14 +33,6 @@ img.filepicker {
 .comment span.karma {
 	font-size: 12px;
 	padding: 5px;
-}
-
-.orange {
-  color: orange;
-}
-
-.blue {
-	color: #3b5998;
 }
 
 .comment span.time-ago{
@@ -81,6 +68,11 @@ img.filepicker {
 	display: inline-block;
 	background: #d8d8d8;
 	border-radius: 10px;
+}
+
+img.filepicker {
+	max-width: 900px;
+	max-height: 450px;
 }
 
 span.comment-link {
