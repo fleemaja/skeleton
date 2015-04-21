@@ -88,48 +88,24 @@ ProjectSkeleton.Views.FrontShow = Backbone.View.extend({
 	  var that = this;
 	  this.collection.changeSort("hotPosts");
 	  this.collection.sort();
-	  // this.collection.fetch({
-		//   success: function(collection){
-		// 	  collection.changeSort("hotPosts");
-		// 	  collection.sort();
-		//   }
-	  // })
   },
 
   sortTop: function(){
 	  var that = this;
 	  this.collection.changeSort("topPosts");
 	  this.collection.sort();
-	  // this.collection.fetch({
-		//   success: function(collection){
-		// 	  collection.changeSort("topPosts");
-		// 	  collection.sort();
-		//   }
-	  // })
   },
 
   sortNew: function(){
 	  var that = this;
 	  this.collection.changeSort("newPosts");
 	  this.collection.sort();
-	  // this.collection.fetch({
-		//   success: function(collection){
-		// 	  collection.changeSort("newPosts");
-		// 	  collection.sort();
-		//   }
-	  // })
   },
 
   sortCon: function(){
 	  var that = this;
 	  this.collection.changeSort("conPosts");
 	  this.collection.sort();
-	  // this.collection.fetch({
-		//   success: function(collection){
-		// 	  collection.changeSort("conPosts");
-		// 	  collection.sort();
-		//   }
-	  // })
   },
 
 
@@ -137,12 +113,6 @@ ProjectSkeleton.Views.FrontShow = Backbone.View.extend({
 	  var that = this;
 	  this.collection.changeSort("bestPosts");
 	  this.collection.sort();
-	  // this.collection.fetch({
-		//   success: function(collection){
-		// 	  collection.changeSort("bestPosts");
-		// 	  collection.sort();
-		//   }
-	  // })
   },
 
   newSubReddit: function(event){
